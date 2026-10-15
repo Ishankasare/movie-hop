@@ -12,11 +12,8 @@ import {
   type HopBand,
   type Pair,
 } from "@/lib/pairs";
+import { parseCategory } from "@/lib/categories";
 import Game from "./Game";
-
-function parseGenre(v: string | null): number | undefined {
-  return v && /^\d+$/.test(v) ? Number(v) : undefined;
-}
 
 function parseHops(v: string | null): HopBand | undefined {
   return v === "2" || v === "3" || v === "4" ? (Number(v) as HopBand) : undefined;
@@ -31,9 +28,9 @@ function useMounted(): boolean {
 
 export default function PlayClient() {
   const params = useSearchParams();
-  const genre = parseGenre(params.get("genre"));
+  const category = parseCategory(params.get("cat"));
   const hops = parseHops(params.get("hops"));
-  const matching = useMemo(() => filterPairs(ALL_PAIRS, { genre, hops }), [genre, hops]);
+  const matching = useMemo(() => filterPairs(ALL_PAIRS, { category, hops }), [category, hops]);
   const [roundNo, setRoundNo] = useState(0);
   const mounted = useMounted();
 
@@ -56,7 +53,7 @@ export default function PlayClient() {
   if (!mounted) return <PlayLoading />;
   return (
     <Round
-      key={`${genre ?? "any"}-${hops ?? "any"}-${roundNo}`}
+      key={`${category ?? "any"}-${hops ?? "any"}-${roundNo}`}
       matching={matching}
       onPlayAgain={() => setRoundNo((n) => n + 1)}
     />

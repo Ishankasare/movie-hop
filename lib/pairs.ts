@@ -1,6 +1,6 @@
 import { z } from "zod";
 import rawPairs from "@/data/pairs.json";
-import { genreName } from "./genres";
+import { categoryName, inCategory, isUniverse, UNIVERSES } from "./categories";
 
 const filmSchema = z.object({
   id: z.number().int().positive(),
@@ -29,7 +29,7 @@ const pairSchema = z.object({
 
 export type Pair = z.infer<typeof pairSchema>;
 export type HopBand = 2 | 3 | 4;
-export type PairFilter = { genre?: number; hops?: HopBand };
+export type PairFilter = { category?: string; hops?: HopBand };
 
 export function parsePairs(input: unknown): Pair[] {
   return z.array(pairSchema).parse(input);
@@ -41,27 +41,75 @@ export function pairKey(pair: Pair): string {
   return `${pair.start.id}-${pair.goal.id}`;
 }
 
-/** Genre = the start film's first genre id. Hops = exact shortest-path length. */
+/** Category = a genre or universe of the GOAL film (see lib/categories.ts). Hops = exact shortest-path length. */
 export function filterPairs(pairs: Pair[], filter: PairFilter = {}): Pair[] {
   return pairs.filter(
     (p) =>
-      (filter.genre === undefined || p.start.genres?.[0] === filter.genre) &&
+      (filter.category === undefined || inCategory(p.goal, filter.category)) &&
       (filter.hops === undefined || p.minHops === filter.hops),
   );
 }
 
-export type GenreOption = { id: number; name: string; count: number };
+export type CategoryOption = {
+  key: string;
+  name: string;
+  /** Universes (Marvel, DC, …) are shown separately from the plain genres. */
+  universe: boolean;
+  count: number;
+  /** Posters of the most common goal films in this category, for the picker tile. */
+  posters: string[];
+};
 
-/** Genres that have at least one pair. Empty when the data has no genres. */
-export function availableGenres(pairs: Pair[]): GenreOption[] {
-  const counts = new Map<number, number>();
-  for (const p of pairs) {
-    const g = p.start.genres?.[0];
-    if (g !== undefined) counts.set(g, (counts.get(g) ?? 0) + 1);
+/** A category needs this many pairs (2 per hop band) to be offered at all. */
+export const MIN_PAIRS_PER_CATEGORY = 6;
+
+/** Universes first (in their fixed order), then genres A–Z. Categories with too few pairs are left out. */
+export function availableCategories(pairs: Pair[]): CategoryOption[] {
+  const keys = new Set<string>(UNIVERSES.map((u) => u.key));
+  for (const p of pairs) for (const g of p.goal.genres ?? []) keys.add(`g${g}`);
+
+  // each category's goal posters, most common goals first
+  const ranked = new Map<string, { posters: string[]; count: number }>();
+  for (const key of keys) {
+    const inCat = pairs.filter((p) => inCategory(p.goal, key));
+    if (inCat.length < MIN_PAIRS_PER_CATEGORY) continue;
+    const byGoal = new Map<number, { poster: string; n: number }>();
+    for (const p of inCat) {
+      if (!p.goal.poster) continue;
+      const e = byGoal.get(p.goal.id) ?? { poster: p.goal.poster, n: 0 };
+      e.n++;
+      byGoal.set(p.goal.id, e);
+    }
+    ranked.set(key, {
+      posters: [...byGoal.values()].sort((a, b) => b.n - a.n).map((e) => e.poster),
+      count: inCat.length,
+    });
   }
-  return [...counts.entries()]
-    .map(([id, count]) => ({ id, name: genreName(id), count }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+
+  // Famous goals fit many genres (The Avengers is Action, Adventure and Sci-Fi), so hand out posters
+  // so that tiles don't all show the same film: universes first, then the smallest genres.
+  const used = new Set<string>();
+  const take = (candidates: string[], n: number): string[] => {
+    const picked = candidates.filter((p) => !used.has(p)).slice(0, n);
+    for (const p of candidates) if (picked.length < n && !picked.includes(p)) picked.push(p); // all taken: reuse
+    picked.forEach((p) => used.add(p));
+    return picked;
+  };
+  const posterFor = new Map<string, string[]>();
+  const assignOrder = [...ranked.keys()].sort((a, b) => {
+    const ua = isUniverse(a), ub = isUniverse(b);
+    return ua !== ub ? (ua ? -1 : 1) : ranked.get(a)!.count - ranked.get(b)!.count;
+  });
+  for (const key of assignOrder) posterFor.set(key, take(ranked.get(key)!.posters, isUniverse(key) ? 3 : 1));
+
+  const options: CategoryOption[] = [];
+  for (const [key, r] of ranked) {
+    options.push({ key, name: categoryName(key), universe: isUniverse(key), count: r.count, posters: posterFor.get(key)! });
+  }
+  const order = (o: CategoryOption) => UNIVERSES.findIndex((u) => u.key === o.key);
+  return options.sort((a, b) =>
+    a.universe !== b.universe ? (a.universe ? -1 : 1) : a.universe ? order(a) - order(b) : a.name.localeCompare(b.name),
+  );
 }
 
 /** Picks a pair, preferring ones not in `recentKeys`; falls back to any if all were recent. */
