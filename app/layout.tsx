@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
 import TabBar from "@/components/TabBar";
 import "./globals.css";
 
@@ -42,7 +43,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </a>
           .
         </footer>
-        <TabBar />
+        {/* the current path isn't known when a dynamic page (/race/<code>) is prerendered */}
+        <Suspense fallback={null}>
+          <TabBar />
+        </Suspense>
       </body>
     </html>
   );

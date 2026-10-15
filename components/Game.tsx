@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { castOf, filmsOf } from "@/lib/graph";
 import { formatTime } from "@/lib/format";
 import { gameReducer, initialState, type GameAction } from "@/lib/game";
@@ -10,9 +10,23 @@ import type { Film, Person } from "@/lib/types";
 import Poster from "./Poster";
 import ResultPanel from "./ResultPanel";
 
+/** Extra wiring when the board is used in a 2-player race (see components/race). */
+export type RaceHooks = {
+  /** performance.now() value at the shared race start (already corrected for the server clock). */
+  startedAtPerf: number;
+  opponent: { name: string; moves: number };
+  onMoves: (moves: number) => void;
+  onHint: () => void;
+  onFinish: (moves: number) => void;
+  onGiveUp: () => void;
+  /** Shown instead of the solo result once you have finished or given up, while the opponent catches up. */
+  waiting: ReactNode;
+};
+
 type Props = {
   pair: Pair;
   onPlayAgain: () => void;
+  race?: RaceHooks;
 };
 
 type Finished = { outcome: "won" | "gaveup"; ms: number };
@@ -20,23 +34,34 @@ type Finished = { outcome: "won" | "gaveup"; ms: number };
 /** Wall-clock helper kept at module level: it is only ever called from effects and event handlers. */
 const now = () => performance.now();
 
+/** A race hint costs 15 s on your time (the server adds it); in solo it costs a hop. */
+const RACE_HINT_MS = 15_000;
+
 function toFilm(f: Film): Film {
   return { id: f.id, title: f.title, year: f.year, poster: f.poster };
 }
 
-export default function Game({ pair, onPlayAgain }: Props) {
+export default function Game({ pair, onPlayAgain, race }: Props) {
   const [game, setGame] = useState(() => initialState(toFilm(pair.start)));
-  // The clock starts when the round is revealed (this component mounts).
-  const [startedAt] = useState(() => now());
+  // Solo: the clock starts when the round is revealed (this component mounts). Race: at the shared start.
+  const [startedAt] = useState(() => race?.startedAtPerf ?? now());
   const [elapsed, setElapsed] = useState(0);
   const [finished, setFinished] = useState<Finished | null>(null);
   // Person whose films are showing. Opening / closing this is free; only reaching a film is a move.
   const [selected, setSelected] = useState<Person | null>(null);
   const [hintText, setHintText] = useState<string | null>(null);
+  const [raceHintUsed, setRaceHintUsed] = useState(false);
 
   const current = game.path[game.path.length - 1];
   const isFinished = finished !== null;
   const goal = pair.goal;
+  const hintUsed = race ? raceHintUsed : game.hintUsed;
+  const onMoves = race?.onMoves;
+
+  // tell the room how many hops we've made (the opponent sees only this number)
+  useEffect(() => {
+    onMoves?.(game.moves);
+  }, [onMoves, game.moves]);
 
   useEffect(() => {
     if (isFinished) return;
@@ -49,23 +74,41 @@ export default function Game({ pair, onPlayAgain }: Props) {
     if (next === game) return;
     setGame(next);
     setSelected(null);
-    if (next.won) setFinished({ outcome: "won", ms: now() - startedAt });
+    if (next.won) {
+      setFinished({ outcome: "won", ms: now() - startedAt });
+      race?.onFinish(next.moves);
+    }
   }
 
-  // One hint per run; it costs a move and doesn't close the person screen you're on.
+  // One hint per run and it doesn't close the person screen you're on. Solo: costs a hop. Race: +15 s.
   function revealHint() {
+    if (race) {
+      if (raceHintUsed) return;
+      setRaceHintUsed(true);
+      setHintText(hintFor(pair));
+      race.onHint();
+      return;
+    }
     const next = gameReducer(game, { type: "hint" });
     if (next === game) return;
     setGame(next);
     setHintText(hintFor(pair));
   }
 
+  function giveUp() {
+    setFinished({ outcome: "gaveup", ms: now() - startedAt });
+    race?.onGiveUp();
+  }
+
   const cast = castOf(current.id);
   const films = selected ? filmsOf(selected.id, current.id) : [];
-  const shownMs = finished ? finished.ms : elapsed;
+  const shownMs = (finished ? finished.ms : elapsed) + (race && raceHintUsed ? RACE_HINT_MS : 0);
+
+  // in a race the room screen already provides the page's <main>
+  const Root = race ? "div" : "main";
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-5">
+    <Root className="mx-auto max-w-3xl px-4 py-5">
       {/* start -> goal header */}
       <header className="flex items-center gap-3 rounded-xl border border-line bg-surface p-3">
         <div className="flex min-w-0 flex-1 items-center gap-2">
@@ -104,8 +147,20 @@ export default function Game({ pair, onPlayAgain }: Props) {
           <span className="font-bold tabular-nums" data-testid="timer">
             {formatTime(shownMs)}
           </span>
+          {race && raceHintUsed && <span className="ml-1 text-xs text-accent-soft">(+15s hint)</span>}
         </p>
       </div>
+      {race && (
+        <p
+          className="mt-2 rounded-lg bg-surface-hi px-3 py-1.5 text-center text-sm"
+          data-testid="opponent-moves"
+          aria-live="polite"
+        >
+          <span className="text-muted">{race.opponent.name} </span>
+          <span className="font-bold tabular-nums">{race.opponent.moves}</span>
+          <span className="text-muted"> {race.opponent.moves === 1 ? "hop" : "hops"}</span>
+        </p>
+      )}
 
       {hintText && !finished && (
         <p
@@ -152,13 +207,17 @@ export default function Game({ pair, onPlayAgain }: Props) {
 
       {finished ? (
         <div className="mt-5">
-          <ResultPanel
-            pair={pair}
-            game={game}
-            outcome={finished.outcome}
-            ms={finished.ms}
-            onPlayAgain={onPlayAgain}
-          />
+          {race ? (
+            race.waiting
+          ) : (
+            <ResultPanel
+              pair={pair}
+              game={game}
+              outcome={finished.outcome}
+              ms={finished.ms}
+              onPlayAgain={onPlayAgain}
+            />
+          )}
         </div>
       ) : (
         <>
@@ -258,14 +317,14 @@ export default function Game({ pair, onPlayAgain }: Props) {
             <button
               type="button"
               onClick={revealHint}
-              disabled={game.hintUsed}
+              disabled={hintUsed}
               className="rounded-full border border-line px-5 py-2 font-semibold hover:bg-surface-hi disabled:opacity-40"
             >
-              {game.hintUsed ? "Hint used" : "Hint (+1 hop)"}
+              {hintUsed ? "Hint used" : race ? "Hint (+15s)" : "Hint (+1 hop)"}
             </button>
             <button
               type="button"
-              onClick={() => setFinished({ outcome: "gaveup", ms: now() - startedAt })}
+              onClick={giveUp}
               className="rounded-full border border-line px-5 py-2 font-semibold text-muted hover:bg-surface-hi"
             >
               Give up
@@ -274,6 +333,6 @@ export default function Game({ pair, onPlayAgain }: Props) {
           </div>
         </>
       )}
-    </main>
+    </Root>
   );
 }

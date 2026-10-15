@@ -30,7 +30,8 @@ const TABS = [
 /** Bottom navigation. Hidden while a round is being played so the board gets the full screen. */
 export default function TabBar() {
   const pathname = usePathname();
-  if (pathname.startsWith("/play")) return null;
+  // hidden while playing: a solo round, or inside a race room (/race/<code>)
+  if (pathname.startsWith("/play") || pathname.startsWith("/race/")) return null;
 
   return (
     <nav

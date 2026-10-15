@@ -1,18 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useSyncExternalStore } from "react";
-import { UNIVERSES } from "@/lib/categories";
-import { posterUrl } from "@/lib/format";
-import {
-  ALL_PAIRS,
-  availableCategories,
-  filterPairs,
-  type CategoryOption,
-  type HopBand,
-} from "@/lib/pairs";
+import { ALL_PAIRS, availableCategories, filterPairs, type HopBand } from "@/lib/pairs";
 import { parsePrefs, prefsToQuery, readStoredPrefs, writeStoredPrefs, type Prefs } from "@/lib/prefs";
+import CategoryTiles from "./CategoryTiles";
 
 const CATEGORIES = availableCategories(ALL_PAIRS);
 const CATEGORY_KEYS = CATEGORIES.map((c) => c.key);
@@ -34,60 +26,6 @@ function subscribe(onChange: () => void) {
   };
 }
 
-function Tile({
-  option,
-  count,
-  selected,
-  onSelect,
-}: {
-  option: CategoryOption;
-  count: number;
-  selected: boolean;
-  onSelect: () => void;
-}) {
-  const blurb = UNIVERSES.find((u) => u.key === option.key)?.blurb;
-  const posters = option.universe ? option.posters : option.posters.slice(0, 1);
-  return (
-    <button
-      type="button"
-      aria-pressed={selected}
-      aria-label={`${option.name}, ${count} pairs`}
-      disabled={count === 0}
-      onClick={onSelect}
-      className={`group relative block w-full overflow-hidden rounded-2xl text-left ring-2 transition disabled:opacity-40 ${
-        selected ? "ring-accent" : "ring-transparent hover:ring-line"
-      } ${option.universe ? "aspect-[4/3]" : "aspect-[3/4]"}`}
-    >
-      <span aria-hidden className="absolute inset-0 flex bg-surface-hi">
-        {posters.map((p) => (
-          <Image
-            key={p}
-            src={posterUrl(p, "w185")}
-            alt=""
-            width={185}
-            height={278}
-            unoptimized
-            className="h-full min-w-0 flex-1 object-cover"
-          />
-        ))}
-      </span>
-      <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-      <span className="absolute inset-x-0 bottom-0 p-2.5">
-        <span className={`block font-bold leading-tight ${option.universe ? "text-lg" : "text-sm"}`}>{option.name}</span>
-        <span className="block text-[11px] text-muted">{blurb ?? `${count} pairs`}</span>
-      </span>
-      {selected && (
-        <span
-          aria-hidden
-          className="absolute top-2 right-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-sm font-bold text-accent-ink"
-        >
-          ✓
-        </span>
-      )}
-    </button>
-  );
-}
-
 export default function PlayPicker() {
   // Server and first client render see null (= "any"); the stored choice appears right after hydration.
   const raw = useSyncExternalStore(subscribe, readStoredPrefs, () => null);
@@ -104,13 +42,6 @@ export default function PlayPicker() {
     window.dispatchEvent(new Event(CHANGE_EVENT));
   }
 
-  function toggleCategory(key: string) {
-    update({ ...prefs, category: prefs.category === key ? undefined : key });
-  }
-
-  const universes = CATEGORIES.filter((c) => c.universe);
-  const genres = CATEGORIES.filter((c) => !c.universe);
-
   return (
     <div className="mt-8 w-full text-left">
       <section aria-labelledby="goal-heading">
@@ -118,32 +49,12 @@ export default function PlayPicker() {
           What kind of film is your goal?
         </h2>
         <p className="text-xs text-muted">Pick one, or leave it empty for a surprise.</p>
-
-        <h3 className="mt-4 text-xs font-semibold tracking-widest text-accent-soft uppercase">Universes</h3>
-        <div className="mt-2 grid grid-cols-2 gap-3">
-          {universes.map((c) => (
-            <Tile
-              key={c.key}
-              option={c}
-              count={counts.get(c.key) ?? 0}
-              selected={prefs.category === c.key}
-              onSelect={() => toggleCategory(c.key)}
-            />
-          ))}
-        </div>
-
-        <h3 className="mt-5 text-xs font-semibold tracking-widest text-accent-soft uppercase">Genres</h3>
-        <div className="mt-2 grid grid-cols-3 gap-2.5">
-          {genres.map((c) => (
-            <Tile
-              key={c.key}
-              option={c}
-              count={counts.get(c.key) ?? 0}
-              selected={prefs.category === c.key}
-              onSelect={() => toggleCategory(c.key)}
-            />
-          ))}
-        </div>
+        <CategoryTiles
+          categories={CATEGORIES}
+          counts={counts}
+          selected={prefs.category}
+          onSelect={(key) => update({ ...prefs, category: prefs.category === key ? undefined : key })}
+        />
       </section>
 
       <fieldset className="mt-6">
