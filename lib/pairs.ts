@@ -12,6 +12,8 @@ const filmSchema = z.object({
 // genres are TMDB genre ids; older pairs.json files don't have them.
 const endpointSchema = filmSchema.extend({
   genres: z.array(z.number().int()).optional(),
+  // "universes" the film belongs to (goal films only): shown next to the genres in the picker
+  tags: z.array(z.enum(["marvel", "dc", "disney", "saga"])).optional(),
 });
 
 const pairSchema = z.object({

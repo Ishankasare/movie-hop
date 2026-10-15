@@ -24,17 +24,46 @@ const BASE = "https://api.themoviedb.org/3";
 const CACHE_FILE = "credits_cache.json";
 
 // ---- tuning knobs ----
-const DISCOVER_PAGES = Number(process.env.DISCOVER_PAGES ?? 50); // ~20 films each, most-voted first
+const DISCOVER_PAGES = Number(process.env.DISCOVER_PAGES ?? 80); // ~20 films each, most-voted first
 const TOP_CAST = 6;          // "main cast" = billing order 0..5
 const MIN_HOPS = Number(process.env.MIN_HOPS ?? 2);
 const MAX_HOPS = Number(process.env.MAX_HOPS ?? 4);
 const MAX_ROUTES = 2;
-const PAIRS_PER_START = 2;
-const TARGET_PAIRS = Number(process.env.TARGET_PAIRS ?? 80);
+// Pairs are generated per (goal category x hop band) cell so every genre / universe has rounds to play.
+const PER_CELL = Number(process.env.PER_CELL ?? 6);        // pairs wanted per category and band
+const MAX_PER_GOAL = 2;                                     // keep the same goal film from dominating
+const MAX_PER_START = 3;
 const CONCURRENCY = 8;
 // A person only counts as a link if a normal viewer would know them:
 const MIN_APPEARANCES = Number(process.env.MIN_APPEARANCES ?? 3); // main cast / director in this many universe films
 const MIN_POPULARITY = Number(process.env.MIN_POPULARITY ?? 5);   // ...or a high TMDB popularity score
+// Directors are rarely recognised by face or name, so they must be genuinely famous to be a link:
+const MIN_DIRECTOR_FILMS = Number(process.env.MIN_DIRECTOR_FILMS ?? 4); // directed this many universe films
+// Start films come from the better-known part of the universe (share of films, ranked by TMDB votes):
+const START_TOP_SHARE = Number(process.env.START_TOP_SHARE ?? 0.5);
+// No pairs for genres that have no recognisable films in a "famous films" universe:
+const SKIP_GENRES = new Set([99, 10770]); // Documentary, TV Movie
+
+// ---- "universes": extra categories next to the normal genres (goal film belongs to one) ----
+const MARVEL_COMPANIES = new Set([420, 7505, 19551]);   // Marvel Studios / Entertainment / Enterprises
+const DC_COMPANIES = new Set([9993, 128064, 429]);      // DC Entertainment / DC Films / DC Comics
+const DISNEY_COMPANIES = new Set([2, 3, 6125]);         // Walt Disney Pictures / Pixar / Walt Disney Animation
+const SAGA_RE = /star wars|harry potter|lord of the rings|hobbit|fantastic beasts/i; // by TMDB collection name
+const TAGS = ["marvel", "dc", "disney", "saga"];
+const NOT_DC = /^RED( 2)?$/; // comic adaptations credited to DC Entertainment, not DC superhero films
+
+function tagsOf(details, title) {
+  const companies = new Set((details?.production_companies ?? []).map((c) => c.id));
+  const has = (set) => [...companies].some((id) => set.has(id));
+  const tags = [];
+  const marvel = has(MARVEL_COMPANIES);
+  const saga = SAGA_RE.test(details?.belongs_to_collection?.name ?? "");
+  if (marvel) tags.push("marvel");
+  if (has(DC_COMPANIES) && !NOT_DC.test(title)) tags.push("dc");
+  if (saga) tags.push("saga");
+  if (has(DISNEY_COMPANIES) && !marvel && !saga) tags.push("disney"); // Marvel / Star Wars are Disney-owned; keep them in their own bucket
+  return tags;
+}
 
 // ---- tiny cached TMDB client ----
 let cache = {};
@@ -92,25 +121,28 @@ async function buildUniverse() {
   }
   // TMDB knows which films belong to the same collection (sequels, trilogies).
   const details = await mapLimit(candidates, CONCURRENCY, (f) => get(`/movie/${f.id}`));
-  const collectionOf = new Map(candidates.map((f, i) => [f.id, details[i]?.belongs_to_collection?.id]));
+  candidates.forEach((f, i) => {
+    const c = details[i]?.belongs_to_collection?.id;
+    f.fkey = c ? `c${c}` : `t${franchise(f.title)}`;   // films with the same fkey are sequels / same franchise
+    f.tags = tagsOf(details[i], f.title);
+  });
 
-  // One film per franchise: first by TMDB collection, then (for films with no collection) by title.
+  // Untagged films: one per franchise (first by TMDB collection, then by title) so routes can't
+  // just hop between sequels. Films in a universe (Marvel, DC, Disney, sagas) are ALL kept so those
+  // categories have enough goals; routes that pass through two films of one franchise are rejected later.
+  const tagged = candidates.filter((f) => f.tags.length > 0);
   const best = new Map();
-  for (const film of candidates) {
-    const c = collectionOf.get(film.id);
-    const k = c ? `c${c}` : `t${franchise(film.title)}`;
-    const prev = best.get(k);
-    if (!prev || film.votes > prev.votes) best.set(k, film);
+  for (const film of candidates.filter((f) => f.tags.length === 0)) {
+    const prev = best.get(film.fkey);
+    if (!prev || film.votes > prev.votes) best.set(film.fkey, film);
   }
-  // a title-keyed film can still be a sequel of a collection film ("Dawn of the Planet of the Apes"
-  // vs "War for..."): merge any remaining films that share a title key too.
   const byTitle = new Map();
   for (const film of best.values()) {
     const k = franchise(film.title);
     const prev = byTitle.get(k);
     if (!prev || film.votes > prev.votes) byTitle.set(k, film);
   }
-  return [...byTitle.values()];
+  return [...byTitle.values(), ...tagged];
 }
 
 // ---- 2. credits: top cast + director ----
@@ -125,7 +157,7 @@ async function peopleOf(film) {
 async function main() {
   console.log("Building film universe…");
   const films = await buildUniverse();
-  console.log(`Universe: ${films.length} films (one per franchise). Fetching credits…`);
+  console.log(`Universe: ${films.length} films. Fetching credits…`);
   const filmById = new Map(films.map((f) => [f.id, f]));
 
   const credits = await mapLimit(films, CONCURRENCY, (f) => peopleOf(f));
@@ -147,14 +179,30 @@ async function main() {
       personFilms.get(pid).push(f.id);
     }
   });
-  // famous connectors only: everyone else is dropped from the graph
-  const notable = new Set(
-    [...personFilms.entries()]
-      .filter(([pid, l]) => l.length >= 2 && (l.length >= MIN_APPEARANCES || personPop.get(pid) >= MIN_POPULARITY))
-      .map(([pid]) => pid),
-  );
-  for (const [pid] of [...personFilms]) if (!notable.has(pid)) personFilms.delete(pid);
-  for (const people of filmPeople.values()) for (const pid of [...people.keys()]) if (!notable.has(pid)) people.delete(pid);
+  // famous connectors only: everyone else is dropped from the graph.
+  // Actors: main cast in several films (or very popular). Directors: must have directed many films here.
+  const castCount = new Map(), dirCount = new Map();
+  for (const people of filmPeople.values()) {
+    for (const [pid, p] of people) {
+      const m = p.role === "director" ? dirCount : castCount;
+      m.set(pid, (m.get(pid) ?? 0) + 1);
+    }
+  }
+  const actorOk = (pid) => (castCount.get(pid) ?? 0) >= 2 && ((castCount.get(pid) ?? 0) >= MIN_APPEARANCES || personPop.get(pid) >= MIN_POPULARITY);
+  const directorOk = (pid) => (dirCount.get(pid) ?? 0) >= MIN_DIRECTOR_FILMS;
+  for (const people of filmPeople.values()) {
+    for (const [pid, p] of [...people]) if (!(p.role === "director" ? directorOk(pid) : actorOk(pid))) people.delete(pid);
+  }
+  personFilms.clear();
+  for (const [fid, people] of filmPeople) for (const pid of people.keys()) {
+    if (!personFilms.has(pid)) personFilms.set(pid, []);
+    personFilms.get(pid).push(fid);
+  }
+  for (const [pid, l] of [...personFilms]) if (l.length < 2) {
+    personFilms.delete(pid);
+    for (const people of filmPeople.values()) people.delete(pid);
+  }
+  const notable = new Set(personFilms.keys());
   console.log(`People: ${personName.size}, famous connectors kept: ${notable.size}`);
   // fame of a person = how many universe films they are main cast / director in
   const fame = (pid) => personFilms.get(pid).length;
@@ -188,61 +236,99 @@ async function main() {
       for (const { pid, from } of seen.get(id).parents) walk(from, [pid, id, ...suffix]);
     };
     walk(goalId, []);
+    const noRepeatFranchise = (r) => {
+      const keys = r.filter((_, i) => i % 2 === 0).map((id) => filmById.get(id).fkey);
+      return new Set(keys).size === keys.length;
+    };
+    all.splice(0, all.length, ...all.filter(noRepeatFranchise));
+    if (all.length === 0) return null;
     // prefer routes whose weakest link is the most famous person, then the most famous overall
     const people = (r) => r.filter((_, i) => i % 2 === 1);
     const score = (r) => [Math.min(...people(r).map(fame)), people(r).reduce((a, p) => a + fame(p), 0)];
     all.sort((a, b) => { const [a1, a2] = score(a), [b1, b2] = score(b); return b1 - a1 || b2 - a2; });
     // second route should differ in films, not just in which person links them
-    const filmKey = (r) => r.filter((_, i) => i % 2 === 0).join(",");
+    // A second route only counts if it passes through genuinely different films, not a sequel swap
+    // (Guardians vs Guardians Vol. 2): at least 2 new franchises (or 1 for a 2-hop route).
+    const middle = (r) => r.filter((_, i) => i % 2 === 0).slice(1, -1).map((id) => filmById.get(id).fkey);
+    const first = new Set(middle(all[0]));
+    const needed = Math.min(2, first.size);
     const picked = [all[0]];
     if (MAX_ROUTES > 1) {
-      const second = all.find((r) => filmKey(r) !== filmKey(all[0])) ?? all[1];
+      const second = all.find((r) => new Set(middle(r).filter((k) => !first.has(k))).size >= needed);
       if (second) picked.push(second);
     }
     return picked;
   }
   const routeNames = (r) => r.map((x, i) => (i % 2 === 0 ? filmById.get(x).title : personName.get(x)));
 
-  // ---- 3. generate pairs ----
-  const order = [...films].sort(() => Math.random() - 0.5);
-  const dist = {};
+  // ---- 3. generate pairs: PER_CELL for every (goal category x hop band) ----
+  const N = films.length;
+  const index = new Map(films.map((f, i) => [f.id, i]));
+  const distTo = films.map((f) => {          // distTo[s][g] = shortest film-hop distance (0 = unreachable within MAX_HOPS)
+    const row = new Int8Array(N);
+    for (const [id, v] of bfs(f.id)) row[index.get(id)] = v.dist;
+    return row;
+  });
+  const genreIds = [...new Set(films.flatMap((f) => f.genres))].filter((g) => !SKIP_GENRES.has(g));
+  const byVotes = films.map((f) => f.votes).sort((a, b) => b - a);
+  const minStartVotes = byVotes[Math.floor(byVotes.length * START_TOP_SHARE)] ?? 0;
+  const startOk = films.map((f) => f.votes >= minStartVotes);
+  const categories = [
+    ...TAGS.map((t) => ({ key: t, test: (f) => f.tags.includes(t) })),
+    ...genreIds.map((g) => ({ key: `g${g}`, test: (f) => f.genres.includes(g) })),
+  ];
+
   const pairs = [];
-  const bands = [];
-  for (let h = MIN_HOPS; h <= MAX_HOPS; h++) bands.push(h);
-  const perBand = Math.ceil(TARGET_PAIRS / bands.length);
-  const count = (h) => pairs.filter((p) => p.minHops === h).length;
+  const used = new Set();
+  const goalUse = new Map();
+  const startUse = new Map();
+  const cellCount = {};
+  const noise = () => 0.5 + Math.random();
 
-  for (const start of order) {
-    if (pairs.length >= TARGET_PAIRS) break;
-    const seen = bfs(start.id);
-    for (const [, v] of seen) dist[v.dist] = (dist[v.dist] || 0) + 1;
-
-    // famous goals first, within the hop band and not over-represented
-    const cands = [...seen.entries()]
-      .filter(([, v]) => v.dist >= MIN_HOPS && v.dist <= MAX_HOPS && count(v.dist) < perBand)
-      .sort((a, b) => filmById.get(b[0]).votes - filmById.get(a[0]).votes);
-
-    let taken = 0;
-    const usedBands = new Set();
-    for (const [gid, v] of cands) {
-      if (taken >= PAIRS_PER_START || pairs.length >= TARGET_PAIRS) break;
-      if (usedBands.has(v.dist)) continue; // spread bands within one start
-      const goal = filmById.get(gid);
-      const rids = routes(start.id, gid, seen);
-      const names = rids.map(routeNames);
-      pairs.push({
-        start: { id: start.id, title: start.title, year: start.year, poster: start.poster, genres: start.genres },
-        goal: { id: goal.id, title: goal.title, year: goal.year, poster: goal.poster, genres: goal.genres },
-        minHops: v.dist,
-        samplePath: names[0],
-        samplePaths: names,
-        // same routes as ids, alternating [filmId, personId, filmId, ...] — what the game checks against
-        samplePathIds: rids,
-      });
-      usedBands.add(v.dist);
-      taken++;
+  for (const cat of categories) {
+    const goalIdx = films.map((f, i) => (cat.test(f) ? i : -1)).filter((i) => i >= 0);
+    for (let band = MIN_HOPS; band <= MAX_HOPS; band++) {
+      // candidate (start, goal) pairs for this cell, famous goals first (with noise for variety)
+      const cands = [];
+      for (const g of goalIdx) {
+        for (let si = 0; si < N; si++) {
+          if (startOk[si] && distTo[si][g] === band && films[si].fkey !== films[g].fkey) {
+            cands.push({ si, g, w: films[g].votes * noise() * noise() });
+          }
+        }
+      }
+      cands.sort((a, b) => b.w - a.w);
+      let got = 0;
+      const key = `${cat.key}|${band}`;
+      for (const { si, g } of cands) {
+        if (got >= PER_CELL) break;
+        const start = films[si], goal = films[g];
+        const k = `${start.id}-${goal.id}`;
+        if (used.has(k)) { got++; continue; }   // already generated for another category: counts for this cell too
+        if ((goalUse.get(goal.id) ?? 0) >= MAX_PER_GOAL || (startUse.get(start.id) ?? 0) >= MAX_PER_START) continue;
+        const seen = bfs(start.id);
+        const rids = routes(start.id, goal.id, seen);
+        if (!rids) continue;
+        const names = rids.map(routeNames);
+        pairs.push({
+          start: { id: start.id, title: start.title, year: start.year, poster: start.poster, genres: start.genres },
+          goal: { id: goal.id, title: goal.title, year: goal.year, poster: goal.poster, genres: goal.genres, tags: goal.tags },
+          minHops: band,
+          samplePath: names[0],
+          samplePaths: names,
+          // same routes as ids, alternating [filmId, personId, filmId, ...] — what the game checks against
+          samplePathIds: rids,
+        });
+        used.add(k);
+        goalUse.set(goal.id, (goalUse.get(goal.id) ?? 0) + 1);
+        startUse.set(start.id, (startUse.get(start.id) ?? 0) + 1);
+        got++;
+      }
+      cellCount[key] = got;
     }
   }
+  const dist = {};
+  for (const row of distTo) for (const d of row) dist[d] = (dist[d] || 0) + 1;
 
   // static graph the game ships with: famous connectors only, so no runtime TMDB calls are needed
   const graph = { films: {}, people: {} };
@@ -264,13 +350,14 @@ async function main() {
 
   const byHop = {};
   pairs.forEach((p) => (byHop[p.minHops] = (byHop[p.minHops] || 0) + 1));
-  console.log("\nFilms reached at each hop count (summed over sampled starts):", dist);
+  console.log("\nFilm pairs by hop distance over the whole universe:", dist);
   console.log(`Done. ${pairs.length} pairs -> data/pairs.json`);
   console.log("Hop distribution:", byHop);
-  for (const p of pairs.slice(0, 6)) {
-    console.log(`\n${p.start.title} -> ${p.goal.title} (${p.minHops} hops)`);
-    for (const r of p.samplePaths) console.log("   " + r.join(" -> "));
-  }
+  const thin = Object.entries(cellCount).filter(([, n]) => n < PER_CELL);
+  console.log(`Cells below ${PER_CELL} pairs (${thin.length}/${Object.keys(cellCount).length}):`, thin.map(([k, n]) => `${k}=${n}`).join(" ") || "none");
+  const tagCount = Object.fromEntries(TAGS.map((t) => [t, films.filter((f) => f.tags.includes(t)).length]));
+  console.log("Films per universe tag:", tagCount);
+  for (const t of TAGS) console.log(`  ${t}: ` + films.filter((f) => f.tags.includes(t)).map((f) => f.title).slice(0, 40).join(", "));
 }
 
 main().catch((e) => { console.error(e); saveCache(); process.exit(1); });
