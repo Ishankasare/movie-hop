@@ -345,7 +345,7 @@ async function main() {
   console.log(`Graph: ${Object.keys(graph.films).length} films, ${Object.keys(graph.people).length} people -> data/graph.json`);
 
   fs.mkdirSync("data", { recursive: true });
-  fs.writeFileSync("data/pairs.json", JSON.stringify(pairs, null, 2));
+  fs.writeFileSync("data/pairs.json", JSON.stringify(pairs));
   saveCache();
 
   const byHop = {};
