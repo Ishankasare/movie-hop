@@ -1,0 +1,5607 @@
+[
+  {
+    "start": {
+      "id": 390043,
+      "title": "The Hitman's Bodyguard",
+      "year": "2017",
+      "poster": "/5CGjlz2vyBhW5xHW4eNOZIdgzYq.jpg",
+      "genres": [
+        28,
+        35,
+        80,
+        53
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Hitman's Bodyguard",
+      "Gary Oldman",
+      "The Dark Knight",
+      "Christopher Nolan",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Hitman's Bodyguard",
+        "Gary Oldman",
+        "The Dark Knight",
+        "Christopher Nolan",
+        "Interstellar"
+      ],
+      [
+        "The Hitman's Bodyguard",
+        "Gary Oldman",
+        "The Dark Knight",
+        "Michael Caine",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        390043,
+        64,
+        155,
+        525,
+        157336
+      ],
+      [
+        390043,
+        64,
+        155,
+        3895,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 390043,
+      "title": "The Hitman's Bodyguard",
+      "year": "2017",
+      "poster": "/5CGjlz2vyBhW5xHW4eNOZIdgzYq.jpg",
+      "genres": [
+        28,
+        35,
+        80,
+        53
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Hitman's Bodyguard",
+      "Samuel L. Jackson",
+      "Django Unchained",
+      "Leonardo DiCaprio",
+      "Shutter Island",
+      "Mark Ruffalo",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Hitman's Bodyguard",
+        "Samuel L. Jackson",
+        "Django Unchained",
+        "Leonardo DiCaprio",
+        "Shutter Island",
+        "Mark Ruffalo",
+        "The Avengers"
+      ],
+      [
+        "The Hitman's Bodyguard",
+        "Samuel L. Jackson",
+        "Captain Marvel",
+        "Jude Law",
+        "Sherlock Holmes",
+        "Robert Downey Jr.",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        390043,
+        2231,
+        68718,
+        6193,
+        11324,
+        103,
+        24428
+      ],
+      [
+        390043,
+        2231,
+        299537,
+        9642,
+        10528,
+        3223,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 4922,
+      "title": "The Curious Case of Benjamin Button",
+      "year": "2008",
+      "poster": "/26wEWZYt6yJkwRVkjcbwJEFh9IS.jpg",
+      "genres": [
+        18,
+        14,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Curious Case of Benjamin Button",
+      "Cate Blanchett",
+      "Ocean's Eight",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Curious Case of Benjamin Button",
+        "Cate Blanchett",
+        "Ocean's Eight",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "The Curious Case of Benjamin Button",
+        "Brad Pitt",
+        "Ocean's Eleven",
+        "Casey Affleck",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        4922,
+        112,
+        402900,
+        1813,
+        157336
+      ],
+      [
+        4922,
+        287,
+        161,
+        1893,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 4922,
+      "title": "The Curious Case of Benjamin Button",
+      "year": "2008",
+      "poster": "/26wEWZYt6yJkwRVkjcbwJEFh9IS.jpg",
+      "genres": [
+        18,
+        14,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Curious Case of Benjamin Button",
+      "David Fincher",
+      "Zodiac",
+      "Jake Gyllenhaal",
+      "Life",
+      "Ryan Reynolds",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "The Curious Case of Benjamin Button",
+        "David Fincher",
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Life",
+        "Ryan Reynolds",
+        "Deadpool"
+      ],
+      [
+        "The Curious Case of Benjamin Button",
+        "Cate Blanchett",
+        "Ocean's Eight",
+        "Sandra Bullock",
+        "The Proposal",
+        "Ryan Reynolds",
+        "Deadpool"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        4922,
+        7467,
+        1949,
+        131,
+        395992,
+        10859,
+        293660
+      ],
+      [
+        4922,
+        112,
+        402900,
+        18277,
+        18240,
+        10859,
+        293660
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 694,
+      "title": "The Shining",
+      "year": "1980",
+      "poster": "/uAR0AWqhQL1hQa69UDEbb2rE5Wx.jpg",
+      "genres": [
+        27,
+        53
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Shining",
+      "Jack Nicholson",
+      "The Departed",
+      "Leonardo DiCaprio",
+      "Inception",
+      "Christopher Nolan",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Shining",
+        "Jack Nicholson",
+        "The Departed",
+        "Leonardo DiCaprio",
+        "Inception",
+        "Christopher Nolan",
+        "Interstellar"
+      ],
+      [
+        "The Shining",
+        "Jack Nicholson",
+        "Batman",
+        "Tim Burton",
+        "Alice in Wonderland",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        694,
+        514,
+        1422,
+        6193,
+        27205,
+        525,
+        157336
+      ],
+      [
+        694,
+        514,
+        268,
+        510,
+        12155,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 694,
+      "title": "The Shining",
+      "year": "1980",
+      "poster": "/uAR0AWqhQL1hQa69UDEbb2rE5Wx.jpg",
+      "genres": [
+        27,
+        53
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Shining",
+      "Jack Nicholson",
+      "The Departed",
+      "Leonardo DiCaprio",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Shining",
+        "Jack Nicholson",
+        "The Departed",
+        "Leonardo DiCaprio",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        694,
+        514,
+        1422,
+        6193,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 155,
+      "title": "The Dark Knight",
+      "year": "2008",
+      "poster": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "genres": [
+        28,
+        53,
+        80
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Dark Knight",
+      "Christopher Nolan",
+      "The Prestige",
+      "Scarlett Johansson",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Dark Knight",
+        "Christopher Nolan",
+        "The Prestige",
+        "Scarlett Johansson",
+        "The Avengers"
+      ],
+      [
+        "The Dark Knight",
+        "Christopher Nolan",
+        "Oppenheimer",
+        "Robert Downey Jr.",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        155,
+        525,
+        1124,
+        1245,
+        24428
+      ],
+      [
+        155,
+        525,
+        872585,
+        3223,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 155,
+      "title": "The Dark Knight",
+      "year": "2008",
+      "poster": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "genres": [
+        28,
+        53,
+        80
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Dark Knight",
+      "Christopher Nolan",
+      "The Prestige",
+      "Hugh Jackman",
+      "Chappie",
+      "Sigourney Weaver",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "The Dark Knight",
+        "Christopher Nolan",
+        "The Prestige",
+        "Hugh Jackman",
+        "Chappie",
+        "Sigourney Weaver",
+        "Avatar"
+      ],
+      [
+        "The Dark Knight",
+        "Christian Bale",
+        "Pocahontas",
+        "Mel Gibson",
+        "Hacksaw Ridge",
+        "Sam Worthington",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        155,
+        525,
+        1124,
+        6968,
+        198184,
+        10205,
+        19995
+      ],
+      [
+        155,
+        3894,
+        10530,
+        2461,
+        324786,
+        65731,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 59967,
+      "title": "Looper",
+      "year": "2012",
+      "poster": "/sNjL6SqErDBE8OUZlrDLkexfsCj.jpg",
+      "genres": [
+        28,
+        53,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Looper",
+      "Emily Blunt",
+      "The Devil Wears Prada",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Looper",
+        "Emily Blunt",
+        "The Devil Wears Prada",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "Looper",
+        "Emily Blunt",
+        "Oppenheimer",
+        "Christopher Nolan",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        59967,
+        5081,
+        350,
+        1813,
+        157336
+      ],
+      [
+        59967,
+        5081,
+        872585,
+        525,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 59967,
+      "title": "Looper",
+      "year": "2012",
+      "poster": "/sNjL6SqErDBE8OUZlrDLkexfsCj.jpg",
+      "genres": [
+        28,
+        53,
+        878
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Looper",
+      "Bruce Willis",
+      "Moonrise Kingdom",
+      "Bill Murray",
+      "Ghostbusters",
+      "Sigourney Weaver",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Looper",
+        "Bruce Willis",
+        "Moonrise Kingdom",
+        "Bill Murray",
+        "Ghostbusters",
+        "Sigourney Weaver",
+        "Avatar"
+      ],
+      [
+        "Looper",
+        "Bruce Willis",
+        "The Fifth Element",
+        "Ian Holm",
+        "Alien",
+        "Sigourney Weaver",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        59967,
+        62,
+        83666,
+        1532,
+        620,
+        10205,
+        19995
+      ],
+      [
+        59967,
+        62,
+        18,
+        65,
+        348,
+        10205,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1949,
+      "title": "Zodiac",
+      "year": "2007",
+      "poster": "/6YmeO4pB7XTh8P8F960O1uA14JO.jpg",
+      "genres": [
+        80,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Zodiac",
+      "Jake Gyllenhaal",
+      "Brokeback Mountain",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Brokeback Mountain",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Love & Other Drugs",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        1949,
+        131,
+        142,
+        1813,
+        157336
+      ],
+      [
+        1949,
+        131,
+        43347,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1949,
+      "title": "Zodiac",
+      "year": "2007",
+      "poster": "/6YmeO4pB7XTh8P8F960O1uA14JO.jpg",
+      "genres": [
+        80,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 680,
+      "title": "Pulp Fiction",
+      "year": "1994",
+      "poster": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+      "genres": [
+        53,
+        80,
+        35
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Zodiac",
+      "Jake Gyllenhaal",
+      "Life",
+      "Ryan Reynolds",
+      "The Hitman's Bodyguard",
+      "Samuel L. Jackson",
+      "Pulp Fiction"
+    ],
+    "samplePaths": [
+      [
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Life",
+        "Ryan Reynolds",
+        "The Hitman's Bodyguard",
+        "Samuel L. Jackson",
+        "Pulp Fiction"
+      ],
+      [
+        "Zodiac",
+        "David Fincher",
+        "Fight Club",
+        "Brad Pitt",
+        "Twelve Monkeys",
+        "Bruce Willis",
+        "Pulp Fiction"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        1949,
+        131,
+        395992,
+        10859,
+        390043,
+        2231,
+        680
+      ],
+      [
+        1949,
+        7467,
+        550,
+        287,
+        63,
+        62,
+        680
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 120,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": "2001",
+      "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "Ian Holm",
+      "The Day After Tomorrow",
+      "Jake Gyllenhaal",
+      "Brokeback Mountain",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Ian Holm",
+        "The Day After Tomorrow",
+        "Jake Gyllenhaal",
+        "Brokeback Mountain",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Ian Holm",
+        "The Day After Tomorrow",
+        "Jake Gyllenhaal",
+        "Love & Other Drugs",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        120,
+        65,
+        435,
+        131,
+        142,
+        1813,
+        157336
+      ],
+      [
+        120,
+        65,
+        435,
+        131,
+        43347,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 120,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": "2001",
+      "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "Elijah Wood",
+      "Eternal Sunshine of the Spotless Mind",
+      "Mark Ruffalo",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Elijah Wood",
+        "Eternal Sunshine of the Spotless Mind",
+        "Mark Ruffalo",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        120,
+        109,
+        38,
+        103,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 10195,
+      "title": "Thor",
+      "year": "2011",
+      "poster": "/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Thor",
+      "Kenneth Branagh",
+      "Dunkirk",
+      "Christopher Nolan",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Thor",
+        "Kenneth Branagh",
+        "Dunkirk",
+        "Christopher Nolan",
+        "Interstellar"
+      ],
+      [
+        "Thor",
+        "Kenneth Branagh",
+        "Tenet",
+        "Christopher Nolan",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        10195,
+        11181,
+        374720,
+        525,
+        157336
+      ],
+      [
+        10195,
+        11181,
+        577922,
+        525,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 10195,
+      "title": "Thor",
+      "year": "2011",
+      "poster": "/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Thor",
+      "Natalie Portman",
+      "V for Vendetta",
+      "Hugo Weaving",
+      "Hacksaw Ridge",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Thor",
+        "Natalie Portman",
+        "V for Vendetta",
+        "Hugo Weaving",
+        "Hacksaw Ridge",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Thor",
+        "Natalie Portman",
+        "V for Vendetta",
+        "John Hurt",
+        "Alien",
+        "Sigourney Weaver",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        10195,
+        524,
+        752,
+        1331,
+        324786,
+        65731,
+        19995
+      ],
+      [
+        10195,
+        524,
+        752,
+        5049,
+        348,
+        10205,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 11,
+      "title": "Star Wars",
+      "year": "1977",
+      "poster": "/fai0rspsNeJCS69wHNjOdWxcI7P.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Star Wars",
+      "Harrison Ford",
+      "Ender's Game",
+      "Viola Davis",
+      "The Help",
+      "Jessica Chastain",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Star Wars",
+        "Harrison Ford",
+        "Ender's Game",
+        "Viola Davis",
+        "The Help",
+        "Jessica Chastain",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        11,
+        3,
+        80274,
+        19492,
+        50014,
+        83002,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 11,
+      "title": "Star Wars",
+      "year": "1977",
+      "poster": "/fai0rspsNeJCS69wHNjOdWxcI7P.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Star Wars",
+      "Harrison Ford",
+      "Ender's Game",
+      "Ben Kingsley",
+      "Prince of Persia: The Sands of Time",
+      "Jake Gyllenhaal",
+      "Everest",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Star Wars",
+        "Harrison Ford",
+        "Ender's Game",
+        "Ben Kingsley",
+        "Prince of Persia: The Sands of Time",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Star Wars",
+        "Harrison Ford",
+        "Raiders of the Lost Ark",
+        "Steven Spielberg",
+        "Schindler's List",
+        "Ralph Fiennes",
+        "Clash of the Titans",
+        "Sam Worthington",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        11,
+        3,
+        80274,
+        2282,
+        9543,
+        131,
+        253412,
+        65731,
+        19995
+      ],
+      [
+        11,
+        3,
+        85,
+        488,
+        424,
+        5469,
+        18823,
+        65731,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 284054,
+      "title": "Black Panther",
+      "year": "2018",
+      "poster": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Black Panther",
+      "Lupita Nyong'o",
+      "12 Years a Slave",
+      "Sarah Paulson",
+      "Ocean's Eight",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Black Panther",
+        "Lupita Nyong'o",
+        "12 Years a Slave",
+        "Sarah Paulson",
+        "Ocean's Eight",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "Black Panther",
+        "Lupita Nyong'o",
+        "12 Years a Slave",
+        "Chiwetel Ejiofor",
+        "Children of Men",
+        "Michael Caine",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        284054,
+        1267329,
+        76203,
+        34490,
+        402900,
+        1813,
+        157336
+      ],
+      [
+        284054,
+        1267329,
+        76203,
+        5294,
+        9693,
+        3895,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 284054,
+      "title": "Black Panther",
+      "year": "2018",
+      "poster": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 278,
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+      "genres": [
+        18,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Black Panther",
+      "Lupita Nyong'o",
+      "12 Years a Slave",
+      "Michael Fassbender",
+      "Inglourious Basterds",
+      "Brad Pitt",
+      "Se7en",
+      "Morgan Freeman",
+      "The Shawshank Redemption"
+    ],
+    "samplePaths": [
+      [
+        "Black Panther",
+        "Lupita Nyong'o",
+        "12 Years a Slave",
+        "Michael Fassbender",
+        "Inglourious Basterds",
+        "Brad Pitt",
+        "Se7en",
+        "Morgan Freeman",
+        "The Shawshank Redemption"
+      ],
+      [
+        "Black Panther",
+        "Lupita Nyong'o",
+        "12 Years a Slave",
+        "Paul Dano",
+        "Looper",
+        "Bruce Willis",
+        "RED",
+        "Morgan Freeman",
+        "The Shawshank Redemption"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        284054,
+        1267329,
+        76203,
+        17288,
+        16869,
+        287,
+        807,
+        192,
+        278
+      ],
+      [
+        284054,
+        1267329,
+        76203,
+        17142,
+        59967,
+        62,
+        39514,
+        192,
+        278
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 293167,
+      "title": "Kong: Skull Island",
+      "year": "2017",
+      "poster": "/r2517Vz9EhDhj88qwbDVj8DCRZN.jpg",
+      "genres": [
+        28,
+        12,
+        14
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Kong: Skull Island",
+      "Tom Hiddleston",
+      "Crimson Peak",
+      "Jessica Chastain",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Kong: Skull Island",
+        "Tom Hiddleston",
+        "Crimson Peak",
+        "Jessica Chastain",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        293167,
+        91606,
+        201085,
+        83002,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 293167,
+      "title": "Kong: Skull Island",
+      "year": "2017",
+      "poster": "/r2517Vz9EhDhj88qwbDVj8DCRZN.jpg",
+      "genres": [
+        28,
+        12,
+        14
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Kong: Skull Island",
+      "Toby Kebbell",
+      "Prince of Persia: The Sands of Time",
+      "Jake Gyllenhaal",
+      "Everest",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Kong: Skull Island",
+        "Toby Kebbell",
+        "Prince of Persia: The Sands of Time",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Kong: Skull Island",
+        "Samuel L. Jackson",
+        "Django Unchained",
+        "Leonardo DiCaprio",
+        "Titanic",
+        "James Cameron",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        293167,
+        20286,
+        9543,
+        131,
+        253412,
+        65731,
+        19995
+      ],
+      [
+        293167,
+        2231,
+        68718,
+        6193,
+        597,
+        2710,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 266856,
+      "title": "The Theory of Everything",
+      "year": "2014",
+      "poster": "/7kwcLFNt887saoQAL7EY0XnW7VI.jpg",
+      "genres": [
+        18,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Theory of Everything",
+      "Eddie Redmayne",
+      "Les Misérables",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Theory of Everything",
+        "Eddie Redmayne",
+        "Les Misérables",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        266856,
+        37632,
+        82695,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 266856,
+      "title": "The Theory of Everything",
+      "year": "2014",
+      "poster": "/7kwcLFNt887saoQAL7EY0XnW7VI.jpg",
+      "genres": [
+        18,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Theory of Everything",
+      "Eddie Redmayne",
+      "Les Misérables",
+      "Hugh Jackman",
+      "The Prestige",
+      "Christopher Nolan",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Theory of Everything",
+        "Eddie Redmayne",
+        "Les Misérables",
+        "Hugh Jackman",
+        "The Prestige",
+        "Christopher Nolan",
+        "Inception"
+      ],
+      [
+        "The Theory of Everything",
+        "Eddie Redmayne",
+        "Les Misérables",
+        "Anne Hathaway",
+        "Interstellar",
+        "Christopher Nolan",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        266856,
+        37632,
+        82695,
+        6968,
+        1124,
+        525,
+        27205
+      ],
+      [
+        266856,
+        37632,
+        82695,
+        1813,
+        157336,
+        525,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Interstellar",
+      "Christopher Nolan",
+      "The Prestige",
+      "Scarlett Johansson",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Interstellar",
+        "Christopher Nolan",
+        "The Prestige",
+        "Scarlett Johansson",
+        "The Avengers"
+      ],
+      [
+        "Interstellar",
+        "Christopher Nolan",
+        "Oppenheimer",
+        "Robert Downey Jr.",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        157336,
+        525,
+        1124,
+        1245,
+        24428
+      ],
+      [
+        157336,
+        525,
+        872585,
+        3223,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Interstellar",
+      "Anne Hathaway",
+      "Brokeback Mountain",
+      "Jake Gyllenhaal",
+      "Everest",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Interstellar",
+        "Anne Hathaway",
+        "Brokeback Mountain",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Interstellar",
+        "Anne Hathaway",
+        "Love & Other Drugs",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        157336,
+        1813,
+        142,
+        131,
+        253412,
+        65731,
+        19995
+      ],
+      [
+        157336,
+        1813,
+        43347,
+        131,
+        253412,
+        65731,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 284052,
+      "title": "Doctor Strange",
+      "year": "2016",
+      "poster": "/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+      "genres": [
+        14,
+        12,
+        28
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Doctor Strange",
+      "Chiwetel Ejiofor",
+      "Children of Men",
+      "Michael Caine",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Doctor Strange",
+        "Chiwetel Ejiofor",
+        "Children of Men",
+        "Michael Caine",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        284052,
+        5294,
+        9693,
+        3895,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 284052,
+      "title": "Doctor Strange",
+      "year": "2016",
+      "poster": "/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+      "genres": [
+        14,
+        12,
+        28
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Doctor Strange",
+      "Rachel McAdams",
+      "About Time",
+      "Margot Robbie",
+      "The Wolf of Wall Street",
+      "Leonardo DiCaprio",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Doctor Strange",
+        "Rachel McAdams",
+        "About Time",
+        "Margot Robbie",
+        "The Wolf of Wall Street",
+        "Leonardo DiCaprio",
+        "Inception"
+      ],
+      [
+        "Doctor Strange",
+        "Rachel McAdams",
+        "About Time",
+        "Margot Robbie",
+        "Once Upon a Time... in Hollywood",
+        "Leonardo DiCaprio",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        284052,
+        53714,
+        122906,
+        234352,
+        106646,
+        6193,
+        27205
+      ],
+      [
+        284052,
+        53714,
+        122906,
+        234352,
+        466272,
+        6193,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 392044,
+      "title": "Murder on the Orient Express",
+      "year": "2017",
+      "poster": "/7GtdJU6iAg6fjQu3E3zta3bIAQh.jpg",
+      "genres": [
+        9648,
+        18,
+        80
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Murder on the Orient Express",
+      "Johnny Depp",
+      "Alice in Wonderland",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Murder on the Orient Express",
+        "Johnny Depp",
+        "Alice in Wonderland",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "Murder on the Orient Express",
+        "Josh Gad",
+        "Love & Other Drugs",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        392044,
+        85,
+        12155,
+        1813,
+        157336
+      ],
+      [
+        392044,
+        54415,
+        43347,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 392044,
+      "title": "Murder on the Orient Express",
+      "year": "2017",
+      "poster": "/7GtdJU6iAg6fjQu3E3zta3bIAQh.jpg",
+      "genres": [
+        9648,
+        18,
+        80
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Murder on the Orient Express",
+      "Willem Dafoe",
+      "The Grand Budapest Hotel",
+      "Ralph Fiennes",
+      "Clash of the Titans",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Murder on the Orient Express",
+        "Willem Dafoe",
+        "The Grand Budapest Hotel",
+        "Ralph Fiennes",
+        "Clash of the Titans",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Murder on the Orient Express",
+        "Josh Gad",
+        "Love & Other Drugs",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        392044,
+        5293,
+        120467,
+        5469,
+        18823,
+        65731,
+        19995
+      ],
+      [
+        392044,
+        54415,
+        43347,
+        131,
+        253412,
+        65731,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 296096,
+      "title": "Me Before You",
+      "year": "2016",
+      "poster": "/oo2Q3T8juOYFh2G1YJ3oSMAfUyq.jpg",
+      "genres": [
+        18,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Me Before You",
+      "Sam Claflin",
+      "Enola Holmes",
+      "Helena Bonham Carter",
+      "Alice in Wonderland",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Me Before You",
+        "Sam Claflin",
+        "Enola Holmes",
+        "Helena Bonham Carter",
+        "Alice in Wonderland",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        296096,
+        237455,
+        497582,
+        1283,
+        12155,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 296096,
+      "title": "Me Before You",
+      "year": "2016",
+      "poster": "/oo2Q3T8juOYFh2G1YJ3oSMAfUyq.jpg",
+      "genres": [
+        18,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Me Before You",
+      "Sam Claflin",
+      "Snow White and the Huntsman",
+      "Chris Hemsworth",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Me Before You",
+        "Sam Claflin",
+        "Snow White and the Huntsman",
+        "Chris Hemsworth",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        296096,
+        237455,
+        58595,
+        74568,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 13223,
+      "title": "Gran Torino",
+      "year": "2008",
+      "poster": "/zUybYvxWdAJy5hhYovsXtHSWI1l.jpg",
+      "genres": [
+        18
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Gran Torino",
+      "Clint Eastwood",
+      "The Mule",
+      "Michael Peña",
+      "The Martian",
+      "Jessica Chastain",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Gran Torino",
+        "Clint Eastwood",
+        "The Mule",
+        "Michael Peña",
+        "The Martian",
+        "Jessica Chastain",
+        "Interstellar"
+      ],
+      [
+        "Gran Torino",
+        "Clint Eastwood",
+        "The Mule",
+        "Andy Garcia",
+        "Ocean's Eleven",
+        "Casey Affleck",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        13223,
+        190,
+        504172,
+        454,
+        286217,
+        83002,
+        157336
+      ],
+      [
+        13223,
+        190,
+        504172,
+        1271,
+        161,
+        1893,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 13223,
+      "title": "Gran Torino",
+      "year": "2008",
+      "poster": "/zUybYvxWdAJy5hhYovsXtHSWI1l.jpg",
+      "genres": [
+        18
+      ]
+    },
+    "goal": {
+      "id": 155,
+      "title": "The Dark Knight",
+      "year": "2008",
+      "poster": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "genres": [
+        28,
+        53,
+        80
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Gran Torino",
+      "Clint Eastwood",
+      "Sully",
+      "Aaron Eckhart",
+      "The Dark Knight"
+    ],
+    "samplePaths": [
+      [
+        "Gran Torino",
+        "Clint Eastwood",
+        "Sully",
+        "Aaron Eckhart",
+        "The Dark Knight"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        13223,
+        190,
+        363676,
+        6383,
+        155
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 190859,
+      "title": "American Sniper",
+      "year": "2014",
+      "poster": "/i1U46OwMc6vlm7OoSUKfqUH615e.jpg",
+      "genres": [
+        10752,
+        28
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "American Sniper",
+      "Bradley Cooper",
+      "Silver Linings Playbook",
+      "Robert De Niro",
+      "The Intern",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "American Sniper",
+        "Bradley Cooper",
+        "Silver Linings Playbook",
+        "Robert De Niro",
+        "The Intern",
+        "Anne Hathaway",
+        "Interstellar"
+      ],
+      [
+        "American Sniper",
+        "Bradley Cooper",
+        "Limitless",
+        "Robert De Niro",
+        "The Intern",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        190859,
+        51329,
+        82693,
+        380,
+        257211,
+        1813,
+        157336
+      ],
+      [
+        190859,
+        51329,
+        51876,
+        380,
+        257211,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 190859,
+      "title": "American Sniper",
+      "year": "2014",
+      "poster": "/i1U46OwMc6vlm7OoSUKfqUH615e.jpg",
+      "genres": [
+        10752,
+        28
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "American Sniper",
+      "Bradley Cooper",
+      "American Hustle",
+      "Jeremy Renner",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "American Sniper",
+        "Bradley Cooper",
+        "American Hustle",
+        "Jeremy Renner",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        190859,
+        51329,
+        168672,
+        17604,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 211672,
+      "title": "Minions",
+      "year": "2015",
+      "poster": "/dr02BdCNAUPVU07aOodwPYv6HCf.jpg",
+      "genres": [
+        10751,
+        16,
+        12,
+        35
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Minions",
+      "Sandra Bullock",
+      "Ocean's Eight",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Minions",
+        "Sandra Bullock",
+        "Ocean's Eight",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        211672,
+        18277,
+        402900,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 211672,
+      "title": "Minions",
+      "year": "2015",
+      "poster": "/dr02BdCNAUPVU07aOodwPYv6HCf.jpg",
+      "genres": [
+        10751,
+        16,
+        12,
+        35
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Minions",
+      "Michael Keaton",
+      "Spider-Man: Homecoming",
+      "Robert Downey Jr.",
+      "Zodiac",
+      "Jake Gyllenhaal",
+      "Everest",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Minions",
+        "Michael Keaton",
+        "Spider-Man: Homecoming",
+        "Robert Downey Jr.",
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Minions",
+        "Michael Keaton",
+        "Spotlight",
+        "Mark Ruffalo",
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        211672,
+        2232,
+        315635,
+        3223,
+        1949,
+        131,
+        253412,
+        65731,
+        19995
+      ],
+      [
+        211672,
+        2232,
+        314365,
+        103,
+        1949,
+        131,
+        253412,
+        65731,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 603,
+      "title": "The Matrix",
+      "year": "1999",
+      "poster": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+      "genres": [
+        28,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Matrix",
+      "Joe Pantoliano",
+      "Memento",
+      "Christopher Nolan",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Matrix",
+        "Joe Pantoliano",
+        "Memento",
+        "Christopher Nolan",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        603,
+        532,
+        77,
+        525,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 603,
+      "title": "The Matrix",
+      "year": "1999",
+      "poster": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+      "genres": [
+        28,
+        878
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Matrix",
+      "Hugo Weaving",
+      "Happy Feet",
+      "Hugh Jackman",
+      "The Prestige",
+      "Scarlett Johansson",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Matrix",
+        "Hugo Weaving",
+        "Happy Feet",
+        "Hugh Jackman",
+        "The Prestige",
+        "Scarlett Johansson",
+        "The Avengers"
+      ],
+      [
+        "The Matrix",
+        "Keanu Reeves",
+        "John Wick",
+        "Willem Dafoe",
+        "Poor Things",
+        "Mark Ruffalo",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        603,
+        1331,
+        9836,
+        6968,
+        1124,
+        1245,
+        24428
+      ],
+      [
+        603,
+        6384,
+        245891,
+        5293,
+        792307,
+        103,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 68726,
+      "title": "Pacific Rim",
+      "year": "2013",
+      "poster": "/lC4ULSf5J4X9jnBOKcY3pwbAwmT.jpg",
+      "genres": [
+        28,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Pacific Rim",
+      "Idris Elba",
+      "The Dark Tower",
+      "Matthew McConaughey",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Pacific Rim",
+        "Idris Elba",
+        "The Dark Tower",
+        "Matthew McConaughey",
+        "Interstellar"
+      ],
+      [
+        "Pacific Rim",
+        "Charlie Hunnam",
+        "The Gentlemen",
+        "Matthew McConaughey",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        68726,
+        17605,
+        353491,
+        10297,
+        157336
+      ],
+      [
+        68726,
+        56365,
+        522627,
+        10297,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 68726,
+      "title": "Pacific Rim",
+      "year": "2013",
+      "poster": "/lC4ULSf5J4X9jnBOKcY3pwbAwmT.jpg",
+      "genres": [
+        28,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Pacific Rim",
+      "Idris Elba",
+      "The Jungle Book",
+      "Ben Kingsley",
+      "Shutter Island",
+      "Leonardo DiCaprio",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Pacific Rim",
+        "Idris Elba",
+        "The Jungle Book",
+        "Ben Kingsley",
+        "Shutter Island",
+        "Leonardo DiCaprio",
+        "Inception"
+      ],
+      [
+        "Pacific Rim",
+        "Idris Elba",
+        "The Jungle Book",
+        "Scarlett Johansson",
+        "The Prestige",
+        "Christopher Nolan",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        68726,
+        17605,
+        278927,
+        2282,
+        11324,
+        6193,
+        27205
+      ],
+      [
+        68726,
+        17605,
+        278927,
+        1245,
+        1124,
+        525,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 82693,
+      "title": "Silver Linings Playbook",
+      "year": "2012",
+      "poster": "/fhHB1uvfFKKFbj6bTKE8xdtsjKi.jpg",
+      "genres": [
+        18,
+        35,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Silver Linings Playbook",
+      "Robert De Niro",
+      "The Intern",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Silver Linings Playbook",
+        "Robert De Niro",
+        "The Intern",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        82693,
+        380,
+        257211,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 82693,
+      "title": "Silver Linings Playbook",
+      "year": "2012",
+      "poster": "/fhHB1uvfFKKFbj6bTKE8xdtsjKi.jpg",
+      "genres": [
+        18,
+        35,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Silver Linings Playbook",
+      "Robert De Niro",
+      "Jackie Brown",
+      "Samuel L. Jackson",
+      "The Hitman's Bodyguard",
+      "Ryan Reynolds",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "Silver Linings Playbook",
+        "Robert De Niro",
+        "Jackie Brown",
+        "Samuel L. Jackson",
+        "The Hitman's Bodyguard",
+        "Ryan Reynolds",
+        "Deadpool"
+      ],
+      [
+        "Silver Linings Playbook",
+        "Chris Tucker",
+        "The Fifth Element",
+        "Gary Oldman",
+        "The Hitman's Bodyguard",
+        "Ryan Reynolds",
+        "Deadpool"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        82693,
+        380,
+        184,
+        2231,
+        390043,
+        10859,
+        293660
+      ],
+      [
+        82693,
+        66,
+        18,
+        64,
+        390043,
+        10859,
+        293660
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 854,
+      "title": "The Mask",
+      "year": "1994",
+      "poster": "/jPC2eYub74zwf2tPGVtzSlBW6Oy.jpg",
+      "genres": [
+        35,
+        14,
+        80,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "The Mask",
+      "Jim Carrey",
+      "Dumb and Dumber",
+      "Jeff Daniels",
+      "The Martian",
+      "Jessica Chastain",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Mask",
+        "Jim Carrey",
+        "Dumb and Dumber",
+        "Jeff Daniels",
+        "The Martian",
+        "Jessica Chastain",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        854,
+        206,
+        8467,
+        8447,
+        286217,
+        83002,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 854,
+      "title": "The Mask",
+      "year": "1994",
+      "poster": "/jPC2eYub74zwf2tPGVtzSlBW6Oy.jpg",
+      "genres": [
+        35,
+        14,
+        80,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Mask",
+      "Jim Carrey",
+      "Eternal Sunshine of the Spotless Mind",
+      "Mark Ruffalo",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Mask",
+        "Jim Carrey",
+        "Eternal Sunshine of the Spotless Mind",
+        "Mark Ruffalo",
+        "The Avengers"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        854,
+        206,
+        38,
+        103,
+        24428
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9738,
+      "title": "Fantastic Four",
+      "year": "2005",
+      "poster": "/4YMcYEFS8sFuW3soP1HVmgR3cSm.jpg",
+      "genres": [
+        28,
+        14,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Fantastic Four",
+      "Chris Evans",
+      "The Avengers",
+      "Scarlett Johansson",
+      "The Prestige",
+      "Christopher Nolan",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Fantastic Four",
+        "Chris Evans",
+        "The Avengers",
+        "Scarlett Johansson",
+        "The Prestige",
+        "Christopher Nolan",
+        "Interstellar"
+      ],
+      [
+        "Fantastic Four",
+        "Chris Evans",
+        "Captain America: Civil War",
+        "Scarlett Johansson",
+        "The Prestige",
+        "Christopher Nolan",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        9738,
+        16828,
+        24428,
+        1245,
+        1124,
+        525,
+        157336
+      ],
+      [
+        9738,
+        16828,
+        271110,
+        1245,
+        1124,
+        525,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9738,
+      "title": "Fantastic Four",
+      "year": "2005",
+      "poster": "/4YMcYEFS8sFuW3soP1HVmgR3cSm.jpg",
+      "genres": [
+        28,
+        14,
+        878
+      ]
+    },
+    "goal": {
+      "id": 680,
+      "title": "Pulp Fiction",
+      "year": "1994",
+      "poster": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+      "genres": [
+        53,
+        80,
+        35
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Fantastic Four",
+      "Jessica Alba",
+      "Sin City",
+      "Bruce Willis",
+      "Pulp Fiction"
+    ],
+    "samplePaths": [
+      [
+        "Fantastic Four",
+        "Jessica Alba",
+        "Sin City",
+        "Bruce Willis",
+        "Pulp Fiction"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        9738,
+        56731,
+        187,
+        62,
+        680
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 16869,
+      "title": "Inglourious Basterds",
+      "year": "2009",
+      "poster": "/aupnPtagH9JVBuMrGEanf4iqXEQ.jpg",
+      "genres": [
+        18,
+        53,
+        10752
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Inglourious Basterds",
+      "Brad Pitt",
+      "Ocean's Eleven",
+      "Casey Affleck",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Inglourious Basterds",
+        "Brad Pitt",
+        "Ocean's Eleven",
+        "Casey Affleck",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        16869,
+        287,
+        161,
+        1893,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 16869,
+      "title": "Inglourious Basterds",
+      "year": "2009",
+      "poster": "/aupnPtagH9JVBuMrGEanf4iqXEQ.jpg",
+      "genres": [
+        18,
+        53,
+        10752
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Inglourious Basterds",
+      "Mélanie Laurent",
+      "Enemy",
+      "Jake Gyllenhaal",
+      "Everest",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Inglourious Basterds",
+        "Mélanie Laurent",
+        "Enemy",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Inglourious Basterds",
+        "Michael Fassbender",
+        "X-Men: Days of Future Past",
+        "Hugh Jackman",
+        "Chappie",
+        "Sigourney Weaver",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        16869,
+        19119,
+        181886,
+        131,
+        253412,
+        65731,
+        19995
+      ],
+      [
+        16869,
+        17288,
+        127585,
+        6968,
+        198184,
+        10205,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 475557,
+      "title": "Joker",
+      "year": "2019",
+      "poster": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+      "genres": [
+        80,
+        53,
+        18
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Joker",
+      "Robert De Niro",
+      "The Intern",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Joker",
+        "Robert De Niro",
+        "The Intern",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        475557,
+        380,
+        257211,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 475557,
+      "title": "Joker",
+      "year": "2019",
+      "poster": "/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+      "genres": [
+        80,
+        53,
+        18
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Joker",
+      "Robert De Niro",
+      "Jackie Brown",
+      "Samuel L. Jackson",
+      "Django Unchained",
+      "Leonardo DiCaprio",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Joker",
+        "Robert De Niro",
+        "Jackie Brown",
+        "Samuel L. Jackson",
+        "Django Unchained",
+        "Leonardo DiCaprio",
+        "Inception"
+      ],
+      [
+        "Joker",
+        "Robert De Niro",
+        "GoodFellas",
+        "Martin Scorsese",
+        "The Wolf of Wall Street",
+        "Leonardo DiCaprio",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        475557,
+        380,
+        184,
+        2231,
+        68718,
+        6193,
+        27205
+      ],
+      [
+        475557,
+        380,
+        769,
+        1032,
+        106646,
+        6193,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 568124,
+      "title": "Encanto",
+      "year": "2021",
+      "poster": "/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Encanto",
+      "Byron Howard",
+      "Zootopia",
+      "Idris Elba",
+      "The Dark Tower",
+      "Matthew McConaughey",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Encanto",
+        "Byron Howard",
+        "Zootopia",
+        "Idris Elba",
+        "The Dark Tower",
+        "Matthew McConaughey",
+        "Interstellar"
+      ],
+      [
+        "Encanto",
+        "John Leguizamo",
+        "Romeo + Juliet",
+        "Leonardo DiCaprio",
+        "Inception",
+        "Christopher Nolan",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        568124,
+        76595,
+        269149,
+        17605,
+        353491,
+        10297,
+        157336
+      ],
+      [
+        568124,
+        5723,
+        454,
+        6193,
+        27205,
+        525,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 568124,
+      "title": "Encanto",
+      "year": "2021",
+      "poster": "/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Encanto",
+      "John Leguizamo",
+      "Romeo + Juliet",
+      "Leonardo DiCaprio",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Encanto",
+        "John Leguizamo",
+        "Romeo + Juliet",
+        "Leonardo DiCaprio",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        568124,
+        5723,
+        454,
+        6193,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 22,
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": "2003",
+      "poster": "/poHwCZeWzJCShH7tOjg8RIoyjcw.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "Johnny Depp",
+      "Alice in Wonderland",
+      "Anne Hathaway",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "Johnny Depp",
+        "Alice in Wonderland",
+        "Anne Hathaway",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        22,
+        85,
+        12155,
+        1813,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 22,
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": "2003",
+      "poster": "/poHwCZeWzJCShH7tOjg8RIoyjcw.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 3,
+    "samplePath": [
+      "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "Johnny Depp",
+      "Alice in Wonderland",
+      "Anne Hathaway",
+      "Interstellar",
+      "Christopher Nolan",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "Johnny Depp",
+        "Alice in Wonderland",
+        "Anne Hathaway",
+        "Interstellar",
+        "Christopher Nolan",
+        "Inception"
+      ],
+      [
+        "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "Johnny Depp",
+        "Rango",
+        "Isla Fisher",
+        "The Great Gatsby",
+        "Leonardo DiCaprio",
+        "Inception"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        22,
+        85,
+        12155,
+        1813,
+        157336,
+        525,
+        27205
+      ],
+      [
+        22,
+        85,
+        44896,
+        52848,
+        64682,
+        6193,
+        27205
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 2501,
+      "title": "The Bourne Identity",
+      "year": "2002",
+      "poster": "/aP8swke3gmowbkfZ6lmNidu0y9p.jpg",
+      "genres": [
+        28,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 2,
+    "samplePath": [
+      "The Bourne Identity",
+      "Matt Damon",
+      "Oppenheimer",
+      "Christopher Nolan",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Bourne Identity",
+        "Matt Damon",
+        "Oppenheimer",
+        "Christopher Nolan",
+        "Interstellar"
+      ],
+      [
+        "The Bourne Identity",
+        "Clive Owen",
+        "Children of Men",
+        "Michael Caine",
+        "Interstellar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        2501,
+        1892,
+        872585,
+        525,
+        157336
+      ],
+      [
+        2501,
+        2296,
+        9693,
+        3895,
+        157336
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 2501,
+      "title": "The Bourne Identity",
+      "year": "2002",
+      "poster": "/aP8swke3gmowbkfZ6lmNidu0y9p.jpg",
+      "genres": [
+        28,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 11,
+      "title": "Star Wars",
+      "year": "1977",
+      "poster": "/fai0rspsNeJCS69wHNjOdWxcI7P.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Bourne Identity",
+      "Matt Damon",
+      "Ocean's Eleven",
+      "Brad Pitt",
+      "The Big Short",
+      "Ryan Gosling",
+      "Blade Runner 2049",
+      "Harrison Ford",
+      "Star Wars"
+    ],
+    "samplePaths": [
+      [
+        "The Bourne Identity",
+        "Matt Damon",
+        "Ocean's Eleven",
+        "Brad Pitt",
+        "The Big Short",
+        "Ryan Gosling",
+        "Blade Runner 2049",
+        "Harrison Ford",
+        "Star Wars"
+      ],
+      [
+        "The Bourne Identity",
+        "Matt Damon",
+        "The Departed",
+        "Leonardo DiCaprio",
+        "Catch Me If You Can",
+        "Steven Spielberg",
+        "Raiders of the Lost Ark",
+        "Harrison Ford",
+        "Star Wars"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        2501,
+        1892,
+        161,
+        287,
+        318846,
+        30614,
+        335984,
+        3,
+        11
+      ],
+      [
+        2501,
+        1892,
+        1422,
+        6193,
+        640,
+        488,
+        85,
+        3,
+        11
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 77,
+      "title": "Memento",
+      "year": "2000",
+      "poster": "/nzlv62aC0octS5AklAiWpXLX9Z0.jpg",
+      "genres": [
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 150540,
+      "title": "Inside Out",
+      "year": "2015",
+      "poster": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+      "genres": [
+        16,
+        10751,
+        12,
+        18,
+        35
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Memento",
+      "Christopher Nolan",
+      "Inception",
+      "Leonardo DiCaprio",
+      "The Wolf of Wall Street",
+      "Jonah Hill",
+      "Sausage Party",
+      "Bill Hader",
+      "Inside Out"
+    ],
+    "samplePaths": [
+      [
+        "Memento",
+        "Christopher Nolan",
+        "Inception",
+        "Leonardo DiCaprio",
+        "The Wolf of Wall Street",
+        "Jonah Hill",
+        "Sausage Party",
+        "Bill Hader",
+        "Inside Out"
+      ],
+      [
+        "Memento",
+        "Christopher Nolan",
+        "Inception",
+        "Leonardo DiCaprio",
+        "Don't Look Up",
+        "Jonah Hill",
+        "Sausage Party",
+        "Bill Hader",
+        "Inside Out"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        77,
+        525,
+        27205,
+        6193,
+        106646,
+        21007,
+        223702,
+        19278,
+        150540
+      ],
+      [
+        77,
+        525,
+        27205,
+        6193,
+        646380,
+        21007,
+        223702,
+        19278,
+        150540
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 350,
+      "title": "The Devil Wears Prada",
+      "year": "2006",
+      "poster": "/8912AsVuS7Sj915apArUFbv6F9L.jpg",
+      "genres": [
+        18,
+        35
+      ]
+    },
+    "goal": {
+      "id": 346364,
+      "title": "It",
+      "year": "2017",
+      "poster": "/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg",
+      "genres": [
+        27,
+        53,
+        18
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Devil Wears Prada",
+      "Meryl Streep",
+      "Don't Look Up",
+      "Leonardo DiCaprio",
+      "Blood Diamond",
+      "Djimon Hounsou",
+      "Shazam!",
+      "Jack Dylan Grazer",
+      "It"
+    ],
+    "samplePaths": [
+      [
+        "The Devil Wears Prada",
+        "Meryl Streep",
+        "Don't Look Up",
+        "Leonardo DiCaprio",
+        "Blood Diamond",
+        "Djimon Hounsou",
+        "Shazam!",
+        "Jack Dylan Grazer",
+        "It"
+      ],
+      [
+        "The Devil Wears Prada",
+        "Emily Blunt",
+        "Oppenheimer",
+        "Robert Downey Jr.",
+        "Sherlock Holmes",
+        "Mark Strong",
+        "Shazam!",
+        "Jack Dylan Grazer",
+        "It"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        350,
+        5064,
+        646380,
+        6193,
+        1372,
+        938,
+        287947,
+        1774679,
+        346364
+      ],
+      [
+        350,
+        5081,
+        872585,
+        3223,
+        10528,
+        2983,
+        287947,
+        1774679,
+        346364
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 14160,
+      "title": "Up",
+      "year": "2009",
+      "poster": "/mFvoEwSfLqbcWwFsDjQebn9bzFe.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        12
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Up",
+      "Christopher Plummer",
+      "The Girl with the Dragon Tattoo",
+      "David Fincher",
+      "Zodiac",
+      "Jake Gyllenhaal",
+      "Everest",
+      "Sam Worthington",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Up",
+        "Christopher Plummer",
+        "The Girl with the Dragon Tattoo",
+        "David Fincher",
+        "Zodiac",
+        "Jake Gyllenhaal",
+        "Everest",
+        "Sam Worthington",
+        "Avatar"
+      ],
+      [
+        "Up",
+        "Christopher Plummer",
+        "Twelve Monkeys",
+        "Bruce Willis",
+        "Moonrise Kingdom",
+        "Bill Murray",
+        "Ghostbusters",
+        "Sigourney Weaver",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        14160,
+        290,
+        65754,
+        7467,
+        1949,
+        131,
+        253412,
+        65731,
+        19995
+      ],
+      [
+        14160,
+        290,
+        63,
+        62,
+        83666,
+        1532,
+        620,
+        10205,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 330459,
+      "title": "Rogue One: A Star Wars Story",
+      "year": "2016",
+      "poster": "/i0yw1mFbB7sNGHCs7EXZPzFkdA1.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 102899,
+      "title": "Ant-Man",
+      "year": "2015",
+      "poster": "/rQRnQfUl3kfp78nCWq8Ks04vnq1.jpg",
+      "genres": [
+        878,
+        12,
+        28
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Rogue One: A Star Wars Story",
+      "Alan Tudyk",
+      "I, Robot",
+      "Will Smith",
+      "Shark Tale",
+      "Robert De Niro",
+      "The Irishman",
+      "Bobby Cannavale",
+      "Ant-Man"
+    ],
+    "samplePaths": [
+      [
+        "Rogue One: A Star Wars Story",
+        "Alan Tudyk",
+        "I, Robot",
+        "Will Smith",
+        "Shark Tale",
+        "Robert De Niro",
+        "The Irishman",
+        "Bobby Cannavale",
+        "Ant-Man"
+      ],
+      [
+        "Rogue One: A Star Wars Story",
+        "Ben Mendelsohn",
+        "Captain Marvel",
+        "Samuel L. Jackson",
+        "Jackie Brown",
+        "Robert De Niro",
+        "The Irishman",
+        "Bobby Cannavale",
+        "Ant-Man"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        330459,
+        21088,
+        2048,
+        2888,
+        10555,
+        380,
+        398978,
+        21127,
+        102899
+      ],
+      [
+        330459,
+        77335,
+        299537,
+        2231,
+        184,
+        380,
+        398978,
+        21127,
+        102899
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 515001,
+      "title": "Jojo Rabbit",
+      "year": "2019",
+      "poster": "/1mqL7VG4Ix8wmxwypmCA1HTHBky.jpg",
+      "genres": [
+        35,
+        10752,
+        18
+      ]
+    },
+    "goal": {
+      "id": 105,
+      "title": "Back to the Future",
+      "year": "1985",
+      "poster": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+      "genres": [
+        12,
+        35,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Jojo Rabbit",
+      "Scarlett Johansson",
+      "Her",
+      "Chris Pratt",
+      "The Magnificent Seven",
+      "Denzel Washington",
+      "Flight",
+      "Robert Zemeckis",
+      "Back to the Future"
+    ],
+    "samplePaths": [
+      [
+        "Jojo Rabbit",
+        "Scarlett Johansson",
+        "Her",
+        "Chris Pratt",
+        "The Magnificent Seven",
+        "Denzel Washington",
+        "Flight",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ],
+      [
+        "Jojo Rabbit",
+        "Scarlett Johansson",
+        "The Island",
+        "Steve Buscemi",
+        "Monsters, Inc.",
+        "John Goodman",
+        "Flight",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        515001,
+        1245,
+        152601,
+        73457,
+        333484,
+        5292,
+        87502,
+        24,
+        105
+      ],
+      [
+        515001,
+        1245,
+        1635,
+        884,
+        585,
+        1230,
+        87502,
+        24,
+        105
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 64688,
+      "title": "21 Jump Street",
+      "year": "2012",
+      "poster": "/8v3Sqv9UcIUC4ebmpKWROqPBINZ.jpg",
+      "genres": [
+        28,
+        35,
+        80
+      ]
+    },
+    "goal": {
+      "id": 10681,
+      "title": "WALL·E",
+      "year": "2008",
+      "poster": "/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
+      "genres": [
+        16,
+        10751,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "21 Jump Street",
+      "Dave Franco",
+      "Now You See Me",
+      "Mark Ruffalo",
+      "Poor Things",
+      "Willem Dafoe",
+      "Finding Nemo",
+      "Andrew Stanton",
+      "WALL·E"
+    ],
+    "samplePaths": [
+      [
+        "21 Jump Street",
+        "Dave Franco",
+        "Now You See Me",
+        "Mark Ruffalo",
+        "Poor Things",
+        "Willem Dafoe",
+        "Finding Nemo",
+        "Andrew Stanton",
+        "WALL·E"
+      ],
+      [
+        "21 Jump Street",
+        "Jonah Hill",
+        "Don't Look Up",
+        "Meryl Streep",
+        "Fantastic Mr. Fox",
+        "Willem Dafoe",
+        "Finding Nemo",
+        "Andrew Stanton",
+        "WALL·E"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        64688,
+        54697,
+        75656,
+        103,
+        792307,
+        5293,
+        12,
+        7,
+        10681
+      ],
+      [
+        64688,
+        21007,
+        646380,
+        5064,
+        10315,
+        5293,
+        12,
+        7,
+        10681
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 627,
+      "title": "Trainspotting",
+      "year": "1996",
+      "poster": "/1jUC02qsqS2NxBMFarbIhcQtazV.jpg",
+      "genres": [
+        18,
+        80
+      ]
+    },
+    "goal": {
+      "id": 11,
+      "title": "Star Wars",
+      "year": "1977",
+      "poster": "/fai0rspsNeJCS69wHNjOdWxcI7P.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Trainspotting",
+      "Ewan McGregor",
+      "The Island",
+      "Scarlett Johansson",
+      "The Jungle Book",
+      "Ben Kingsley",
+      "Ender's Game",
+      "Harrison Ford",
+      "Star Wars"
+    ],
+    "samplePaths": [
+      [
+        "Trainspotting",
+        "Ewan McGregor",
+        "The Island",
+        "Scarlett Johansson",
+        "The Jungle Book",
+        "Ben Kingsley",
+        "Ender's Game",
+        "Harrison Ford",
+        "Star Wars"
+      ],
+      [
+        "Trainspotting",
+        "Ewan McGregor",
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "Margot Robbie",
+        "Barbie",
+        "Ryan Gosling",
+        "Blade Runner 2049",
+        "Harrison Ford",
+        "Star Wars"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        627,
+        3061,
+        1635,
+        1245,
+        278927,
+        2282,
+        80274,
+        3,
+        11
+      ],
+      [
+        627,
+        3061,
+        495764,
+        234352,
+        346698,
+        30614,
+        335984,
+        3,
+        11
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 316029,
+      "title": "The Greatest Showman",
+      "year": "2017",
+      "poster": "/b9CeobiihCx1uG1tpw8hXmpi7nm.jpg",
+      "genres": [
+        18
+      ]
+    },
+    "goal": {
+      "id": 105,
+      "title": "Back to the Future",
+      "year": "1985",
+      "poster": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+      "genres": [
+        12,
+        35,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Greatest Showman",
+      "Michelle Williams",
+      "Shutter Island",
+      "Leonardo DiCaprio",
+      "Catch Me If You Can",
+      "Tom Hanks",
+      "Forrest Gump",
+      "Robert Zemeckis",
+      "Back to the Future"
+    ],
+    "samplePaths": [
+      [
+        "The Greatest Showman",
+        "Michelle Williams",
+        "Shutter Island",
+        "Leonardo DiCaprio",
+        "Catch Me If You Can",
+        "Tom Hanks",
+        "Forrest Gump",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ],
+      [
+        "The Greatest Showman",
+        "Michelle Williams",
+        "Shutter Island",
+        "Leonardo DiCaprio",
+        "Catch Me If You Can",
+        "Tom Hanks",
+        "Cast Away",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        316029,
+        1812,
+        11324,
+        6193,
+        640,
+        31,
+        13,
+        24,
+        105
+      ],
+      [
+        316029,
+        1812,
+        11324,
+        6193,
+        640,
+        31,
+        8358,
+        24,
+        105
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 399055,
+      "title": "The Shape of Water",
+      "year": "2017",
+      "poster": "/9zfwPffUXpBrEP26yp0q1ckXDcj.jpg",
+      "genres": [
+        18,
+        14,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 150540,
+      "title": "Inside Out",
+      "year": "2015",
+      "poster": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+      "genres": [
+        16,
+        10751,
+        12,
+        18,
+        35
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Shape of Water",
+      "Richard Jenkins",
+      "Burn After Reading",
+      "Brad Pitt",
+      "Megamind",
+      "Jonah Hill",
+      "Superbad",
+      "Bill Hader",
+      "Inside Out"
+    ],
+    "samplePaths": [
+      [
+        "The Shape of Water",
+        "Richard Jenkins",
+        "Burn After Reading",
+        "Brad Pitt",
+        "Megamind",
+        "Jonah Hill",
+        "Superbad",
+        "Bill Hader",
+        "Inside Out"
+      ],
+      [
+        "The Shape of Water",
+        "Richard Jenkins",
+        "Burn After Reading",
+        "Brad Pitt",
+        "Moneyball",
+        "Jonah Hill",
+        "Superbad",
+        "Bill Hader",
+        "Inside Out"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        399055,
+        28633,
+        4944,
+        287,
+        38055,
+        21007,
+        8363,
+        19278,
+        150540
+      ],
+      [
+        399055,
+        28633,
+        4944,
+        287,
+        60308,
+        21007,
+        8363,
+        19278,
+        150540
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9479,
+      "title": "The Nightmare Before Christmas",
+      "year": "1993",
+      "poster": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+      "genres": [
+        14,
+        16,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Nightmare Before Christmas",
+      "Catherine O'Hara",
+      "Beetlejuice",
+      "Alec Baldwin",
+      "Rise of the Guardians",
+      "Hugh Jackman",
+      "Chappie",
+      "Sigourney Weaver",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "The Nightmare Before Christmas",
+        "Catherine O'Hara",
+        "Beetlejuice",
+        "Alec Baldwin",
+        "Rise of the Guardians",
+        "Hugh Jackman",
+        "Chappie",
+        "Sigourney Weaver",
+        "Avatar"
+      ],
+      [
+        "The Nightmare Before Christmas",
+        "Catherine O'Hara",
+        "Beetlejuice",
+        "Alec Baldwin",
+        "The Aviator",
+        "Leonardo DiCaprio",
+        "Titanic",
+        "James Cameron",
+        "Avatar"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        9479,
+        11514,
+        4011,
+        7447,
+        81188,
+        6968,
+        198184,
+        10205,
+        19995
+      ],
+      [
+        9479,
+        11514,
+        4011,
+        7447,
+        2567,
+        6193,
+        597,
+        2710,
+        19995
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 106646,
+      "title": "The Wolf of Wall Street",
+      "year": "2013",
+      "poster": "/kW9LmvYHAaS9iA0tHmZVq8hQYoq.jpg",
+      "genres": [
+        80,
+        18,
+        35
+      ]
+    },
+    "goal": {
+      "id": 10681,
+      "title": "WALL·E",
+      "year": "2008",
+      "poster": "/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
+      "genres": [
+        16,
+        10751,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Wolf of Wall Street",
+      "Leonardo DiCaprio",
+      "The Departed",
+      "Matt Damon",
+      "The Great Wall",
+      "Willem Dafoe",
+      "Finding Nemo",
+      "Andrew Stanton",
+      "WALL·E"
+    ],
+    "samplePaths": [
+      [
+        "The Wolf of Wall Street",
+        "Leonardo DiCaprio",
+        "The Departed",
+        "Matt Damon",
+        "The Great Wall",
+        "Willem Dafoe",
+        "Finding Nemo",
+        "Andrew Stanton",
+        "WALL·E"
+      ],
+      [
+        "The Wolf of Wall Street",
+        "Leonardo DiCaprio",
+        "Django Unchained",
+        "Samuel L. Jackson",
+        "Kingsman: The Secret Service",
+        "Mark Strong",
+        "John Carter",
+        "Andrew Stanton",
+        "WALL·E"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        106646,
+        6193,
+        1422,
+        1892,
+        311324,
+        5293,
+        12,
+        7,
+        10681
+      ],
+      [
+        106646,
+        6193,
+        68718,
+        2231,
+        207703,
+        2983,
+        49529,
+        7,
+        10681
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1417,
+      "title": "Pan's Labyrinth",
+      "year": "2006",
+      "poster": "/7wb2Ldp0oAx1lcZvffq9RfWoI2h.jpg",
+      "genres": [
+        14,
+        18,
+        10752
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Pan's Labyrinth",
+      "Guillermo del Toro",
+      "The Shape of Water",
+      "Octavia Spencer",
+      "The Help",
+      "Emma Stone",
+      "The Croods",
+      "Ryan Reynolds",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "Pan's Labyrinth",
+        "Guillermo del Toro",
+        "The Shape of Water",
+        "Octavia Spencer",
+        "The Help",
+        "Emma Stone",
+        "The Croods",
+        "Ryan Reynolds",
+        "Deadpool"
+      ],
+      [
+        "Pan's Labyrinth",
+        "Guillermo del Toro",
+        "The Shape of Water",
+        "Michael Shannon",
+        "Nocturnal Animals",
+        "Jake Gyllenhaal",
+        "Life",
+        "Ryan Reynolds",
+        "Deadpool"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        1417,
+        10828,
+        399055,
+        6944,
+        50014,
+        54693,
+        49519,
+        10859,
+        293660
+      ],
+      [
+        1417,
+        10828,
+        399055,
+        335,
+        340666,
+        131,
+        395992,
+        10859,
+        293660
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 51876,
+      "title": "Limitless",
+      "year": "2011",
+      "poster": "/r8anWUCVK7MZEolcfPrM9eFkRO4.jpg",
+      "genres": [
+        53,
+        9648,
+        878
+      ]
+    },
+    "goal": {
+      "id": 10681,
+      "title": "WALL·E",
+      "year": "2008",
+      "poster": "/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
+      "genres": [
+        16,
+        10751,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Limitless",
+      "Robert De Niro",
+      "Jackie Brown",
+      "Samuel L. Jackson",
+      "Kingsman: The Secret Service",
+      "Mark Strong",
+      "John Carter",
+      "Andrew Stanton",
+      "WALL·E"
+    ],
+    "samplePaths": [
+      [
+        "Limitless",
+        "Robert De Niro",
+        "Jackie Brown",
+        "Samuel L. Jackson",
+        "Kingsman: The Secret Service",
+        "Mark Strong",
+        "John Carter",
+        "Andrew Stanton",
+        "WALL·E"
+      ],
+      [
+        "Limitless",
+        "Robert De Niro",
+        "Taxi Driver",
+        "Jodie Foster",
+        "Inside Man",
+        "Willem Dafoe",
+        "Finding Nemo",
+        "Andrew Stanton",
+        "WALL·E"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        51876,
+        380,
+        184,
+        2231,
+        207703,
+        2983,
+        49529,
+        7,
+        10681
+      ],
+      [
+        51876,
+        380,
+        103,
+        1038,
+        388,
+        5293,
+        12,
+        7,
+        10681
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 414906,
+      "title": "The Batman",
+      "year": "2022",
+      "poster": "/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+      "genres": [
+        80,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 105,
+      "title": "Back to the Future",
+      "year": "1985",
+      "poster": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+      "genres": [
+        12,
+        35,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Batman",
+      "Colin Farrell",
+      "Minority Report",
+      "Steven Spielberg",
+      "Saving Private Ryan",
+      "Tom Hanks",
+      "Forrest Gump",
+      "Robert Zemeckis",
+      "Back to the Future"
+    ],
+    "samplePaths": [
+      [
+        "The Batman",
+        "Colin Farrell",
+        "Minority Report",
+        "Steven Spielberg",
+        "Saving Private Ryan",
+        "Tom Hanks",
+        "Forrest Gump",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ],
+      [
+        "The Batman",
+        "Colin Farrell",
+        "Minority Report",
+        "Steven Spielberg",
+        "Catch Me If You Can",
+        "Tom Hanks",
+        "Forrest Gump",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        414906,
+        72466,
+        180,
+        488,
+        857,
+        31,
+        13,
+        24,
+        105
+      ],
+      [
+        414906,
+        72466,
+        180,
+        488,
+        640,
+        31,
+        13,
+        24,
+        105
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 72105,
+      "title": "Ted",
+      "year": "2012",
+      "poster": "/1QVZXQQHCEIj8lyUhdBYd2qOYtq.jpg",
+      "genres": [
+        35,
+        14
+      ]
+    },
+    "goal": {
+      "id": 284054,
+      "title": "Black Panther",
+      "year": "2018",
+      "poster": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Ted",
+      "Mila Kunis",
+      "The Book of Eli",
+      "Denzel Washington",
+      "Inside Man",
+      "Chiwetel Ejiofor",
+      "12 Years a Slave",
+      "Lupita Nyong'o",
+      "Black Panther"
+    ],
+    "samplePaths": [
+      [
+        "Ted",
+        "Mila Kunis",
+        "The Book of Eli",
+        "Denzel Washington",
+        "Inside Man",
+        "Chiwetel Ejiofor",
+        "12 Years a Slave",
+        "Lupita Nyong'o",
+        "Black Panther"
+      ],
+      [
+        "Ted",
+        "Mila Kunis",
+        "The Book of Eli",
+        "Denzel Washington",
+        "American Gangster",
+        "Chiwetel Ejiofor",
+        "12 Years a Slave",
+        "Lupita Nyong'o",
+        "Black Panther"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        72105,
+        18973,
+        20504,
+        5292,
+        388,
+        5294,
+        76203,
+        1267329,
+        284054
+      ],
+      [
+        72105,
+        18973,
+        20504,
+        5292,
+        4982,
+        5294,
+        76203,
+        1267329,
+        284054
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 346698,
+      "title": "Barbie",
+      "year": "2023",
+      "poster": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+      "genres": [
+        35,
+        12,
+        14
+      ]
+    },
+    "goal": {
+      "id": 8587,
+      "title": "The Lion King",
+      "year": "1994",
+      "poster": "/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg",
+      "genres": [
+        16,
+        10751,
+        18
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Barbie",
+      "Ryan Gosling",
+      "The Big Short",
+      "Brad Pitt",
+      "Inglourious Basterds",
+      "Michael Fassbender",
+      "Assassin's Creed",
+      "Jeremy Irons",
+      "The Lion King"
+    ],
+    "samplePaths": [
+      [
+        "Barbie",
+        "Ryan Gosling",
+        "The Big Short",
+        "Brad Pitt",
+        "Inglourious Basterds",
+        "Michael Fassbender",
+        "Assassin's Creed",
+        "Jeremy Irons",
+        "The Lion King"
+      ],
+      [
+        "Barbie",
+        "Ryan Gosling",
+        "The Big Short",
+        "Brad Pitt",
+        "Troy",
+        "Brendan Gleeson",
+        "Assassin's Creed",
+        "Jeremy Irons",
+        "The Lion King"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        346698,
+        30614,
+        318846,
+        287,
+        16869,
+        17288,
+        121856,
+        16940,
+        8587
+      ],
+      [
+        346698,
+        30614,
+        318846,
+        287,
+        652,
+        2039,
+        121856,
+        16940,
+        8587
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 381284,
+      "title": "Hidden Figures",
+      "year": "2016",
+      "poster": "/9lfz2W2uGjyow3am00rsPJ8iOyq.jpg",
+      "genres": [
+        18,
+        36
+      ]
+    },
+    "goal": {
+      "id": 671,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "year": "2001",
+      "poster": "/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+      "genres": [
+        12,
+        14
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Hidden Figures",
+      "Octavia Spencer",
+      "Onward",
+      "Chris Pratt",
+      "The Lego Movie",
+      "Liam Neeson",
+      "Love Actually",
+      "Alan Rickman",
+      "Harry Potter and the Philosopher's Stone"
+    ],
+    "samplePaths": [
+      [
+        "Hidden Figures",
+        "Octavia Spencer",
+        "Onward",
+        "Chris Pratt",
+        "The Lego Movie",
+        "Liam Neeson",
+        "Love Actually",
+        "Alan Rickman",
+        "Harry Potter and the Philosopher's Stone"
+      ],
+      [
+        "Hidden Figures",
+        "Octavia Spencer",
+        "The Help",
+        "Jessica Chastain",
+        "The Martian",
+        "Sean Bean",
+        "Percy Jackson & the Olympians: The Lightning Thief",
+        "Chris Columbus",
+        "Harry Potter and the Philosopher's Stone"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        381284,
+        6944,
+        508439,
+        73457,
+        137106,
+        3896,
+        508,
+        4566,
+        671
+      ],
+      [
+        381284,
+        6944,
+        50014,
+        83002,
+        286217,
+        48,
+        32657,
+        10965,
+        671
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 37165,
+      "title": "The Truman Show",
+      "year": "1998",
+      "poster": "/vuza0WqY239yBXOadKlGwJsZJFE.jpg",
+      "genres": [
+        35,
+        18
+      ]
+    },
+    "goal": {
+      "id": 284054,
+      "title": "Black Panther",
+      "year": "2018",
+      "poster": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Truman Show",
+      "Ed Harris",
+      "A Beautiful Mind",
+      "Russell Crowe",
+      "American Gangster",
+      "Chiwetel Ejiofor",
+      "12 Years a Slave",
+      "Lupita Nyong'o",
+      "Black Panther"
+    ],
+    "samplePaths": [
+      [
+        "The Truman Show",
+        "Ed Harris",
+        "A Beautiful Mind",
+        "Russell Crowe",
+        "American Gangster",
+        "Chiwetel Ejiofor",
+        "12 Years a Slave",
+        "Lupita Nyong'o",
+        "Black Panther"
+      ],
+      [
+        "The Truman Show",
+        "Ed Harris",
+        "mother!",
+        "Jennifer Lawrence",
+        "X-Men: Days of Future Past",
+        "Michael Fassbender",
+        "12 Years a Slave",
+        "Lupita Nyong'o",
+        "Black Panther"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        37165,
+        228,
+        453,
+        934,
+        4982,
+        5294,
+        76203,
+        1267329,
+        284054
+      ],
+      [
+        37165,
+        228,
+        381283,
+        72129,
+        127585,
+        17288,
+        76203,
+        1267329,
+        284054
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 310,
+      "title": "Bruce Almighty",
+      "year": "2003",
+      "poster": "/wqkWrOFtYnZSvIMu8Lsmz7WIvKC.jpg",
+      "genres": [
+        14,
+        35
+      ]
+    },
+    "goal": {
+      "id": 284054,
+      "title": "Black Panther",
+      "year": "2018",
+      "poster": "/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Bruce Almighty",
+      "Morgan Freeman",
+      "Se7en",
+      "Brad Pitt",
+      "Inglourious Basterds",
+      "Michael Fassbender",
+      "12 Years a Slave",
+      "Lupita Nyong'o",
+      "Black Panther"
+    ],
+    "samplePaths": [
+      [
+        "Bruce Almighty",
+        "Morgan Freeman",
+        "Se7en",
+        "Brad Pitt",
+        "Inglourious Basterds",
+        "Michael Fassbender",
+        "12 Years a Slave",
+        "Lupita Nyong'o",
+        "Black Panther"
+      ],
+      [
+        "Bruce Almighty",
+        "Morgan Freeman",
+        "RED",
+        "Bruce Willis",
+        "Looper",
+        "Paul Dano",
+        "12 Years a Slave",
+        "Lupita Nyong'o",
+        "Black Panther"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        310,
+        192,
+        807,
+        287,
+        16869,
+        17288,
+        76203,
+        1267329,
+        284054
+      ],
+      [
+        310,
+        192,
+        39514,
+        62,
+        59967,
+        17142,
+        76203,
+        1267329,
+        284054
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1402,
+      "title": "The Pursuit of Happyness",
+      "year": "2006",
+      "poster": "/lBYOKAMcxIvuk9s9hMuecB9dPBV.jpg",
+      "genres": [
+        18
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Pursuit of Happyness",
+      "Will Smith",
+      "Shark Tale",
+      "Robert De Niro",
+      "Jackie Brown",
+      "Samuel L. Jackson",
+      "The Hitman's Bodyguard",
+      "Ryan Reynolds",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "The Pursuit of Happyness",
+        "Will Smith",
+        "Shark Tale",
+        "Robert De Niro",
+        "Jackie Brown",
+        "Samuel L. Jackson",
+        "The Hitman's Bodyguard",
+        "Ryan Reynolds",
+        "Deadpool"
+      ],
+      [
+        "The Pursuit of Happyness",
+        "Will Smith",
+        "Suicide Squad",
+        "Margot Robbie",
+        "The Legend of Tarzan",
+        "Samuel L. Jackson",
+        "The Hitman's Bodyguard",
+        "Ryan Reynolds",
+        "Deadpool"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        1402,
+        2888,
+        10555,
+        380,
+        184,
+        2231,
+        390043,
+        10859,
+        293660
+      ],
+      [
+        1402,
+        2888,
+        297761,
+        234352,
+        258489,
+        2231,
+        390043,
+        10859,
+        293660
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 118340,
+      "title": "Guardians of the Galaxy",
+      "year": "2014",
+      "poster": "/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
+      "genres": [
+        28,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 10681,
+      "title": "WALL·E",
+      "year": "2008",
+      "poster": "/hbhFnRzzg6ZDmm8YAmxBnQpQIPh.jpg",
+      "genres": [
+        16,
+        10751,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Guardians of the Galaxy",
+      "Chris Pratt",
+      "The Magnificent Seven",
+      "Denzel Washington",
+      "Inside Man",
+      "Willem Dafoe",
+      "Finding Nemo",
+      "Andrew Stanton",
+      "WALL·E"
+    ],
+    "samplePaths": [
+      [
+        "Guardians of the Galaxy",
+        "Chris Pratt",
+        "The Magnificent Seven",
+        "Denzel Washington",
+        "Inside Man",
+        "Willem Dafoe",
+        "Finding Nemo",
+        "Andrew Stanton",
+        "WALL·E"
+      ],
+      [
+        "Guardians of the Galaxy",
+        "Vin Diesel",
+        "xXx: Return of Xander Cage",
+        "Samuel L. Jackson",
+        "Kingsman: The Secret Service",
+        "Mark Strong",
+        "John Carter",
+        "Andrew Stanton",
+        "WALL·E"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        118340,
+        73457,
+        333484,
+        5292,
+        388,
+        5293,
+        12,
+        7,
+        10681
+      ],
+      [
+        118340,
+        12835,
+        47971,
+        2231,
+        207703,
+        2983,
+        49529,
+        7,
+        10681
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 70160,
+      "title": "The Hunger Games",
+      "year": "2012",
+      "poster": "/apa5G43Hha7kH7wJG0gkkHT7FA9.jpg",
+      "genres": [
+        878,
+        12,
+        28,
+        53
+      ]
+    },
+    "goal": {
+      "id": 105,
+      "title": "Back to the Future",
+      "year": "1985",
+      "poster": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+      "genres": [
+        12,
+        35,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Hunger Games",
+      "Jennifer Lawrence",
+      "Don't Look Up",
+      "Leonardo DiCaprio",
+      "Catch Me If You Can",
+      "Tom Hanks",
+      "Forrest Gump",
+      "Robert Zemeckis",
+      "Back to the Future"
+    ],
+    "samplePaths": [
+      [
+        "The Hunger Games",
+        "Jennifer Lawrence",
+        "Don't Look Up",
+        "Leonardo DiCaprio",
+        "Catch Me If You Can",
+        "Tom Hanks",
+        "Forrest Gump",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ],
+      [
+        "The Hunger Games",
+        "Jennifer Lawrence",
+        "Don't Look Up",
+        "Leonardo DiCaprio",
+        "Catch Me If You Can",
+        "Tom Hanks",
+        "Cast Away",
+        "Robert Zemeckis",
+        "Back to the Future"
+      ]
+    ],
+    "samplePathIds": [
+      [
+        70160,
+        72129,
+        646380,
+        6193,
+        640,
+        31,
+        13,
+        24,
+        105
+      ],
+      [
+        70160,
+        72129,
+        646380,
+        6193,
+        640,
+        31,
+        8358,
+        24,
+        105
+      ]
+    ]
+  }
+]

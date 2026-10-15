@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0c0720;
+  --foreground: #f3efff;
+  --surface: #181033;
+  --surface-hi: #241848;
+  --line: #3a2a6b;
+  --muted: #a99ed3;
+  --accent: #7c4dff;
+  --accent-soft: #c4b0ff;
+  --accent-ink: #ffffff;
+  --danger: #ff6b6b;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hi: var(--surface-hi);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background:
+    radial-gradient(900px 500px at 85% -5%, rgba(124, 77, 255, 0.28), transparent 70%),
+    radial-gradient(700px 500px at 0% 40%, rgba(124, 77, 255, 0.14), transparent 70%),
+    var(--background);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* glowing primary button, as in the mockups */
+.btn-glow {
+  background-image: linear-gradient(180deg, #8f63ff, #6a3df0);
+  box-shadow: 0 8px 28px -8px rgba(124, 77, 255, 0.8);
+}
+.btn-glow:hover {
+  filter: brightness(1.1);
+}

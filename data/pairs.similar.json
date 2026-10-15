@@ -1,0 +1,3890 @@
+[
+  {
+    "start": {
+      "id": 137106,
+      "title": "The Lego Movie",
+      "year": "2014",
+      "poster": "/lbctonEnewCYZ4FYoTZhs8cidAl.jpg",
+      "genres": [
+        16,
+        10751,
+        12,
+        35,
+        14
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Lego Movie",
+      "Big Hero 6",
+      "Spy Kids",
+      "Avatar: The Way of Water",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Lego Movie",
+        "Big Hero 6",
+        "Spy Kids",
+        "Avatar: The Way of Water",
+        "Interstellar"
+      ],
+      [
+        "The Lego Movie",
+        "Despicable Me 2",
+        "Spy Kids",
+        "Avatar: The Way of Water",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 137106,
+      "title": "The Lego Movie",
+      "year": "2014",
+      "poster": "/lbctonEnewCYZ4FYoTZhs8cidAl.jpg",
+      "genres": [
+        16,
+        10751,
+        12,
+        35,
+        14
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Lego Movie",
+      "Elio",
+      "Megamind",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Lego Movie",
+        "Elio",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "The Lego Movie",
+        "Despicable Me",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 912649,
+      "title": "Venom: The Last Dance",
+      "year": "2024",
+      "poster": "/vGXptEdgZIhPg3cGlc7e8sNPC2e.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Venom: The Last Dance",
+      "Venom: Let There Be Carnage",
+      "Transformers: Revenge of the Fallen",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Venom: The Last Dance",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 912649,
+      "title": "Venom: The Last Dance",
+      "year": "2024",
+      "poster": "/vGXptEdgZIhPg3cGlc7e8sNPC2e.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Venom: The Last Dance",
+      "Venom: Let There Be Carnage",
+      "Transformers: Revenge of the Fallen",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Venom: The Last Dance",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Venom: The Last Dance",
+        "Bloodshot",
+        "iBoy",
+        "The Dead Zone",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 853,
+      "title": "Enemy at the Gates",
+      "year": "2001",
+      "poster": "/cHRAbVdsCWFaQrswRsBP7Bn255W.jpg",
+      "genres": [
+        10752,
+        36
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Enemy at the Gates",
+      "American Sniper",
+      "Tom Clancy's Without Remorse",
+      "The King's Man",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "Enemy at the Gates",
+        "American Sniper",
+        "Tom Clancy's Without Remorse",
+        "The King's Man",
+        "Deadpool"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 853,
+      "title": "Enemy at the Gates",
+      "year": "2001",
+      "poster": "/cHRAbVdsCWFaQrswRsBP7Bn255W.jpg",
+      "genres": [
+        10752,
+        36
+      ]
+    },
+    "goal": {
+      "id": 550,
+      "title": "Fight Club",
+      "year": "1999",
+      "poster": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+      "genres": [
+        18,
+        53
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Enemy at the Gates",
+      "The Dirty Dozen",
+      "Letters from Iwo Jima",
+      "Platoon",
+      "Born on the Fourth of July",
+      "Fight Club"
+    ],
+    "samplePaths": [
+      [
+        "Enemy at the Gates",
+        "The Dirty Dozen",
+        "Letters from Iwo Jima",
+        "Platoon",
+        "Born on the Fourth of July",
+        "Fight Club"
+      ],
+      [
+        "Enemy at the Gates",
+        "Flags of Our Fathers",
+        "Letters from Iwo Jima",
+        "Platoon",
+        "Born on the Fourth of July",
+        "Fight Club"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 713704,
+      "title": "Evil Dead Rise",
+      "year": "2023",
+      "poster": "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
+      "genres": [
+        27,
+        53
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Evil Dead Rise",
+      "Lights Out",
+      "The Endless",
+      "The Butterfly Effect",
+      "Eternal Sunshine of the Spotless Mind",
+      "Her",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Evil Dead Rise",
+        "Lights Out",
+        "The Endless",
+        "The Butterfly Effect",
+        "Eternal Sunshine of the Spotless Mind",
+        "Her",
+        "Interstellar"
+      ],
+      [
+        "Evil Dead Rise",
+        "28 Weeks Later",
+        "The Endless",
+        "The Butterfly Effect",
+        "Eternal Sunshine of the Spotless Mind",
+        "Her",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 713704,
+      "title": "Evil Dead Rise",
+      "year": "2023",
+      "poster": "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
+      "genres": [
+        27,
+        53
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Evil Dead Rise",
+      "Final Destination Bloodlines",
+      "Final Destination 2",
+      "The Dead Zone",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Evil Dead Rise",
+        "Final Destination Bloodlines",
+        "Final Destination 2",
+        "The Dead Zone",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1022789,
+      "title": "Inside Out 2",
+      "year": "2024",
+      "poster": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+      "genres": [
+        16,
+        12,
+        35,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Inside Out 2",
+      "Lightyear",
+      "Transformers: Rise of the Beasts",
+      "Transformers",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Inside Out 2",
+        "Lightyear",
+        "Transformers: Rise of the Beasts",
+        "Transformers",
+        "The Creator",
+        "Interstellar"
+      ],
+      [
+        "Inside Out 2",
+        "Transformers One",
+        "Transformers: Rise of the Beasts",
+        "Transformers",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1022789,
+      "title": "Inside Out 2",
+      "year": "2024",
+      "poster": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+      "genres": [
+        16,
+        12,
+        35,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Inside Out 2",
+      "Elio",
+      "Megamind",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Inside Out 2",
+        "Elio",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Inside Out 2",
+        "Minions",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 83533,
+      "title": "Avatar: Fire and Ash",
+      "year": "2025",
+      "poster": "/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg",
+      "genres": [
+        878,
+        12,
+        14
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Avatar: Fire and Ash",
+      "Star Trek Beyond",
+      "Star Trek: Nemesis",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Avatar: Fire and Ash",
+        "Star Trek Beyond",
+        "Star Trek: Nemesis",
+        "Push",
+        "Inception"
+      ],
+      [
+        "Avatar: Fire and Ash",
+        "Solo: A Star Wars Story",
+        "Star Trek: Nemesis",
+        "Push",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 83533,
+      "title": "Avatar: Fire and Ash",
+      "year": "2025",
+      "poster": "/bRBeSHfGHwkEpImlhxPmOcUsaeg.jpg",
+      "genres": [
+        878,
+        12,
+        14
+      ]
+    },
+    "goal": {
+      "id": 671,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "year": "2001",
+      "poster": "/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+      "genres": [
+        12,
+        14
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Avatar: Fire and Ash",
+      "Rebel Moon - Part Two: The Scargiver",
+      "Star Wars: Episode III - Revenge of the Sith",
+      "Dune: Part Two",
+      "The Lord of the Rings: The Two Towers",
+      "Harry Potter and the Order of the Phoenix",
+      "Harry Potter and the Philosopher's Stone"
+    ],
+    "samplePaths": [
+      [
+        "Avatar: Fire and Ash",
+        "Rebel Moon - Part Two: The Scargiver",
+        "Star Wars: Episode III - Revenge of the Sith",
+        "Dune: Part Two",
+        "The Lord of the Rings: The Two Towers",
+        "Harry Potter and the Order of the Phoenix",
+        "Harry Potter and the Philosopher's Stone"
+      ],
+      [
+        "Avatar: Fire and Ash",
+        "Avatar: The Way of Water",
+        "Star Wars: Episode III - Revenge of the Sith",
+        "Dune: Part Two",
+        "The Lord of the Rings: The Two Towers",
+        "Harry Potter and the Order of the Phoenix",
+        "Harry Potter and the Philosopher's Stone"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 205596,
+      "title": "The Imitation Game",
+      "year": "2014",
+      "poster": "/zSqJ1qFq8NXFfi7JeIYMlzyR0dx.jpg",
+      "genres": [
+        36,
+        18,
+        53,
+        10752
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Imitation Game",
+      "Transcendence",
+      "The Matrix Reloaded",
+      "Eternals",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Imitation Game",
+        "Transcendence",
+        "The Matrix Reloaded",
+        "Eternals",
+        "The Avengers"
+      ],
+      [
+        "The Imitation Game",
+        "WarGames",
+        "The Matrix Reloaded",
+        "Eternals",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 205596,
+      "title": "The Imitation Game",
+      "year": "2014",
+      "poster": "/zSqJ1qFq8NXFfi7JeIYMlzyR0dx.jpg",
+      "genres": [
+        36,
+        18,
+        53,
+        10752
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Imitation Game",
+      "Transcendence",
+      "The Matrix Reloaded",
+      "2012",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "The Imitation Game",
+        "Transcendence",
+        "The Matrix Reloaded",
+        "2012",
+        "Avatar"
+      ],
+      [
+        "The Imitation Game",
+        "WarGames",
+        "The Matrix Reloaded",
+        "2012",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1301421,
+      "title": "The Sheep Detectives",
+      "year": "2026",
+      "poster": "/iKy5460GdsoknM8ppmGlJbKxAKa.jpg",
+      "genres": [
+        35,
+        10751,
+        9648
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Sheep Detectives",
+      "Scooby-Doo",
+      "Sherlock Jr.",
+      "Wild Hogs",
+      "Back to the Future Part III",
+      "The Electric State",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Sheep Detectives",
+        "Scooby-Doo",
+        "Sherlock Jr.",
+        "Wild Hogs",
+        "Back to the Future Part III",
+        "The Electric State",
+        "Interstellar"
+      ],
+      [
+        "The Sheep Detectives",
+        "Scooby-Doo",
+        "Sherlock Jr.",
+        "Knight and Day",
+        "Inception",
+        "The Electric State",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1301421,
+      "title": "The Sheep Detectives",
+      "year": "2026",
+      "poster": "/iKy5460GdsoknM8ppmGlJbKxAKa.jpg",
+      "genres": [
+        35,
+        10751,
+        9648
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Sheep Detectives",
+      "Scooby-Doo",
+      "Sherlock Jr.",
+      "Knight and Day",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Sheep Detectives",
+        "Scooby-Doo",
+        "Sherlock Jr.",
+        "Knight and Day",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1315772,
+      "title": "Minions & Monsters",
+      "year": "2026",
+      "poster": "/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
+      "genres": [
+        12,
+        16,
+        35,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Minions & Monsters",
+      "Minions: The Rise of Gru",
+      "Megamind",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Minions & Monsters",
+        "Minions: The Rise of Gru",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Minions & Monsters",
+        "Monsters vs Aliens",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1315772,
+      "title": "Minions & Monsters",
+      "year": "2026",
+      "poster": "/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
+      "genres": [
+        12,
+        16,
+        35,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Minions & Monsters",
+      "Minions: The Rise of Gru",
+      "Megamind",
+      "Eternals",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Minions & Monsters",
+        "Minions: The Rise of Gru",
+        "Megamind",
+        "Eternals",
+        "The Avengers"
+      ],
+      [
+        "Minions & Monsters",
+        "Monsters vs Aliens",
+        "Megamind",
+        "Eternals",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 687163,
+      "title": "Project Hail Mary",
+      "year": "2026",
+      "poster": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+      "genres": [
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Project Hail Mary",
+      "Interstellar",
+      "Primer",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Project Hail Mary",
+        "Interstellar",
+        "Primer",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Project Hail Mary",
+        "Arrival",
+        "Primer",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 687163,
+      "title": "Project Hail Mary",
+      "year": "2026",
+      "poster": "/iOb2fjXLbpJgyQXe46n1WtGCnaa.jpg",
+      "genres": [
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Project Hail Mary",
+      "The Andromeda Strain",
+      "The Sum of All Fears",
+      "Jack Ryan: Shadow Recruit",
+      "Tom Clancy's Without Remorse",
+      "The King's Man",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "Project Hail Mary",
+        "The Andromeda Strain",
+        "The Sum of All Fears",
+        "Jack Ryan: Shadow Recruit",
+        "Tom Clancy's Without Remorse",
+        "The King's Man",
+        "Deadpool"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1168190,
+      "title": "The Wrecking Crew",
+      "year": "2026",
+      "poster": "/gbVwHl4YPSq6BcC92TQpe7qUTh6.jpg",
+      "genres": [
+        28,
+        35,
+        80,
+        9648
+      ]
+    },
+    "goal": {
+      "id": 550,
+      "title": "Fight Club",
+      "year": "1999",
+      "poster": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+      "genres": [
+        18,
+        53
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Wrecking Crew",
+      "The Boondock Saints",
+      "Mississippi Burning",
+      "Requiem for a Dream",
+      "Fight Club"
+    ],
+    "samplePaths": [
+      [
+        "The Wrecking Crew",
+        "The Boondock Saints",
+        "Mississippi Burning",
+        "Requiem for a Dream",
+        "Fight Club"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1168190,
+      "title": "The Wrecking Crew",
+      "year": "2026",
+      "poster": "/gbVwHl4YPSq6BcC92TQpe7qUTh6.jpg",
+      "genres": [
+        28,
+        35,
+        80,
+        9648
+      ]
+    },
+    "goal": {
+      "id": 278,
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+      "genres": [
+        18,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The Wrecking Crew",
+      "Nobody 2",
+      "John Wick: Chapter 3 - Parabellum",
+      "The Informer",
+      "The Shawshank Redemption"
+    ],
+    "samplePaths": [
+      [
+        "The Wrecking Crew",
+        "Nobody 2",
+        "John Wick: Chapter 3 - Parabellum",
+        "The Informer",
+        "The Shawshank Redemption"
+      ],
+      [
+        "The Wrecking Crew",
+        "The Boondock Saints",
+        "The Departed",
+        "The Informer",
+        "The Shawshank Redemption"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 120,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": "2001",
+      "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "Valhalla Rising",
+      "Daybreakers",
+      "Arcadian",
+      "The Last House",
+      "Meg 2: The Trench",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Valhalla Rising",
+        "Daybreakers",
+        "Arcadian",
+        "The Last House",
+        "Meg 2: The Trench",
+        "The Avengers"
+      ],
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Constantine",
+        "Legion",
+        "Arcadian",
+        "The Last House",
+        "Meg 2: The Trench",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 120,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "year": "2001",
+      "poster": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+      "genres": [
+        12,
+        14,
+        28
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Lord of the Rings: The Fellowship of the Ring",
+      "Conan the Barbarian",
+      "Mortal Kombat Legends: Scorpion's Revenge",
+      "Big Trouble in Little China",
+      "Barbarella",
+      "Rebel Moon - Part One: A Child of Fire",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Conan the Barbarian",
+        "Mortal Kombat Legends: Scorpion's Revenge",
+        "Big Trouble in Little China",
+        "Barbarella",
+        "Rebel Moon - Part One: A Child of Fire",
+        "Avatar"
+      ],
+      [
+        "The Lord of the Rings: The Fellowship of the Ring",
+        "Excalibur",
+        "Mortal Kombat Legends: Scorpion's Revenge",
+        "Big Trouble in Little China",
+        "Barbarella",
+        "Rebel Moon - Part One: A Child of Fire",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1184918,
+      "title": "The Wild Robot",
+      "year": "2024",
+      "poster": "/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+      "genres": [
+        10751,
+        16,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "The Wild Robot",
+      "Transformers One",
+      "Bumblebee",
+      "Transformers",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Wild Robot",
+        "Transformers One",
+        "Bumblebee",
+        "Transformers",
+        "The Creator",
+        "Interstellar"
+      ],
+      [
+        "The Wild Robot",
+        "Transformers One",
+        "Transformers: Rise of the Beasts",
+        "Transformers",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1184918,
+      "title": "The Wild Robot",
+      "year": "2024",
+      "poster": "/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+      "genres": [
+        10751,
+        16,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Wild Robot",
+      "Transformers One",
+      "Bumblebee",
+      "Terminator Genisys",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Wild Robot",
+        "Transformers One",
+        "Bumblebee",
+        "Terminator Genisys",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "The Wild Robot",
+        "Transformers One",
+        "Transformers: Rise of the Beasts",
+        "Terminator Genisys",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1423191,
+      "title": "Resident Evil",
+      "year": "2026",
+      "poster": "/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
+      "genres": [
+        27,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Resident Evil",
+      "Resident Evil: Afterlife",
+      "Venom: Let There Be Carnage",
+      "Transformers: Revenge of the Fallen",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Resident Evil",
+        "Resident Evil: Afterlife",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1423191,
+      "title": "Resident Evil",
+      "year": "2026",
+      "poster": "/i7UyjfPio0VFHB9rBUZSFyhOoM8.jpg",
+      "genres": [
+        27,
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Resident Evil",
+      "Extinction",
+      "Arcadian",
+      "The Last House",
+      "Circle",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Resident Evil",
+        "Extinction",
+        "Arcadian",
+        "The Last House",
+        "Circle",
+        "Push",
+        "Inception"
+      ],
+      [
+        "Resident Evil",
+        "Resident Evil: Welcome to Raccoon City",
+        "Arcadian",
+        "The Last House",
+        "Circle",
+        "Push",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 693134,
+      "title": "Dune: Part Two",
+      "year": "2024",
+      "poster": "/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
+      "genres": [
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 1726,
+      "title": "Iron Man",
+      "year": "2008",
+      "poster": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+      "genres": [
+        28,
+        878,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Dune: Part Two",
+      "Spider-Man 3",
+      "Ant-Man and the Wasp: Quantumania",
+      "Ant-Man",
+      "Iron Man"
+    ],
+    "samplePaths": [
+      [
+        "Dune: Part Two",
+        "Spider-Man 3",
+        "Ant-Man and the Wasp: Quantumania",
+        "Ant-Man",
+        "Iron Man"
+      ],
+      [
+        "Dune: Part Two",
+        "X-Men: Days of Future Past",
+        "Ant-Man and the Wasp: Quantumania",
+        "Ant-Man",
+        "Iron Man"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 693134,
+      "title": "Dune: Part Two",
+      "year": "2024",
+      "poster": "/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
+      "genres": [
+        878,
+        12
+      ]
+    },
+    "goal": {
+      "id": 597,
+      "title": "Titanic",
+      "year": "1997",
+      "poster": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+      "genres": [
+        18,
+        10749
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Dune: Part Two",
+      "The Lord of the Rings: The Two Towers",
+      "Harry Potter and the Deathly Hallows: Part 1",
+      "The Twilight Saga: New Moon",
+      "Twilight",
+      "The Notebook",
+      "Titanic"
+    ],
+    "samplePaths": [
+      [
+        "Dune: Part Two",
+        "The Lord of the Rings: The Two Towers",
+        "Harry Potter and the Deathly Hallows: Part 1",
+        "The Twilight Saga: New Moon",
+        "Twilight",
+        "The Notebook",
+        "Titanic"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1288445,
+      "title": "Mutiny",
+      "year": "2026",
+      "poster": "/pu2VxGlpGwffOx292w18b1tv96j.jpg",
+      "genres": [
+        28,
+        53
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Mutiny",
+      "Under Siege",
+      "Hunter Killer",
+      "The Abyss",
+      "The Last House",
+      "Meg 2: The Trench",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Mutiny",
+        "Under Siege",
+        "Hunter Killer",
+        "The Abyss",
+        "The Last House",
+        "Meg 2: The Trench",
+        "The Avengers"
+      ],
+      [
+        "Mutiny",
+        "Captain Phillips",
+        "Into the Blue",
+        "Deep Rising",
+        "The Last House",
+        "Meg 2: The Trench",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1288445,
+      "title": "Mutiny",
+      "year": "2026",
+      "poster": "/pu2VxGlpGwffOx292w18b1tv96j.jpg",
+      "genres": [
+        28,
+        53
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Mutiny",
+      "Under Siege",
+      "Hunter Killer",
+      "The Abyss",
+      "Extinction",
+      "Rebel Moon - Part One: A Child of Fire",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Mutiny",
+        "Under Siege",
+        "Hunter Killer",
+        "The Abyss",
+        "Extinction",
+        "Rebel Moon - Part One: A Child of Fire",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 299534,
+      "title": "Avengers: Endgame",
+      "year": "2019",
+      "poster": "/bR8ISy1O9XQxqiy0fQFw2BX72RQ.jpg",
+      "genres": [
+        12,
+        878,
+        28
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Avengers: Endgame",
+      "Dark Phoenix",
+      "Alita: Battle Angel",
+      "Ghost in the Shell",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Avengers: Endgame",
+        "Dark Phoenix",
+        "Alita: Battle Angel",
+        "Ghost in the Shell",
+        "Push",
+        "Inception"
+      ],
+      [
+        "Avengers: Endgame",
+        "The Marvels",
+        "Black Widow",
+        "Ghost in the Shell",
+        "Push",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 299534,
+      "title": "Avengers: Endgame",
+      "year": "2019",
+      "poster": "/bR8ISy1O9XQxqiy0fQFw2BX72RQ.jpg",
+      "genres": [
+        12,
+        878,
+        28
+      ]
+    },
+    "goal": {
+      "id": 315635,
+      "title": "Spider-Man: Homecoming",
+      "year": "2017",
+      "poster": "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Avengers: Endgame",
+      "Aquaman and the Lost Kingdom",
+      "Spider-Man 3",
+      "Spider-Man 2",
+      "Spider-Man: Homecoming"
+    ],
+    "samplePaths": [
+      [
+        "Avengers: Endgame",
+        "Aquaman and the Lost Kingdom",
+        "Spider-Man 3",
+        "Spider-Man 2",
+        "Spider-Man: Homecoming"
+      ],
+      [
+        "Avengers: Endgame",
+        "Aquaman and the Lost Kingdom",
+        "Spider-Man 3",
+        "The Amazing Spider-Man",
+        "Spider-Man: Homecoming"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 755898,
+      "title": "War of the Worlds",
+      "year": "2025",
+      "poster": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
+      "genres": [
+        878,
+        53
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "War of the Worlds",
+      "The Island",
+      "A Scanner Darkly",
+      "The Dead Zone",
+      "The Maze Runner",
+      "The Electric State",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "War of the Worlds",
+        "The Island",
+        "A Scanner Darkly",
+        "The Dead Zone",
+        "The Maze Runner",
+        "The Electric State",
+        "Interstellar"
+      ],
+      [
+        "War of the Worlds",
+        "The Island",
+        "A Scanner Darkly",
+        "The Dead Zone",
+        "Paycheck",
+        "The Electric State",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 755898,
+      "title": "War of the Worlds",
+      "year": "2025",
+      "poster": "/yvirUYrva23IudARHn3mMGVxWqM.jpg",
+      "genres": [
+        878,
+        53
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "War of the Worlds",
+      "The Island",
+      "A Scanner Darkly",
+      "The Dead Zone",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "War of the Worlds",
+        "The Island",
+        "A Scanner Darkly",
+        "The Dead Zone",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9772,
+      "title": "Air Force One",
+      "year": "1997",
+      "poster": "/evO1iENjLpUnbwjnt5XK85jRYob.jpg",
+      "genres": [
+        28,
+        53
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Air Force One",
+      "Plane",
+      "Cliffhanger",
+      "Vertical Limit",
+      "Jurassic World: Fallen Kingdom",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Air Force One",
+        "Plane",
+        "Cliffhanger",
+        "Vertical Limit",
+        "Jurassic World: Fallen Kingdom",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9772,
+      "title": "Air Force One",
+      "year": "1997",
+      "poster": "/evO1iENjLpUnbwjnt5XK85jRYob.jpg",
+      "genres": [
+        28,
+        53
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Air Force One",
+      "Plane",
+      "The Expendables 2",
+      "Riddick",
+      "Rebel Moon - Part One: A Child of Fire",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Air Force One",
+        "Plane",
+        "The Expendables 2",
+        "Riddick",
+        "Rebel Moon - Part One: A Child of Fire",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 744,
+      "title": "Top Gun",
+      "year": "1986",
+      "poster": "/xUuHj3CgmZQ9P2cMaqQs4J0d4Zc.jpg",
+      "genres": [
+        28,
+        18,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Top Gun",
+      "The Mountain Between Us",
+      "The Aeronauts",
+      "Forever Young",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Top Gun",
+        "The Mountain Between Us",
+        "The Aeronauts",
+        "Forever Young",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 744,
+      "title": "Top Gun",
+      "year": "1986",
+      "poster": "/xUuHj3CgmZQ9P2cMaqQs4J0d4Zc.jpg",
+      "genres": [
+        28,
+        18,
+        10749
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Top Gun",
+      "Top Gun: Maverick",
+      "Battleship",
+      "Guardians of the Galaxy",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Top Gun",
+        "Top Gun: Maverick",
+        "Battleship",
+        "Guardians of the Galaxy",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 20352,
+      "title": "Despicable Me",
+      "year": "2010",
+      "poster": "/b1BT309QWjtFUlJPLmXmrcHOWEL.jpg",
+      "genres": [
+        16,
+        35,
+        80,
+        878,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Despicable Me",
+      "Despicable Me 2",
+      "Spy Kids",
+      "Avatar: The Way of Water",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Despicable Me",
+        "Despicable Me 2",
+        "Spy Kids",
+        "Avatar: The Way of Water",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 20352,
+      "title": "Despicable Me",
+      "year": "2010",
+      "poster": "/b1BT309QWjtFUlJPLmXmrcHOWEL.jpg",
+      "genres": [
+        16,
+        35,
+        80,
+        878,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Despicable Me",
+      "Megamind",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Despicable Me",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Despicable Me",
+        "Megamind",
+        "Superman",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 315635,
+      "title": "Spider-Man: Homecoming",
+      "year": "2017",
+      "poster": "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Spider-Man: Homecoming",
+      "The Amazing Spider-Man 2",
+      "Superman Returns",
+      "Transformers: Age of Extinction",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Spider-Man: Homecoming",
+        "The Amazing Spider-Man 2",
+        "Superman Returns",
+        "Transformers: Age of Extinction",
+        "The Creator",
+        "Interstellar"
+      ],
+      [
+        "Spider-Man: Homecoming",
+        "Spider-Man: Brand New Day",
+        "Superman Returns",
+        "Transformers: Age of Extinction",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 315635,
+      "title": "Spider-Man: Homecoming",
+      "year": "2017",
+      "poster": "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Spider-Man: Homecoming",
+      "Superman",
+      "Supergirl",
+      "Rebel Moon - Part Two: The Scargiver",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Spider-Man: Homecoming",
+        "Superman",
+        "Supergirl",
+        "Rebel Moon - Part Two: The Scargiver",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 2062,
+      "title": "Ratatouille",
+      "year": "2007",
+      "poster": "/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Ratatouille",
+      "Big Hero 6",
+      "Spy Kids",
+      "Avatar: The Way of Water",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Ratatouille",
+        "Big Hero 6",
+        "Spy Kids",
+        "Avatar: The Way of Water",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 2062,
+      "title": "Ratatouille",
+      "year": "2007",
+      "poster": "/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Ratatouille",
+      "MouseHunt",
+      "Lemony Snicket's A Series of Unfortunate Events",
+      "The War with Grandpa",
+      "The Spy Next Door",
+      "Knight and Day",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Ratatouille",
+        "MouseHunt",
+        "Lemony Snicket's A Series of Unfortunate Events",
+        "The War with Grandpa",
+        "The Spy Next Door",
+        "Knight and Day",
+        "Inception"
+      ],
+      [
+        "Ratatouille",
+        "MouseHunt",
+        "Ramona and Beezus",
+        "The War with Grandpa",
+        "The Spy Next Door",
+        "Knight and Day",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 156022,
+      "title": "The Equalizer",
+      "year": "2014",
+      "poster": "/9u4yW7yPA0BQ2pv9XwiNzItwvp8.jpg",
+      "genres": [
+        53,
+        28,
+        80
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Equalizer",
+      "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+      "Batman: Year One",
+      "Batman Begins",
+      "Ghost in the Shell",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "The Equalizer",
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "Batman: Year One",
+        "Batman Begins",
+        "Ghost in the Shell",
+        "The Creator",
+        "Interstellar"
+      ],
+      [
+        "The Equalizer",
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "Deadpool 2",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 156022,
+      "title": "The Equalizer",
+      "year": "2014",
+      "poster": "/9u4yW7yPA0BQ2pv9XwiNzItwvp8.jpg",
+      "genres": [
+        53,
+        28,
+        80
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Equalizer",
+      "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+      "Batman: Year One",
+      "Batman Begins",
+      "Ghost in the Shell",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Equalizer",
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "Batman: Year One",
+        "Batman Begins",
+        "Ghost in the Shell",
+        "Push",
+        "Inception"
+      ],
+      [
+        "The Equalizer",
+        "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "Deadpool 2",
+        "Once Upon a Deadpool",
+        "Red One",
+        "Knight and Day",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 181812,
+      "title": "Star Wars: The Rise of Skywalker",
+      "year": "2019",
+      "poster": "/db32LaOibwEliAmSL2jjDF6oDdj.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Star Wars: The Rise of Skywalker",
+      "Star Trek Beyond",
+      "Star Trek: Nemesis",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Star Wars: The Rise of Skywalker",
+        "Star Trek Beyond",
+        "Star Trek: Nemesis",
+        "Push",
+        "Inception"
+      ],
+      [
+        "Star Wars: The Rise of Skywalker",
+        "Solo: A Star Wars Story",
+        "Star Trek: Nemesis",
+        "Push",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 181812,
+      "title": "Star Wars: The Rise of Skywalker",
+      "year": "2019",
+      "poster": "/db32LaOibwEliAmSL2jjDF6oDdj.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "goal": {
+      "id": 1726,
+      "title": "Iron Man",
+      "year": "2008",
+      "poster": "/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+      "genres": [
+        28,
+        878,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Star Wars: The Rise of Skywalker",
+      "Guardians of the Galaxy",
+      "Guardians of the Galaxy Vol. 2",
+      "Ant-Man",
+      "Iron Man"
+    ],
+    "samplePaths": [
+      [
+        "Star Wars: The Rise of Skywalker",
+        "Guardians of the Galaxy",
+        "Guardians of the Galaxy Vol. 2",
+        "Ant-Man",
+        "Iron Man"
+      ],
+      [
+        "Star Wars: The Rise of Skywalker",
+        "Guardians of the Galaxy",
+        "Ant-Man and the Wasp: Quantumania",
+        "Ant-Man",
+        "Iron Man"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9479,
+      "title": "The Nightmare Before Christmas",
+      "year": "1993",
+      "poster": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+      "genres": [
+        14,
+        16,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "The Nightmare Before Christmas",
+      "The Christmas Chronicles: Part Two",
+      "The Christmas Chronicles",
+      "Red One",
+      "Knight and Day",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "The Nightmare Before Christmas",
+        "The Christmas Chronicles: Part Two",
+        "The Christmas Chronicles",
+        "Red One",
+        "Knight and Day",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 9479,
+      "title": "The Nightmare Before Christmas",
+      "year": "1993",
+      "poster": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+      "genres": [
+        14,
+        16,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Nightmare Before Christmas",
+      "The Christmas Chronicles: Part Two",
+      "The Christmas Chronicles",
+      "Red One",
+      "The Guardians of the Galaxy Holiday Special",
+      "Eternals",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "The Nightmare Before Christmas",
+        "The Christmas Chronicles: Part Two",
+        "The Christmas Chronicles",
+        "Red One",
+        "The Guardians of the Galaxy Holiday Special",
+        "Eternals",
+        "The Avengers"
+      ],
+      [
+        "The Nightmare Before Christmas",
+        "The Christmas Chronicles: Part Two",
+        "The Christmas Chronicles",
+        "Red One",
+        "The Guardians of the Galaxy Holiday Special",
+        "Guardians of the Galaxy",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 11324,
+      "title": "Shutter Island",
+      "year": "2010",
+      "poster": "/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg",
+      "genres": [
+        18,
+        53,
+        9648
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Shutter Island",
+      "Twelve Monkeys",
+      "Stonehearst Asylum",
+      "The Dead Zone",
+      "The Maze Runner",
+      "The Electric State",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Shutter Island",
+        "Twelve Monkeys",
+        "Stonehearst Asylum",
+        "The Dead Zone",
+        "The Maze Runner",
+        "The Electric State",
+        "Interstellar"
+      ],
+      [
+        "Shutter Island",
+        "Twelve Monkeys",
+        "A Scanner Darkly",
+        "The Dead Zone",
+        "The Maze Runner",
+        "The Electric State",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 11324,
+      "title": "Shutter Island",
+      "year": "2010",
+      "poster": "/nrmXQ0zcZUL8jFLrakWc90IR8z9.jpg",
+      "genres": [
+        18,
+        53,
+        9648
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Shutter Island",
+      "Twelve Monkeys",
+      "Stonehearst Asylum",
+      "The Dead Zone",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Shutter Island",
+        "Twelve Monkeys",
+        "Stonehearst Asylum",
+        "The Dead Zone",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Shutter Island",
+        "Twelve Monkeys",
+        "A Scanner Darkly",
+        "The Dead Zone",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1280738,
+      "title": "The Furious",
+      "year": "2026",
+      "poster": "/ivQ1Z3lI1xWvAeGDHBw3CCYZDGJ.jpg",
+      "genres": [
+        28,
+        80,
+        53
+      ]
+    },
+    "goal": {
+      "id": 550,
+      "title": "Fight Club",
+      "year": "1999",
+      "poster": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+      "genres": [
+        18,
+        53
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Furious",
+      "Kiss of the Dragon",
+      "The French Connection",
+      "The Boondock Saints",
+      "Mississippi Burning",
+      "Requiem for a Dream",
+      "Fight Club"
+    ],
+    "samplePaths": [
+      [
+        "The Furious",
+        "Kiss of the Dragon",
+        "The French Connection",
+        "The Boondock Saints",
+        "Mississippi Burning",
+        "Requiem for a Dream",
+        "Fight Club"
+      ],
+      [
+        "The Furious",
+        "Hard Target",
+        "From Dusk Till Dawn",
+        "The Boondock Saints",
+        "Mississippi Burning",
+        "Requiem for a Dream",
+        "Fight Club"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1280738,
+      "title": "The Furious",
+      "year": "2026",
+      "poster": "/ivQ1Z3lI1xWvAeGDHBw3CCYZDGJ.jpg",
+      "genres": [
+        28,
+        80,
+        53
+      ]
+    },
+    "goal": {
+      "id": 278,
+      "title": "The Shawshank Redemption",
+      "year": "1994",
+      "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+      "genres": [
+        18,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "The Furious",
+      "Wanted",
+      "Ninja Assassin",
+      "The Expendables",
+      "John Wick: Chapter 3 - Parabellum",
+      "The Informer",
+      "The Shawshank Redemption"
+    ],
+    "samplePaths": [
+      [
+        "The Furious",
+        "Wanted",
+        "Ninja Assassin",
+        "The Expendables",
+        "John Wick: Chapter 3 - Parabellum",
+        "The Informer",
+        "The Shawshank Redemption"
+      ],
+      [
+        "The Furious",
+        "Kiss of the Dragon",
+        "The French Connection",
+        "The Boondock Saints",
+        "The Departed",
+        "The Informer",
+        "The Shawshank Redemption"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 76600,
+      "title": "Avatar: The Way of Water",
+      "year": "2022",
+      "poster": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 680,
+      "title": "Pulp Fiction",
+      "year": "1994",
+      "poster": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+      "genres": [
+        53,
+        80,
+        35
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Avatar: The Way of Water",
+      "F9",
+      "The Family Plan",
+      "The Man from U.N.C.L.E.",
+      "Central Intelligence",
+      "The Unbearable Weight of Massive Talent",
+      "Pulp Fiction"
+    ],
+    "samplePaths": [
+      [
+        "Avatar: The Way of Water",
+        "F9",
+        "The Family Plan",
+        "The Man from U.N.C.L.E.",
+        "Central Intelligence",
+        "The Unbearable Weight of Massive Talent",
+        "Pulp Fiction"
+      ],
+      [
+        "Avatar: The Way of Water",
+        "F9",
+        "The Family Plan",
+        "The Man from U.N.C.L.E.",
+        "Central Intelligence",
+        "21 Jump Street",
+        "Pulp Fiction"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 76600,
+      "title": "Avatar: The Way of Water",
+      "year": "2022",
+      "poster": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      "genres": [
+        28,
+        12,
+        878
+      ]
+    },
+    "goal": {
+      "id": 671,
+      "title": "Harry Potter and the Philosopher's Stone",
+      "year": "2001",
+      "poster": "/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+      "genres": [
+        12,
+        14
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Avatar: The Way of Water",
+      "Star Wars: Episode III - Revenge of the Sith",
+      "Dune: Part Two",
+      "The Lord of the Rings: The Two Towers",
+      "Harry Potter and the Order of the Phoenix",
+      "Harry Potter and the Philosopher's Stone"
+    ],
+    "samplePaths": [
+      [
+        "Avatar: The Way of Water",
+        "Star Wars: Episode III - Revenge of the Sith",
+        "Dune: Part Two",
+        "The Lord of the Rings: The Two Towers",
+        "Harry Potter and the Order of the Phoenix",
+        "Harry Potter and the Philosopher's Stone"
+      ],
+      [
+        "Avatar: The Way of Water",
+        "Spider-Man 3",
+        "Dune: Part Two",
+        "The Lord of the Rings: The Two Towers",
+        "Harry Potter and the Order of the Phoenix",
+        "Harry Potter and the Philosopher's Stone"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 62177,
+      "title": "Brave",
+      "year": "2012",
+      "poster": "/1XAuDtMWpL0sYSFK0R6EZate2Ux.jpg",
+      "genres": [
+        12,
+        16,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Brave",
+      "Puss in Boots",
+      "Spies in Disguise",
+      "Megamind",
+      "Eternals",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Brave",
+        "Puss in Boots",
+        "Spies in Disguise",
+        "Megamind",
+        "Eternals",
+        "The Avengers"
+      ],
+      [
+        "Brave",
+        "Elemental",
+        "Elio",
+        "Megamind",
+        "Eternals",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 62177,
+      "title": "Brave",
+      "year": "2012",
+      "poster": "/1XAuDtMWpL0sYSFK0R6EZate2Ux.jpg",
+      "genres": [
+        12,
+        16,
+        10751,
+        14
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Brave",
+      "Puss in Boots",
+      "Transformers One",
+      "Bumblebee",
+      "Transformers: Age of Extinction",
+      "Rebel Moon - Part Two: The Scargiver",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Brave",
+        "Puss in Boots",
+        "Transformers One",
+        "Bumblebee",
+        "Transformers: Age of Extinction",
+        "Rebel Moon - Part Two: The Scargiver",
+        "Avatar"
+      ],
+      [
+        "Brave",
+        "The Croods: A New Age",
+        "Transformers One",
+        "Bumblebee",
+        "Transformers: Age of Extinction",
+        "Rebel Moon - Part Two: The Scargiver",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 85,
+      "title": "Raiders of the Lost Ark",
+      "year": "1981",
+      "poster": "/ceG9VzoRAVGwivFU403Wc3AHRys.jpg",
+      "genres": [
+        12,
+        28
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Raiders of the Lost Ark",
+      "Pirates of the Caribbean: Dead Men Tell No Tales",
+      "U-571",
+      "Tom Clancy's Without Remorse",
+      "The King's Man",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "Raiders of the Lost Ark",
+        "Pirates of the Caribbean: Dead Men Tell No Tales",
+        "U-571",
+        "Tom Clancy's Without Remorse",
+        "The King's Man",
+        "Deadpool"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 85,
+      "title": "Raiders of the Lost Ark",
+      "year": "1981",
+      "poster": "/ceG9VzoRAVGwivFU403Wc3AHRys.jpg",
+      "genres": [
+        12,
+        28
+      ]
+    },
+    "goal": {
+      "id": 550,
+      "title": "Fight Club",
+      "year": "1999",
+      "poster": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+      "genres": [
+        18,
+        53
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Raiders of the Lost Ark",
+      "Romancing the Stone",
+      "Live and Let Die",
+      "Jack Ryan: Shadow Recruit",
+      "Layer Cake",
+      "Trainspotting",
+      "Fight Club"
+    ],
+    "samplePaths": [
+      [
+        "Raiders of the Lost Ark",
+        "Romancing the Stone",
+        "Live and Let Die",
+        "Jack Ryan: Shadow Recruit",
+        "Layer Cake",
+        "Trainspotting",
+        "Fight Club"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 969681,
+      "title": "Spider-Man: Brand New Day",
+      "year": "2026",
+      "poster": "/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Spider-Man: Brand New Day",
+      "Superman Returns",
+      "Transformers: Age of Extinction",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Spider-Man: Brand New Day",
+        "Superman Returns",
+        "Transformers: Age of Extinction",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 969681,
+      "title": "Spider-Man: Brand New Day",
+      "year": "2026",
+      "poster": "/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Spider-Man: Brand New Day",
+      "Justice League",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Spider-Man: Brand New Day",
+        "Justice League",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Spider-Man: Brand New Day",
+        "Superman Returns",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 749170,
+      "title": "Heads of State",
+      "year": "2025",
+      "poster": "/lVgE5oLzf7ABmzyASEVcjYyHI41.jpg",
+      "genres": [
+        28,
+        53,
+        35
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Heads of State",
+      "Deadpool",
+      "Venom: Let There Be Carnage",
+      "Transformers: Revenge of the Fallen",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Heads of State",
+        "Deadpool",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 749170,
+      "title": "Heads of State",
+      "year": "2025",
+      "poster": "/lVgE5oLzf7ABmzyASEVcjYyHI41.jpg",
+      "genres": [
+        28,
+        53,
+        35
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Heads of State",
+      "Deadpool",
+      "Venom: Let There Be Carnage",
+      "Morbius",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Heads of State",
+        "Deadpool",
+        "Venom: Let There Be Carnage",
+        "Morbius",
+        "The Avengers"
+      ],
+      [
+        "Heads of State",
+        "Deadpool",
+        "Venom: Let There Be Carnage",
+        "The Marvels",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 57800,
+      "title": "Ice Age: Continental Drift",
+      "year": "2012",
+      "poster": "/dfp1BZF7FxbBUyzHvMOI9t8NWDD.jpg",
+      "genres": [
+        16,
+        35,
+        12,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Ice Age: Continental Drift",
+      "Lightyear",
+      "Transformers: Rise of the Beasts",
+      "Transformers",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Ice Age: Continental Drift",
+        "Lightyear",
+        "Transformers: Rise of the Beasts",
+        "Transformers",
+        "The Creator",
+        "Interstellar"
+      ],
+      [
+        "Ice Age: Continental Drift",
+        "Lightyear",
+        "Transformers: Rise of the Beasts",
+        "Pacific Rim",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 57800,
+      "title": "Ice Age: Continental Drift",
+      "year": "2012",
+      "poster": "/dfp1BZF7FxbBUyzHvMOI9t8NWDD.jpg",
+      "genres": [
+        16,
+        35,
+        12,
+        10751
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "Ice Age: Continental Drift",
+      "Monsters vs Aliens",
+      "Megamind",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Ice Age: Continental Drift",
+        "Monsters vs Aliens",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Ice Age: Continental Drift",
+        "Despicable Me 4",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 460458,
+      "title": "Resident Evil: Welcome to Raccoon City",
+      "year": "2021",
+      "poster": "/bArhvjRHl535XMaSh9VjInF2mSZ.jpg",
+      "genres": [
+        28,
+        27,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Resident Evil: Welcome to Raccoon City",
+      "Resident Evil: Afterlife",
+      "Venom: Let There Be Carnage",
+      "Transformers: Revenge of the Fallen",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Resident Evil: Welcome to Raccoon City",
+        "Resident Evil: Afterlife",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Creator",
+        "Interstellar"
+      ],
+      [
+        "Resident Evil: Welcome to Raccoon City",
+        "Arcadian",
+        "The Last House",
+        "I Am Mother",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 460458,
+      "title": "Resident Evil: Welcome to Raccoon City",
+      "year": "2021",
+      "poster": "/bArhvjRHl535XMaSh9VjInF2mSZ.jpg",
+      "genres": [
+        28,
+        27,
+        878
+      ]
+    },
+    "goal": {
+      "id": 24428,
+      "title": "The Avengers",
+      "year": "2012",
+      "poster": "/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Resident Evil: Welcome to Raccoon City",
+      "Resident Evil: Afterlife",
+      "Venom: Let There Be Carnage",
+      "Morbius",
+      "The Avengers"
+    ],
+    "samplePaths": [
+      [
+        "Resident Evil: Welcome to Raccoon City",
+        "Resident Evil: Afterlife",
+        "Venom: Let There Be Carnage",
+        "Morbius",
+        "The Avengers"
+      ],
+      [
+        "Resident Evil: Welcome to Raccoon City",
+        "Resident Evil: Afterlife",
+        "Venom: Let There Be Carnage",
+        "The Marvels",
+        "The Avengers"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 803796,
+      "title": "KPop Demon Hunters",
+      "year": "2025",
+      "poster": "/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
+      "genres": [
+        14,
+        10402,
+        35,
+        16
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "KPop Demon Hunters",
+      "Casper",
+      "Ghostbusters: Frozen Empire",
+      "Avatar: Fire and Ash",
+      "Avatar: The Way of Water",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "KPop Demon Hunters",
+        "Casper",
+        "Ghostbusters: Frozen Empire",
+        "Avatar: Fire and Ash",
+        "Avatar: The Way of Water",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 803796,
+      "title": "KPop Demon Hunters",
+      "year": "2025",
+      "poster": "/zT7Lhw3BhJbMkRqm9Zlx2YGMsY0.jpg",
+      "genres": [
+        14,
+        10402,
+        35,
+        16
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 6,
+    "samplePath": [
+      "KPop Demon Hunters",
+      "Casper",
+      "Ghostbusters: Frozen Empire",
+      "Beetlejuice",
+      "The Golden Child",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "KPop Demon Hunters",
+        "Casper",
+        "Ghostbusters: Frozen Empire",
+        "Beetlejuice",
+        "The Golden Child",
+        "Push",
+        "Inception"
+      ],
+      [
+        "KPop Demon Hunters",
+        "Casper",
+        "Beetlejuice Beetlejuice",
+        "Beetlejuice",
+        "The Golden Child",
+        "Push",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 93456,
+      "title": "Despicable Me 2",
+      "year": "2013",
+      "poster": "/5Fh4NdoEnCjCK9wLjdJ9DJNFl2b.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        878
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Despicable Me 2",
+      "Megamind",
+      "Eternals",
+      "The Matrix Reloaded",
+      "Paycheck",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Despicable Me 2",
+        "Megamind",
+        "Eternals",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ],
+      [
+        "Despicable Me 2",
+        "Megamind",
+        "Superman",
+        "The Matrix Reloaded",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 93456,
+      "title": "Despicable Me 2",
+      "year": "2013",
+      "poster": "/5Fh4NdoEnCjCK9wLjdJ9DJNFl2b.jpg",
+      "genres": [
+        16,
+        35,
+        10751,
+        878
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "Despicable Me 2",
+      "Spy Kids",
+      "Avatar: The Way of Water",
+      "Avatar: Fire and Ash",
+      "Rebel Moon - Part Two: The Scargiver",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Despicable Me 2",
+        "Spy Kids",
+        "Avatar: The Way of Water",
+        "Avatar: Fire and Ash",
+        "Rebel Moon - Part Two: The Scargiver",
+        "Avatar"
+      ],
+      [
+        "Despicable Me 2",
+        "Spy Kids",
+        "Avatar: The Way of Water",
+        "Star Trek Beyond",
+        "Rebel Moon - Part Two: The Scargiver",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1101383,
+      "title": "The End of Oak Street",
+      "year": "2026",
+      "poster": "/hkPxuAMEqIqo1HCtIi4sqx0GRuP.jpg",
+      "genres": [
+        878,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 293660,
+      "title": "Deadpool",
+      "year": "2016",
+      "poster": "/3E53WEZJqP6aM84D8CckXx4pIHw.jpg",
+      "genres": [
+        28,
+        12,
+        35
+      ]
+    },
+    "minHops": 5,
+    "samplePath": [
+      "The End of Oak Street",
+      "The Blob",
+      "Resident Evil",
+      "Resident Evil: Afterlife",
+      "Venom: The Last Dance",
+      "Deadpool"
+    ],
+    "samplePaths": [
+      [
+        "The End of Oak Street",
+        "The Blob",
+        "Resident Evil",
+        "Resident Evil: Afterlife",
+        "Venom: The Last Dance",
+        "Deadpool"
+      ],
+      [
+        "The End of Oak Street",
+        "The Blob",
+        "Land of the Dead",
+        "Resident Evil: Afterlife",
+        "Venom: The Last Dance",
+        "Deadpool"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 1101383,
+      "title": "The End of Oak Street",
+      "year": "2026",
+      "poster": "/hkPxuAMEqIqo1HCtIi4sqx0GRuP.jpg",
+      "genres": [
+        878,
+        9648,
+        53
+      ]
+    },
+    "goal": {
+      "id": 299536,
+      "title": "Avengers: Infinity War",
+      "year": "2018",
+      "poster": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "genres": [
+        12,
+        28,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "The End of Oak Street",
+      "War of the Worlds",
+      "Chaos Walking",
+      "Guardians of the Galaxy",
+      "Avengers: Infinity War"
+    ],
+    "samplePaths": [
+      [
+        "The End of Oak Street",
+        "War of the Worlds",
+        "Chaos Walking",
+        "Guardians of the Galaxy",
+        "Avengers: Infinity War"
+      ],
+      [
+        "The End of Oak Street",
+        "War of the Worlds",
+        "Project Hail Mary",
+        "Guardians of the Galaxy",
+        "Avengers: Infinity War"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 381284,
+      "title": "Hidden Figures",
+      "year": "2016",
+      "poster": "/9lfz2W2uGjyow3am00rsPJ8iOyq.jpg",
+      "genres": [
+        18,
+        36
+      ]
+    },
+    "goal": {
+      "id": 27205,
+      "title": "Inception",
+      "year": "2010",
+      "poster": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+      "genres": [
+        28,
+        878,
+        80
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Hidden Figures",
+      "The Aviator",
+      "Chronicle",
+      "Push",
+      "Inception"
+    ],
+    "samplePaths": [
+      [
+        "Hidden Figures",
+        "The Aviator",
+        "Chronicle",
+        "Push",
+        "Inception"
+      ],
+      [
+        "Hidden Figures",
+        "Contact",
+        "Primer",
+        "Paycheck",
+        "Inception"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 381284,
+      "title": "Hidden Figures",
+      "year": "2016",
+      "poster": "/9lfz2W2uGjyow3am00rsPJ8iOyq.jpg",
+      "genres": [
+        18,
+        36
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Hidden Figures",
+      "First Man",
+      "Moon",
+      "Moonfall",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Hidden Figures",
+        "First Man",
+        "Moon",
+        "Moonfall",
+        "Avatar"
+      ],
+      [
+        "Hidden Figures",
+        "First Man",
+        "Ad Astra",
+        "Moonfall",
+        "Avatar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 533535,
+      "title": "Deadpool & Wolverine",
+      "year": "2024",
+      "poster": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+      "genres": [
+        28,
+        35,
+        878
+      ]
+    },
+    "goal": {
+      "id": 157336,
+      "title": "Interstellar",
+      "year": "2014",
+      "poster": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+      "genres": [
+        12,
+        18,
+        878
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Deadpool & Wolverine",
+      "Venom: Let There Be Carnage",
+      "Transformers: Revenge of the Fallen",
+      "The Creator",
+      "Interstellar"
+    ],
+    "samplePaths": [
+      [
+        "Deadpool & Wolverine",
+        "Venom: Let There Be Carnage",
+        "Transformers: Revenge of the Fallen",
+        "The Creator",
+        "Interstellar"
+      ]
+    ]
+  },
+  {
+    "start": {
+      "id": 533535,
+      "title": "Deadpool & Wolverine",
+      "year": "2024",
+      "poster": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+      "genres": [
+        28,
+        35,
+        878
+      ]
+    },
+    "goal": {
+      "id": 19995,
+      "title": "Avatar",
+      "year": "2009",
+      "poster": "/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg",
+      "genres": [
+        878,
+        28,
+        12
+      ]
+    },
+    "minHops": 4,
+    "samplePath": [
+      "Deadpool & Wolverine",
+      "Bloodshot",
+      "Mickey 17",
+      "Rebel Moon - Part One: A Child of Fire",
+      "Avatar"
+    ],
+    "samplePaths": [
+      [
+        "Deadpool & Wolverine",
+        "Bloodshot",
+        "Mickey 17",
+        "Rebel Moon - Part One: A Child of Fire",
+        "Avatar"
+      ]
+    ]
+  }
+]
