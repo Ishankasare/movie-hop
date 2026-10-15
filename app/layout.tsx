@@ -14,9 +14,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Absolute base for share-link metadata: Vercel provides the production domain; set NEXT_PUBLIC_SITE_URL to override.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
+const description = "Hop from one film to another through the actors and directors they share. Fewest hops wins. Play solo or race a friend.";
+
 export const metadata: Metadata = {
-  title: "Movie Hop",
-  description: "Hop from one film to another through similar movies. Fewest hops wins.",
+  metadataBase: new URL(siteUrl),
+  title: { default: "Movie Hop", template: "%s" },
+  description,
+  openGraph: { title: "Movie Hop", description, siteName: "Movie Hop", type: "website" },
+  twitter: { card: "summary_large_image", title: "Movie Hop", description },
 };
 
 export const viewport: Viewport = {
