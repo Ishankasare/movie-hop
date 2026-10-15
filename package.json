@@ -9,9 +9,11 @@
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:db": "vitest run --config vitest.config.integration.mts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
     "next": "16.4.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
@@ -28,5 +30,8 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^5.0.5"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "^1.2.14"
   }
 }
