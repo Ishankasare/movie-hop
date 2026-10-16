@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
   await page.route("https://image.tmdb.org/**", (r) => r.fulfill({ contentType: "image/png", body: ONE_PX_PNG }));
 });
 
-const tile = (page: Page, name: string) => page.getByRole("button", { name: new RegExp(`^${name},`) });
+const tile = (page: Page, name: string) => page.getByRole("button", { name: new RegExp(`^${name}( |$)`) });
 const playLink = (page: Page) => page.getByRole("link", { name: "Play", exact: true });
 
 test("universe and genre tiles are offered, universes first", async ({ page }) => {

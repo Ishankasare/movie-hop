@@ -109,13 +109,18 @@ export default function Game({ pair, onPlayAgain, race }: Props) {
 
   return (
     <Root className="mx-auto max-w-3xl px-4 py-5">
+      {!race && (
+        <h1 className="sr-only">
+          Movie Hop: get from {pair.start.title} to {goal.title}
+        </h1>
+      )}
       {/* start -> goal header */}
       <header className="flex items-center gap-3 rounded-xl border border-line bg-surface p-3">
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <Poster title={pair.start.title} poster={pair.start.poster} className="w-10 shrink-0" />
           <div className="min-w-0">
             <p className="text-[10px] font-semibold tracking-widest text-muted uppercase">Start</p>
-            <p className="truncate text-sm font-semibold" data-testid="start-title">
+            <p className="line-clamp-2 text-sm leading-tight font-semibold" data-testid="start-title">
               {pair.start.title}
             </p>
           </div>
@@ -126,7 +131,7 @@ export default function Game({ pair, onPlayAgain, race }: Props) {
         <div className="flex min-w-0 flex-1 items-center justify-end gap-2 text-right">
           <div className="min-w-0">
             <p className="text-[10px] font-semibold tracking-widest text-accent-soft uppercase">Goal</p>
-            <p className="truncate text-sm font-semibold" data-testid="goal-title">
+            <p className="line-clamp-2 text-sm leading-tight font-semibold" data-testid="goal-title">
               {goal.title}
             </p>
           </div>
@@ -275,13 +280,14 @@ export default function Game({ pair, onPlayAgain, race }: Props) {
                     <button
                       type="button"
                       onClick={() => setSelected(person)}
-                      aria-label={`Choose ${person.name}${role === "director" ? " (director)" : ""}`}
                       className="group block w-full text-left"
                     >
+                      {/* the button's name is its visible text ("Choose" is read aloud only), so voice control works */}
+                      <span className="sr-only">Choose </span>
                       <Poster
                         title={person.name}
                         poster={person.photo}
-                        alt={`${person.name}`}
+                        alt=""
                         className="w-full transition group-hover:brightness-110 group-hover:ring-2 group-hover:ring-accent"
                       />
                       <span className="mt-1 line-clamp-2 block text-xs leading-tight">{person.name}</span>

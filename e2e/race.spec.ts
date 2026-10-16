@@ -20,7 +20,7 @@ const ONE_PX_PNG = Buffer.from(
 );
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 // exact names: "Hop to Doctor Strange" must not also match "Doctor Strange in the Multiverse of Madness"
-const personButton = (name: string) => new RegExp("^Choose " + esc(name) + "( \\(director\\))?$");
+const personButton = (name: string) => new RegExp("^Choose " + esc(name) + " (Cast|Director)$");
 const filmButton = (title: string) => new RegExp("^Hop to " + esc(title) + "( \\(\\d{4}\\))?$");
 
 async function newPlayer(browser: import("@playwright/test").Browser) {

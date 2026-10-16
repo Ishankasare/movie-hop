@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import { Suspense } from "react";
 import TabBar from "@/components/TabBar";
 import "./globals.css";
@@ -40,7 +41,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <div className="flex-1">{children}</div>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:font-semibold focus:text-accent-ink"
+        >
+          Skip to content
+        </a>
+        <div id="main-content" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </div>
         <footer className="px-4 pt-6 pb-24 text-center text-xs text-muted">
           This product uses the TMDB API but is not endorsed or certified by{" "}
           <a
@@ -51,7 +60,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             TMDB
           </a>
-          .
+          .{" "}
+          <Link href="/about" className="underline hover:text-foreground">
+            About &amp; credits
+          </Link>
         </footer>
         {/* the current path isn't known when a dynamic page (/race/<code>) is prerendered */}
         <Suspense fallback={null}>

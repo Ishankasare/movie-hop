@@ -32,7 +32,12 @@ function perfStart(startAtIso: string, offset: number): number {
 }
 
 function Shell({ children }: { children: React.ReactNode }) {
-  return <main className="mx-auto max-w-xl px-4 pt-8 pb-28">{children}</main>;
+  return (
+    <main className="mx-auto max-w-xl px-4 pt-8 pb-28">
+      <h1 className="sr-only">Movie Hop race room</h1>
+      {children}
+    </main>
+  );
 }
 
 export default function RoomClient({ code }: { code: string }) {
@@ -43,7 +48,7 @@ export default function RoomClient({ code }: { code: string }) {
     return (
       <Shell>
         <Card>
-          <h1 className="text-xl font-black">Race isn&apos;t set up yet</h1>
+          <h2 className="text-xl font-black">Race isn&apos;t set up yet</h2>
           <p className="mt-2 text-sm text-muted">
             This site has no Supabase settings. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to .env.local.
           </p>
@@ -64,7 +69,7 @@ export default function RoomClient({ code }: { code: string }) {
     return (
       <Shell>
         <Card className="text-center">
-          <h1 className="text-xl font-black">Couldn&apos;t open the room</h1>
+          <h2 className="text-xl font-black">Couldn&apos;t open the room</h2>
           <p className="mt-2 text-sm text-muted">{load.message}</p>
           <Link href="/race" className="mt-4 inline-block rounded-full border border-line px-5 py-2 font-semibold hover:bg-surface-hi">
             Back to Race

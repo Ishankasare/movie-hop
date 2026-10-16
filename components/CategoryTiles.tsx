@@ -22,7 +22,6 @@ function Tile({
     <button
       type="button"
       aria-pressed={selected}
-      aria-label={`${option.name}, ${count} pairs`}
       disabled={count === 0}
       onClick={onSelect}
       className={`group relative block w-full overflow-hidden rounded-2xl text-left ring-2 transition disabled:opacity-40 ${
