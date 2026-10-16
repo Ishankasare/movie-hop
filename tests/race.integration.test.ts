@@ -205,4 +205,17 @@ describe.skipIf(!URL || !KEY)("race database functions", () => {
     expect(fresh.room.round_no).toBe(1);
     expect(fresh.results).toEqual([]);
   });
+
+  // needs supabase/migrations/0002_race_hardening.sql
+  it("limits each player to 10 new rooms per hour, and players cannot run the cleanup", async () => {
+    const spammer = await player(); // a fresh anonymous player, so the limit is theirs alone
+    for (let i = 0; i < 10; i++) {
+      const { error } = await spammer.db.rpc("create_room", { p_nickname: "Spam", p_rounds: 2, p_band: null });
+      expect(error, `room ${i + 1}`).toBeNull();
+    }
+    await expectError(rpc(spammer.db, "create_room", { p_nickname: "Spam", p_rounds: 2, p_band: null }), "too_many_rooms");
+
+    const { error } = await spammer.db.rpc("cleanup_old_rooms");
+    expect(error).not.toBeNull();
+  }, 60_000);
 });

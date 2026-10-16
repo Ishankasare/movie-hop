@@ -220,6 +220,7 @@ const ERRORS: Record<string, string> = {
   too_early: "The race hasn't started yet.",
   opponent_still_here: "Your opponent is still connected.",
   pair_already_played: "That pair was already played. Pick again.",
+  too_many_rooms: "You've created a lot of rooms recently. Please try again in a little while.",
 };
 
 export function friendlyError(message: string | undefined | null): string {
