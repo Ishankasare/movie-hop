@@ -19,6 +19,9 @@ const ONE_PX_PNG = Buffer.from(
   "base64",
 );
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// exact names: "Hop to Doctor Strange" must not also match "Doctor Strange in the Multiverse of Madness"
+const personButton = (name: string) => new RegExp("^Choose " + esc(name) + "( \\(director\\))?$");
+const filmButton = (title: string) => new RegExp("^Hop to " + esc(title) + "( \\(\\d{4}\\))?$");
 
 async function newPlayer(browser: import("@playwright/test").Browser) {
   const ctx = await browser.newContext({ ...devices["Pixel 7"] });
@@ -35,8 +38,8 @@ async function playRound(page: Page) {
   expect(pair, `pair ${start} -> ${goal} should be in pairs.json`).toBeDefined();
   const route = (pair.samplePaths ?? [pair.samplePath])[0];
   for (let i = 1; i < route.length - 1; i += 2) {
-    await page.getByRole("button", { name: new RegExp(`^Choose ${esc(route[i])}`) }).click();
-    await page.getByRole("button", { name: new RegExp(`^Hop to ${esc(route[i + 1])}`) }).click();
+    await page.getByRole("button", { name: personButton(route[i]) }).click();
+    await page.getByRole("button", { name: filmButton(route[i + 1]) }).click();
   }
 }
 

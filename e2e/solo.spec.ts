@@ -19,6 +19,9 @@ const ONE_PX_PNG = Buffer.from(
 );
 
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// exact names: "Hop to Doctor Strange" must not also match "Doctor Strange in the Multiverse of Madness"
+const personButton = (name: string) => new RegExp("^Choose " + esc(name) + "( \\(director\\))?$");
+const filmButton = (title: string) => new RegExp("^Hop to " + esc(title) + "( \\(\\d{4}\\))?$");
 
 async function setup(page: Page) {
   await page.addInitScript(() => {
@@ -33,8 +36,8 @@ async function setup(page: Page) {
 
 /** Choose route[i] (a person) on the current film, then hop to route[i + 1] (a film). */
 async function hopVia(page: Page, i: number) {
-  await page.getByRole("button", { name: new RegExp(`^Choose ${esc(route[i])}`) }).click();
-  await page.getByRole("button", { name: new RegExp(`^Hop to ${esc(route[i + 1])}`) }).click();
+  await page.getByRole("button", { name: personButton(route[i]) }).click();
+  await page.getByRole("button", { name: filmButton(route[i + 1]) }).click();
 }
 
 test("plays a round film → person → film to the win screen, and Back costs a move", async ({ page }) => {
@@ -42,7 +45,7 @@ test("plays a round film → person → film to the win screen, and Back costs a
   await expect(page.getByTestId("hop-count")).toHaveText("0");
 
   // choosing a person and closing the list is free
-  await page.getByRole("button", { name: new RegExp(`^Choose ${esc(route[1])}`) }).click();
+  await page.getByRole("button", { name: personButton(route[1]) }).click();
   await page.getByRole("button", { name: "Back to cast" }).click();
   await expect(page.getByTestId("hop-count")).toHaveText("0");
 
