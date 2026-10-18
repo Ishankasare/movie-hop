@@ -293,8 +293,10 @@ export function wantsRealtime(status: RoomStatus | null): boolean {
  * How often to re-read the room. With realtime working it is only a safety net (10 s); without it (a lobby, a
  * finished match, or realtime unavailable) we poll faster while a race is on, so the game still feels live.
  */
-export function pollIntervalMs(status: RoomStatus | null, realtimeOk: boolean): number {
-  if (!wantsRealtime(status)) return status === "finished" ? 6000 : 2500;
+export function pollIntervalMs(status: RoomStatus | null, realtimeOk: boolean, waitingOnOthers = false): number {
+  // finished screens poll gently, but a player who has asked for a rematch is actively waiting for the others
+  if (status === "finished") return waitingOnOthers ? 2000 : 6000;
+  if (!wantsRealtime(status)) return 2500;
   if (realtimeOk) return 10_000;
   return status === "round_over" ? 2500 : 1500;
 }

@@ -136,7 +136,10 @@ export function useRoom(code: string): RoomApi {
   }, [useRealtime, code, refresh]);
 
   // polling: a safety net while realtime works, the main way of staying up to date otherwise
-  const pollMs = pollIntervalMs(status, realtimeOk);
+  const myId = load.phase === "ready" ? load.myId : undefined;
+  const askedForRematch =
+    load.phase === "ready" && load.snapshot.players.find((p) => p.player_id === myId)?.rematch === true;
+  const pollMs = pollIntervalMs(status, realtimeOk, status === "finished" && askedForRematch);
   useEffect(() => {
     if (!member) return;
     const poll = setInterval(() => {

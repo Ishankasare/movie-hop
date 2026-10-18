@@ -278,8 +278,21 @@ function RacingView({
   const opponents = seats(players, me?.player_id ?? "").opponents;
   const stillRacing = opponents.filter((p) => !resultOf(p.player_id));
   const windowLeft = room.deadline_at && room.first_finish_ms !== null ? msUntil(room.deadline_at, offset, t) : null;
+  const opponentList = opponents.map((p) => {
+    const r = resultOf(p.player_id);
+    return {
+      name: p.nickname,
+      moves: p.moves,
+      status: r ? (r.outcome === "finished" ? ("finished" as const) : ("gaveup" as const)) : ("racing" as const),
+    };
+  });
   const waiting = (
-    <WaitingPanel mine={mine} waitingFor={stillRacing.map((p) => p.nickname)} windowLeftMs={windowLeft} />
+    <WaitingPanel
+      mine={mine}
+      waitingFor={stillRacing.map((p) => p.nickname)}
+      windowLeftMs={windowLeft}
+      opponents={opponentList}
+    />
   );
 
   if (!pair) {
@@ -298,14 +311,7 @@ function RacingView({
       api={api}
       room={room}
       pair={pair}
-      opponents={opponents.map((p) => {
-        const r = resultOf(p.player_id);
-        return {
-          name: p.nickname,
-          moves: p.moves,
-          status: r ? (r.outcome === "finished" ? ("finished" as const) : ("gaveup" as const)) : ("racing" as const),
-        };
-      })}
+      opponents={opponentList}
       offset={offset}
       waiting={waiting}
     />

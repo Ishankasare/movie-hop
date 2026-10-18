@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CategoryTiles from "@/components/CategoryTiles";
+import type { RaceOpponent } from "@/components/Game";
 import Poster from "@/components/Poster";
 import { categoryName } from "@/lib/categories";
 import { ALL_PAIRS, availableCategories, filterPairs, pairKey, type HopBand, type Pair } from "@/lib/pairs";
@@ -301,12 +302,15 @@ export function WaitingPanel({
   mine,
   waitingFor,
   windowLeftMs,
+  opponents,
 }: {
   mine: RoundResult | undefined;
   /** nicknames of the players who haven't finished yet */
   waitingFor: string[];
   /** milliseconds left of the finishing window, once someone finished first */
   windowLeftMs: number | null;
+  /** everyone else's hop count and status, so you can keep watching while you wait */
+  opponents: RaceOpponent[];
 }) {
   return (
     <Card className="text-center">
@@ -318,6 +322,19 @@ export function WaitingPanel({
           {formatMs(mine.ms)}
           {mine.hints > 0 && <span className="ml-2 text-sm font-normal text-muted">(incl. +15s hint)</span>}
         </p>
+      )}
+      {opponents.length > 0 && (
+        <ul aria-label="Other players" className="mt-4 flex flex-wrap justify-center gap-2 text-sm" data-testid="waiting-opponents">
+          {opponents.map((o) => (
+            <li key={o.name} className="rounded-lg bg-surface-hi px-3 py-1.5">
+              <span className="text-muted">{o.name} </span>
+              <span className="font-bold tabular-nums">{o.moves}</span>
+              <span className="text-muted"> {o.moves === 1 ? "hop" : "hops"}</span>
+              {o.status === "finished" && <span className="ml-1 text-accent-soft"> · done</span>}
+              {o.status === "gaveup" && <span className="ml-1 text-muted"> · gave up</span>}
+            </li>
+          ))}
+        </ul>
       )}
       <p className="mt-4 text-muted" role="status">
         {waitingFor.length > 0 ? `Waiting for ${waitingFor.join(", ")} to finish…` : "Wrapping up the round…"}

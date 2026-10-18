@@ -1,3 +1,4 @@
+import AxeBuilder from "@axe-core/playwright";
 import { devices, expect, test, type Browser, type Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -72,6 +73,13 @@ async function pickWithWhoever(players: Player[]) {
   return picker;
 }
 
+/** Accessibility check (WCAG A/AA + best practice) of whatever screen the page is showing. */
+async function scan(page: Page, what: string) {
+  const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "best-practice"]).analyze();
+  const summary = results.violations.map((v) => `${v.id} (${v.impact}): ${v.nodes.length} node(s), e.g. ${v.nodes[0]?.target.join(" ")}`);
+  expect(summary, `${what}: ${summary.join("; ")}`).toEqual([]);
+}
+
 async function everyoneReady(players: Player[]) {
   for (const p of players) await p.page.getByTestId("ready-button").click();
 }
@@ -96,19 +104,28 @@ test.describe("race with 3 and 4 players (real Supabase)", () => {
       await expect(aria.page.getByText("Waiting for a player…")).toHaveCount(1);
       await expect(aria.page.getByTestId("start-match")).toContainText("Start with 3 players");
       await expect(ps[1].page.getByText(/Waiting for Aria to start/)).toBeVisible();
+      await scan(aria.page, "lobby (host)");
+      await scan(ps[1].page, "lobby (guest)");
 
       await join(dev, code); // the fourth player fills the room: the match starts by itself
-      await pickWithWhoever(ps);
+      const picker = await pickWithWhoever(ps);
+      await scan(picker.page, "ready screen");
 
       await everyoneReady(ps);
       for (const p of ps) await expect(p.page.getByTestId("start-title")).toBeVisible({ timeout: 30_000 });
+      await scan(aria.page, "race board with three opponents");
 
       // everyone sees the other three players' hop counts, and nothing else about them
       for (const p of ps) await expect(p.page.getByTestId("opponent-moves").locator("li")).toHaveCount(3);
 
       // three of them race to the goal; Dev gives up
       await Promise.all([aria, ps[1], ps[2]].map((p) => playRound(p.page)));
-      await expect(ps[1].page.getByTestId("opponent-moves")).toContainText("done", { timeout: 20_000 });
+      // a finished player keeps watching the others: Ben's waiting screen shows who is done, by name
+      await expect(ps[1].page.getByTestId("waiting-opponents")).toContainText("Aria", { timeout: 20_000 });
+      await expect(ps[1].page.getByTestId("waiting-opponents").locator("li").filter({ hasText: "Cleo" })).toContainText("done", {
+        timeout: 20_000,
+      });
+      await scan(ps[1].page, "waiting screen");
       await dev.page.getByRole("button", { name: "Give up" }).click();
 
       // ranked results for all four, with the gave-up player last
@@ -118,6 +135,7 @@ test.describe("race with 3 and 4 players (real Supabase)", () => {
       await expect(rows.last()).toContainText("Dev");
       await expect(rows.last()).toContainText("gave up");
       await expect(dev.page.getByText("You finished 4th of 4.")).toBeVisible();
+      await scan(aria.page, "round results");
 
       // round 2: the next player in turn picks; everybody gives up quickly
       for (const p of ps) await p.page.getByTestId("next-round").click();
@@ -131,9 +149,10 @@ test.describe("race with 3 and 4 players (real Supabase)", () => {
       for (const p of ps) await p.page.getByTestId("next-round").click();
       for (const p of ps) await expect(p.page.getByTestId("match-winner")).toBeVisible({ timeout: 30_000 });
       await expect(aria.page.getByRole("list", { name: "Final standings" }).locator("li")).toHaveCount(4);
+      await scan(aria.page, "final standings");
 
       for (const p of ps.slice(0, 3)) await p.page.getByTestId("rematch").click();
-      await expect(aria.page.getByTestId("rematch")).toContainText("Waiting for Dev");
+      await expect(aria.page.getByTestId("rematch")).toContainText("Waiting for Dev", { timeout: 15_000 });
       await dev.page.getByTestId("rematch").click();
       for (const p of ps) {
         await expect(p.page.getByText("is choosing the genre").or(p.page.getByRole("heading", { name: "Your pick" }))).toBeVisible({ timeout: 25_000 });

@@ -327,6 +327,11 @@ describe("staying within the free Supabase limits", () => {
     expect(pollIntervalMs(null, false)).toBe(2500);
   });
 
+  it("polls faster on the finished screen once you've asked for a rematch and are waiting on the others", () => {
+    expect(pollIntervalMs("finished", false, true)).toBe(2000);
+    expect(pollIntervalMs("finished", true, true)).toBe(2000);
+  });
+
   it("never polls slower than the 20 s forfeit rule needs (a missed update must not hide a leaver)", () => {
     for (const s of ["lobby", "picking", "ready", "racing", "round_over", "finished"] as const)
       for (const ok of [true, false]) expect(pollIntervalMs(s, ok)).toBeLessThan(12_000);
