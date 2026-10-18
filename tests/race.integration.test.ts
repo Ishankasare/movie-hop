@@ -219,3 +219,158 @@ describe.skipIf(!URL || !KEY)("race database functions", () => {
     expect(error).not.toBeNull();
   }, 60_000);
 });
+
+// needs supabase/migrations/0003_players_2_to_4.sql
+describe.skipIf(!URL || !KEY)("race with 3 and 4 players", () => {
+  type P = Awaited<ReturnType<typeof player>>;
+
+  async function room(host: P, max: number, rounds = 4) {
+    const { data, error } = await host.db.rpc("create_room", { p_nickname: "P0", p_rounds: rounds, p_band: null, p_max_players: max });
+    expect(error).toBeNull();
+    return data as string;
+  }
+  const seatOf = (s: Snapshot, id: string) => (s.players as unknown as { player_id: string; seat: number }[]).find((p) => p.player_id === id)!.seat;
+
+  async function startRace(code: string, ps: P[]) {
+    const s = await snap(ps[0].db, code);
+    const picker = ps.find((p) => p.id === s.room.picker_id)!;
+    await rpc(picker.db, "pick_round", { p_code: code, p_category: null, p_pair_key: `${100 + s.room.round_no}-${200 + s.room.round_no}` });
+    for (const p of ps) await rpc(p.db, "set_ready", { p_code: code });
+    const racing = await snap(ps[0].db, code);
+    const startIn = new Date(racing.room.start_at as string).getTime() - new Date(racing.now).getTime();
+    await sleep(startIn + 400);
+    return { picker, racing };
+  }
+
+  it("validates the room size and rounds", async () => {
+    const host = await player();
+    await expectError(rpc(host.db, "create_room", { p_nickname: "H", p_rounds: 4, p_band: null, p_max_players: 5 }), "bad_players");
+    await expectError(rpc(host.db, "create_room", { p_nickname: "H", p_rounds: 3, p_band: null, p_max_players: 4 }), "bad_rounds");
+    const { error } = await host.db.rpc("create_room", { p_nickname: "H", p_rounds: 8, p_band: 3, p_max_players: 3 });
+    expect(error).toBeNull(); // 8 rounds is allowed now
+  });
+
+  it("4 players: the lobby fills, the match starts by itself, everyone must be ready, picking rotates in seat order", async () => {
+    const ps = await Promise.all([player(), player(), player(), player()]);
+    const code = await room(ps[0], 4);
+
+    for (let i = 1; i < 3; i++) {
+      await rpc(ps[i].db, "join_room", { p_code: code, p_nickname: `P${i}` });
+      expect((await snap(ps[0].db, code)).room.status).toBe("lobby"); // not full yet
+    }
+    const fifth = await player();
+    await rpc(ps[3].db, "join_room", { p_code: code, p_nickname: "P3" });
+    await expectError(rpc(fifth.db, "join_room", { p_code: code, p_nickname: "P4" }), "room_full");
+
+    let s = await snap(ps[0].db, code);
+    expect(s.room.status).toBe("picking");
+    expect(s.players).toHaveLength(4);
+    expect((s.players as unknown as { seat: number }[]).map((p) => p.seat).sort()).toEqual([0, 1, 2, 3]);
+    const firstPicker = s.room.picker_id;
+
+    // 3 of 4 ready is not enough
+    const picker = ps.find((p) => p.id === firstPicker)!;
+    await rpc(picker.db, "pick_round", { p_code: code, p_category: "marvel", p_pair_key: "101-201" });
+    for (const p of ps.slice(0, 3)) await rpc(p.db, "set_ready", { p_code: code });
+    expect((await snap(ps[0].db, code)).room.status).toBe("ready");
+    await rpc(ps[3].db, "set_ready", { p_code: code });
+    s = await snap(ps[0].db, code);
+    expect(s.room.status).toBe("racing");
+    const startIn = new Date(s.room.start_at as string).getTime() - new Date(s.now).getTime();
+    await sleep(startIn + 400);
+
+    // all four finish at the same moment, one of them with a hint
+    await rpc(ps[2].db, "use_hint", { p_code: code });
+    const results = await Promise.allSettled(ps.map((p) => rpc(p.db, "finish_round", { p_code: code, p_moves: 2 })));
+    expect(results.map((r) => r.status)).toEqual(["fulfilled", "fulfilled", "fulfilled", "fulfilled"]);
+    s = await snap(ps[0].db, code);
+    expect(s.room.status).toBe("round_over");
+    expect(s.results).toHaveLength(4);
+    expect(s.results.find((r) => r.player_id === ps[2].id)!.ms!).toBeGreaterThanOrEqual(15_000);
+
+    // the next round is picked by the next seat, wrapping around, for every round
+    let prev = firstPicker;
+    for (let round = 1; round <= 3; round++) {
+      await Promise.all(ps.map((p) => rpc(p.db, "next_round", { p_code: code, p_from_round: round }))); // idempotent
+      s = await snap(ps[0].db, code);
+      expect(s.room.round_no).toBe(round + 1);
+      expect(seatOf(s, s.room.picker_id)).toBe((seatOf(s, prev) + 1) % 4);
+      prev = s.room.picker_id;
+      if (round < 3) {
+        await startRace(code, ps);
+        await Promise.all(ps.map((p) => rpc(p.db, "give_up", { p_code: code })));
+        expect((await snap(ps[0].db, code)).room.status).toBe("round_over");
+      }
+    }
+  }, 120_000);
+
+  it("3 players: only the host can start early; a player who leaves is scored at the cap and the others carry on", async () => {
+    const ps = await Promise.all([player(), player(), player()]);
+    const code = await room(ps[0], 4);
+    await expectError(rpc(ps[0].db, "start_match", { p_code: code }), "need_more_players");
+    await rpc(ps[1].db, "join_room", { p_code: code, p_nickname: "P1" });
+    await rpc(ps[2].db, "join_room", { p_code: code, p_nickname: "P2" });
+    expect((await snap(ps[0].db, code)).room.status).toBe("lobby");
+
+    await expectError(rpc(ps[1].db, "start_match", { p_code: code }), "not_host");
+    await rpc(ps[0].db, "start_match", { p_code: code });
+    expect((await snap(ps[0].db, code)).room.status).toBe("picking");
+
+    await startRace(code, ps);
+    // P2 leaves mid-race; the round closes when the other two are done
+    await rpc(ps[2].db, "leave_room", { p_code: code });
+    expect((await snap(ps[0].db, code)).room.status).toBe("racing");
+    await rpc(ps[0].db, "finish_round", { p_code: code, p_moves: 2 });
+    await rpc(ps[1].db, "finish_round", { p_code: code, p_moves: 2 });
+    const s = await snap(ps[0].db, code);
+    expect(s.room.status).toBe("round_over");
+    expect(s.results).toHaveLength(3);
+    const leaver = s.results.find((r) => r.player_id === ps[2].id)!;
+    expect(leaver.outcome).toBe("timeout");
+    expect(leaver.ms).toBe((s.room.first_finish_ms as number) + 60_000);
+
+    // the leaver never picks again, and the match goes on with two players
+    await rpc(ps[0].db, "next_round", { p_code: code, p_from_round: 1 });
+    expect((await snap(ps[0].db, code)).room.picker_id).not.toBe(ps[2].id);
+
+    // when only one player is left, they win
+    await rpc(ps[1].db, "leave_room", { p_code: code });
+    const end = await snap(ps[0].db, code);
+    expect(end.room.status).toBe("finished");
+    expect(end.room.forfeit_winner).toBe(ps[0].id);
+  }, 120_000);
+
+  it("a lobby member can leave; if the host leaves, the room goes", async () => {
+    const [host, guest, later] = await Promise.all([player(), player(), player()]);
+    const code = await room(host, 3);
+    await rpc(guest.db, "join_room", { p_code: code, p_nickname: "G" });
+    await rpc(guest.db, "leave_room", { p_code: code });
+    expect((await snap(host.db, code)).players).toHaveLength(1);
+    await rpc(later.db, "join_room", { p_code: code, p_nickname: "L" }); // the seat is free again
+    expect((await snap(host.db, code)).players).toHaveLength(2);
+
+    await rpc(host.db, "leave_room", { p_code: code });
+    await expectError(snap(later.db, code), "room_not_found");
+  });
+
+  it("a rematch needs every remaining player", async () => {
+    const ps = await Promise.all([player(), player(), player()]);
+    const code = await room(ps[0], 3, 2);
+    await rpc(ps[1].db, "join_room", { p_code: code, p_nickname: "P1" });
+    await rpc(ps[2].db, "join_room", { p_code: code, p_nickname: "P2" });
+    for (let round = 1; round <= 2; round++) {
+      await startRace(code, ps);
+      await Promise.all(ps.map((p) => rpc(p.db, "give_up", { p_code: code })));
+      await rpc(ps[0].db, "next_round", { p_code: code, p_from_round: round });
+    }
+    expect((await snap(ps[0].db, code)).room.status).toBe("finished");
+
+    await rpc(ps[0].db, "rematch", { p_code: code });
+    await rpc(ps[1].db, "rematch", { p_code: code });
+    expect((await snap(ps[0].db, code)).room.status).toBe("finished"); // P2 hasn't asked yet
+    await rpc(ps[2].db, "rematch", { p_code: code });
+    const fresh = await snap(ps[0].db, code);
+    expect(fresh.room).toMatchObject({ status: "picking", match_no: 2, round_no: 1 });
+    expect(fresh.results).toEqual([]);
+  }, 120_000);
+});
