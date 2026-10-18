@@ -1,11 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { friendlyError, msUntil, parseSnapshot, serverOffset, type Snapshot } from "@/lib/race";
+import {
+  friendlyError,
+  msUntil,
+  parseSnapshot,
+  pollIntervalMs,
+  serverOffset,
+  wantsRealtime,
+  type Snapshot,
+} from "@/lib/race";
 import { callRpc, ensureUser, getSupabase } from "@/lib/supabase";
 
 const HEARTBEAT_MS = 5000;
-const POLL_MS = 2500;
 
 type Load =
   | { phase: "loading" }
@@ -30,17 +37,23 @@ export type RoomApi = {
   nextRound: (fromRound: number) => Promise<boolean>;
   forfeit: () => Promise<boolean>;
   rematch: () => Promise<boolean>;
+  /** Host: start the match from the lobby with the players who are in. */
+  start: () => Promise<boolean>;
+  /** Leave the room (mid-match you are scored at the cap and the others carry on). */
+  leave: () => Promise<boolean>;
 };
 
 /**
- * Everything a room screen needs: the live snapshot (realtime + a slow poll as a safety net),
- * a heartbeat so the opponent can tell we're here, the timeout settle call, and the actions.
+ * Everything a room screen needs: the live snapshot, a heartbeat so the others can tell we're here,
+ * the timeout settle call, and the actions. Realtime is only used while a match is moving (see
+ * wantsRealtime); the rest of the time, and whenever realtime is unavailable, it polls instead.
  * The database decides everything; this hook only asks and displays.
  */
 export function useRoom(code: string): RoomApi {
   const [load, setLoad] = useState<Load>({ phase: "loading" });
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [rtState, setRtState] = useState<"ok" | "down">("down");
   const offsetRef = useRef(0);
   const alive = useRef(true);
   const refreshTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -95,34 +108,57 @@ export function useRoom(code: string): RoomApi {
     };
   }, [fetchSnapshot]);
 
-  // realtime: any change to this room's rows triggers a re-read
+  const status = load.phase === "ready" ? load.snapshot.room.status : null;
+  const useRealtime = member && wantsRealtime(status);
+  const realtimeOk = useRealtime && rtState === "ok";
+
+  // realtime (only while a match is moving): any change to this room's rows triggers a re-read.
+  // If the connection can't be made (e.g. the plan's limit is reached) rtState says so and we poll faster instead.
   useEffect(() => {
-    if (!member) return;
+    if (!useRealtime) return;
     const db = getSupabase();
     const ch = db
       .channel(`room:${code}`)
       .on("postgres_changes", { event: "*", schema: "public", table: "rooms", filter: `code=eq.${code}` }, refresh)
       .on("postgres_changes", { event: "*", schema: "public", table: "room_players", filter: `room_code=eq.${code}` }, refresh)
       .on("postgres_changes", { event: "*", schema: "public", table: "round_results", filter: `room_code=eq.${code}` }, refresh)
-      .subscribe();
+      .subscribe((s) => {
+        if (s === "SUBSCRIBED") {
+          setRtState("ok");
+          refresh(); // catch up on anything that happened before the connection was ready
+        } else if (s === "CHANNEL_ERROR" || s === "TIMED_OUT" || s === "CLOSED") {
+          setRtState("down");
+        }
+      });
     return () => {
       void db.removeChannel(ch);
     };
-  }, [member, code, refresh]);
+  }, [useRealtime, code, refresh]);
 
-  // slow poll as a safety net, plus heartbeat
+  // polling: a safety net while realtime works, the main way of staying up to date otherwise
+  const pollMs = pollIntervalMs(status, realtimeOk);
   useEffect(() => {
     if (!member) return;
     const poll = setInterval(() => {
       if (document.visibilityState === "visible") void fetchSnapshot();
-    }, POLL_MS);
-    const beat = setInterval(() => void callRpc("touch", { p_code: code }).catch(() => undefined), HEARTBEAT_MS);
-    void callRpc("touch", { p_code: code }).catch(() => undefined);
+    }, pollMs);
+    const onVisible = () => {
+      if (document.visibilityState === "visible") void fetchSnapshot(); // catch up after a phone wakes up
+    };
+    document.addEventListener("visibilitychange", onVisible);
     return () => {
       clearInterval(poll);
-      clearInterval(beat);
+      document.removeEventListener("visibilitychange", onVisible);
     };
-  }, [member, code, fetchSnapshot]);
+  }, [member, pollMs, fetchSnapshot]);
+
+  // heartbeat so the others can tell we're still here
+  useEffect(() => {
+    if (!member) return;
+    const beat = setInterval(() => void callRpc("touch", { p_code: code }).catch(() => undefined), HEARTBEAT_MS);
+    void callRpc("touch", { p_code: code }).catch(() => undefined);
+    return () => clearInterval(beat);
+  }, [member, code]);
 
   // the server resets hop counts for each round, so forget what we last reported
   const racing = load.phase === "ready" && load.snapshot.room.status === "racing";
@@ -181,6 +217,8 @@ export function useRoom(code: string): RoomApi {
       nextRound: (fromRound) => run("next_round", { p_from_round: fromRound }, { quiet: true }),
       forfeit: () => run("forfeit", {}),
       rematch: () => run("rematch", {}),
+      start: () => run("start_match", {}),
+      leave: () => run("leave_room", {}),
     }),
     [load, error, busy, run, code],
   );

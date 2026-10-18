@@ -8,12 +8,20 @@ import {
   formatMs,
   friendlyError,
   isValidCode,
+  activePlayers,
+  canStart,
   matchView,
   msUntil,
   normalizeCode,
   opponentPresence,
+  othersPresence,
+  placesFor,
+  readiness,
+  seatsLeft,
   parseSnapshot,
+  pollIntervalMs,
   randomNickname,
+  wantsRealtime,
   roundView,
   seats,
   serverOffset,
@@ -29,11 +37,14 @@ const player = (id: string, seat: number, over: Partial<RoomPlayer> = {}): RoomP
   moves: 0,
   hints: 0,
   rematch: false,
+  has_left: false,
   last_seen: "2026-01-01T00:00:00.000Z",
   ...over,
 });
 const A = player("a", 0);
 const B = player("b", 1);
+const C = player("c", 2);
+const D = player("d", 3);
 const res = (id: string, round: number, ms: number | null, outcome: RoundResult["outcome"] = "finished"): RoundResult => ({
   player_id: id,
   match_no: 1,
@@ -102,8 +113,8 @@ describe("match totals", () => {
   it("adds up times; the lowest total wins, not the most round wins", () => {
     const m = matchView(results, [A, B]);
     expect(m.rows).toEqual([
-      { playerId: "a", nickname: "A", totalMs: 130_000, roundWins: 1 },
-      { playerId: "b", nickname: "B", totalMs: 122_000, roundWins: 1 },
+      { playerId: "a", nickname: "A", totalMs: 130_000, roundWins: 1, hasLeft: false },
+      { playerId: "b", nickname: "B", totalMs: 122_000, roundWins: 1, hasLeft: false },
     ]);
     expect(m.winnerId).toBe("b");
     expect(m.byForfeit).toBe(false);
@@ -139,7 +150,7 @@ describe("opponent presence", () => {
     expect(opponentPresence(undefined, 0, base)).toEqual({ away: false, canForfeit: false, silentMs: 0 });
   });
   it("finds me and my opponent", () => {
-    expect(seats([A, B], "b")).toEqual({ me: B, opponent: A });
+    expect(seats([A, B], "b")).toEqual({ me: B, opponent: A, opponents: [A] });
   });
 });
 
@@ -188,6 +199,136 @@ describe("codes, nicknames, formatting, errors", () => {
   });
 });
 
+describe("3 and 4 players", () => {
+  const four = [A, B, C, D];
+
+  it("places share a rank when times tie (1, 2, 2, 4)", () => {
+    expect(placesFor([10, 20, 20, 40], (x) => x)).toEqual([1, 2, 2, 4]);
+    expect(placesFor([5, 5, 5], (x) => x)).toEqual([1, 1, 1]);
+    expect(placesFor([7], (x) => x)).toEqual([1]);
+  });
+
+  it("ranks a 4-player round, fastest first", () => {
+    const v = roundView([res("a", 1, 50_000), res("b", 1, 30_000), res("c", 1, 90_000), res("d", 1, 41_000)], four, 1);
+    expect(v.complete).toBe(true);
+    expect(v.ordered.map((r) => r.playerId)).toEqual(["b", "d", "a", "c"]);
+    expect(v.ranks).toEqual({ b: 1, d: 2, a: 3, c: 4 });
+    expect(v.winnerId).toBe("b");
+    expect(v.tie).toBe(false);
+    expect(v.rows.map((r) => r.playerId)).toEqual(["a", "b", "c", "d"]); // seat order is kept too
+  });
+
+  it("a tie for first is a tie, a tie further down is not", () => {
+    const top = roundView([res("a", 1, 30_000), res("b", 1, 30_000), res("c", 1, 90_000)], [A, B, C], 1);
+    expect(top).toMatchObject({ tie: true, winnerId: null });
+    expect(top.ranks).toEqual({ a: 1, b: 1, c: 3 });
+
+    const low = roundView([res("a", 1, 10_000), res("b", 1, 30_000), res("c", 1, 30_000)], [A, B, C], 1);
+    expect(low).toMatchObject({ tie: false, winnerId: "a" });
+    expect(low.ranks).toEqual({ a: 1, b: 2, c: 2 });
+  });
+
+  it("a round is incomplete until all four have a time", () => {
+    const v = roundView([res("a", 1, 1), res("b", 1, 2), res("c", 1, 3)], four, 1);
+    expect(v.complete).toBe(false);
+    expect(v.winnerId).toBeNull();
+  });
+
+  it("match totals rank everybody by total time, not by round wins", () => {
+    const results = [
+      res("a", 1, 10_000), res("b", 1, 20_000), res("c", 1, 30_000), res("d", 1, 40_000), // a wins round 1
+      res("a", 2, 90_000), res("b", 2, 25_000), res("c", 2, 26_000), res("d", 2, 27_000), // b wins round 2
+    ];
+    const m = matchView(results, four);
+    expect(m.ordered.map((r) => [r.playerId, r.totalMs])).toEqual([
+      ["b", 45_000], ["c", 56_000], ["d", 67_000], ["a", 100_000],
+    ]);
+    expect(m.winnerId).toBe("b");
+    expect(m.ranks).toEqual({ b: 1, c: 2, d: 3, a: 4 });
+    expect(m.rows.find((r) => r.playerId === "a")!.roundWins).toBe(1);
+  });
+
+  it("a player who left is scored at the cap, shown as left, and the rest carry on", () => {
+    const leaver = player("c", 2, { has_left: true });
+    const results = [
+      res("a", 1, 20_000), res("b", 1, 30_000), res("c", 1, 80_000, "timeout"), // c left: scored at 20 s + 60 s
+    ];
+    const m = matchView(results, [A, B, leaver]);
+    expect(m.rows.find((r) => r.playerId === "c")).toMatchObject({ hasLeft: true, totalMs: 80_000 });
+    expect(m.winnerId).toBe("a");
+    expect(activePlayers([A, B, leaver]).map((p) => p.player_id)).toEqual(["a", "b"]);
+    expect(seats([A, B, leaver], "a").opponents.map((p) => p.player_id)).toEqual(["b"]); // leavers aren't opponents any more
+  });
+
+  it("a forfeit puts the survivor on top whatever the times were", () => {
+    const m = matchView([res("a", 1, 99_000), res("b", 1, 10_000)], [A, B], "a");
+    expect(m).toMatchObject({ winnerId: "a", byForfeit: true });
+    expect(m.ordered.map((r) => r.playerId)).toEqual(["a", "b"]);
+  });
+
+  it("counts who is ready among players still in the match", () => {
+    expect(readiness([player("a", 0, { ready: true }), player("b", 1, { ready: true }), player("c", 2)])).toEqual({ ready: 2, total: 3 });
+    expect(readiness([A, player("b", 1, { has_left: true, ready: true })])).toEqual({ ready: 0, total: 1 });
+  });
+
+  it("only the host can start, and only with 2 or more players", () => {
+    const base = { host_id: "a", status: "lobby", max_players: 4 } as Parameters<typeof canStart>[0];
+    expect(canStart(base, [A], "a")).toBe(false); // alone
+    expect(canStart(base, [A, B], "a")).toBe(true);
+    expect(canStart(base, [A, B], "b")).toBe(false); // not the host
+    expect(canStart({ ...base, status: "picking" }, [A, B], "a")).toBe(false); // already started
+  });
+
+  it("knows how many seats are left", () => {
+    const room = { max_players: 4 } as Parameters<typeof seatsLeft>[0];
+    expect(seatsLeft(room, [A, B])).toBe(2);
+    expect(seatsLeft(room, four)).toBe(0);
+    expect(seatsLeft({ max_players: 2 } as typeof room, [A, B, C])).toBe(0);
+  });
+
+  it("shows an 'away' state per opponent, so one quiet player doesn't flag the others", () => {
+    const base = new Date("2026-01-01T00:00:00.000Z").getTime();
+    const quiet = player("c", 2, { last_seen: "2026-01-01T00:00:00.000Z" });
+    const lively = player("b", 1, { last_seen: "2026-01-01T00:00:28.000Z" });
+    const list = othersPresence([A, lively, quiet], "a", 0, base + 30_000);
+    expect(list.map((x) => [x.player.player_id, x.presence.away, x.presence.canForfeit])).toEqual([
+      ["b", false, false],
+      ["c", true, true],
+    ]);
+  });
+});
+
+describe("staying within the free Supabase limits", () => {
+  it("only holds a realtime connection while a match is moving", () => {
+    for (const s of ["picking", "ready", "racing", "round_over"] as const) expect(wantsRealtime(s)).toBe(true);
+    for (const s of ["lobby", "finished"] as const) expect(wantsRealtime(s)).toBe(false);
+    expect(wantsRealtime(null)).toBe(false);
+  });
+
+  it("polls only as a slow safety net while realtime works", () => {
+    for (const s of ["picking", "ready", "racing", "round_over"] as const) expect(pollIntervalMs(s, true)).toBe(10_000);
+  });
+
+  it("polls faster when realtime is unavailable, so a race still feels live", () => {
+    expect(pollIntervalMs("racing", false)).toBe(1500);
+    expect(pollIntervalMs("ready", false)).toBe(1500);
+    expect(pollIntervalMs("picking", false)).toBe(1500);
+    expect(pollIntervalMs("round_over", false)).toBe(2500);
+  });
+
+  it("polls waiting rooms and finished matches gently, whatever realtime says", () => {
+    expect(pollIntervalMs("lobby", false)).toBe(2500);
+    expect(pollIntervalMs("lobby", true)).toBe(2500);
+    expect(pollIntervalMs("finished", false)).toBe(6000);
+    expect(pollIntervalMs(null, false)).toBe(2500);
+  });
+
+  it("never polls slower than the 20 s forfeit rule needs (a missed update must not hide a leaver)", () => {
+    for (const s of ["lobby", "picking", "ready", "racing", "round_over", "finished"] as const)
+      for (const ok of [true, false]) expect(pollIntervalMs(s, ok)).toBeLessThan(12_000);
+  });
+});
+
 describe("snapshot parsing", () => {
   const room = {
     code: "ABC2D", host_id: "a", status: "picking", rounds_total: 2, band: null, match_no: 1, round_no: 1,
@@ -198,6 +339,25 @@ describe("snapshot parsing", () => {
     const s = parseSnapshot({ now: "2026-01-01T00:00:00Z", room, players: [A, B], results: [res("a", 1, 5)] });
     expect(s.room.status).toBe("picking");
     expect(s.players).toHaveLength(2);
+  });
+
+  it("fills in the 2-player defaults for rooms from before 3-4 player support", () => {
+    const old = { ...A } as Partial<RoomPlayer>;
+    delete old.has_left;
+    const s = parseSnapshot({ now: "2026-01-01T00:00:00Z", room, players: [old], results: [] });
+    expect(s.room.max_players).toBe(2);
+    expect(s.players[0].has_left).toBe(false);
+  });
+
+  it("reads max_players and has_left from a new room", () => {
+    const s = parseSnapshot({
+      now: "2026-01-01T00:00:00Z",
+      room: { ...room, max_players: 4 },
+      players: [A, player("b", 1, { has_left: true })],
+      results: [],
+    });
+    expect(s.room.max_players).toBe(4);
+    expect(s.players[1].has_left).toBe(true);
   });
   it("rejects a malformed snapshot", () => {
     expect(() => parseSnapshot({ now: "x", room: { ...room, status: "nope" }, players: [], results: [] })).toThrow();
