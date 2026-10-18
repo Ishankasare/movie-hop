@@ -20,6 +20,14 @@ async function player(): Promise<{ db: SupabaseClient; id: string }> {
   return { db, id: data.user.id };
 }
 
+// Every anonymous sign-in counts against Supabase's per-IP hourly limit (30 by default), so the multi-player
+// tests share a small pool of players instead of signing in fresh ones each time.
+const pool: Awaited<ReturnType<typeof player>>[] = [];
+async function pooled(n: number): Promise<typeof pool> {
+  while (pool.length < n) pool.push(await player());
+  return pool.slice(0, n);
+}
+
 type Snapshot = {
   now: string;
   room: Record<string, unknown> & { status: string; round_no: number; picker_id: string; match_no: number };
@@ -243,7 +251,7 @@ describe.skipIf(!URL || !KEY)("race with 3 and 4 players", () => {
   }
 
   it("validates the room size and rounds", async () => {
-    const host = await player();
+    const [host] = await pooled(1);
     await expectError(rpc(host.db, "create_room", { p_nickname: "H", p_rounds: 4, p_band: null, p_max_players: 5 }), "bad_players");
     await expectError(rpc(host.db, "create_room", { p_nickname: "H", p_rounds: 3, p_band: null, p_max_players: 4 }), "bad_rounds");
     const { error } = await host.db.rpc("create_room", { p_nickname: "H", p_rounds: 8, p_band: 3, p_max_players: 3 });
@@ -251,14 +259,14 @@ describe.skipIf(!URL || !KEY)("race with 3 and 4 players", () => {
   });
 
   it("4 players: the lobby fills, the match starts by itself, everyone must be ready, picking rotates in seat order", async () => {
-    const ps = await Promise.all([player(), player(), player(), player()]);
+    const ps = await pooled(4);
     const code = await room(ps[0], 4);
 
     for (let i = 1; i < 3; i++) {
       await rpc(ps[i].db, "join_room", { p_code: code, p_nickname: `P${i}` });
       expect((await snap(ps[0].db, code)).room.status).toBe("lobby"); // not full yet
     }
-    const fifth = await player();
+    const fifth = (await pooled(5))[4];
     await rpc(ps[3].db, "join_room", { p_code: code, p_nickname: "P3" });
     await expectError(rpc(fifth.db, "join_room", { p_code: code, p_nickname: "P4" }), "room_full");
 
@@ -305,7 +313,7 @@ describe.skipIf(!URL || !KEY)("race with 3 and 4 players", () => {
   }, 120_000);
 
   it("3 players: only the host can start early; a player who leaves is scored at the cap and the others carry on", async () => {
-    const ps = await Promise.all([player(), player(), player()]);
+    const ps = await pooled(3);
     const code = await room(ps[0], 4);
     await expectError(rpc(ps[0].db, "start_match", { p_code: code }), "need_more_players");
     await rpc(ps[1].db, "join_room", { p_code: code, p_nickname: "P1" });
@@ -341,7 +349,7 @@ describe.skipIf(!URL || !KEY)("race with 3 and 4 players", () => {
   }, 120_000);
 
   it("a lobby member can leave; if the host leaves, the room goes", async () => {
-    const [host, guest, later] = await Promise.all([player(), player(), player()]);
+    const [host, guest, later] = await pooled(3);
     const code = await room(host, 3);
     await rpc(guest.db, "join_room", { p_code: code, p_nickname: "G" });
     await rpc(guest.db, "leave_room", { p_code: code });
@@ -354,7 +362,7 @@ describe.skipIf(!URL || !KEY)("race with 3 and 4 players", () => {
   });
 
   it("a rematch needs every remaining player", async () => {
-    const ps = await Promise.all([player(), player(), player()]);
+    const ps = await pooled(3);
     const code = await room(ps[0], 3, 2);
     await rpc(ps[1].db, "join_room", { p_code: code, p_nickname: "P1" });
     await rpc(ps[2].db, "join_room", { p_code: code, p_nickname: "P2" });

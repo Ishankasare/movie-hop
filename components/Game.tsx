@@ -10,11 +10,14 @@ import type { Film, Person } from "@/lib/types";
 import Poster from "./Poster";
 import ResultPanel from "./ResultPanel";
 
-/** Extra wiring when the board is used in a 2-player race (see components/race). */
+/** One of the other players in a race: only their hop count and whether they are done, never their route. */
+export type RaceOpponent = { name: string; moves: number; status: "racing" | "finished" | "gaveup" };
+
+/** Extra wiring when the board is used in a 2 to 4 player race (see components/race). */
 export type RaceHooks = {
   /** performance.now() value at the shared race start (already corrected for the server clock). */
   startedAtPerf: number;
-  opponent: { name: string; moves: number };
+  opponents: RaceOpponent[];
   onMoves: (moves: number) => void;
   onHint: () => void;
   onFinish: (moves: number) => void;
@@ -156,15 +159,21 @@ export default function Game({ pair, onPlayAgain, race }: Props) {
         </p>
       </div>
       {race && (
-        <p
-          className="mt-2 rounded-lg bg-surface-hi px-3 py-1.5 text-center text-sm"
+        <ul
+          aria-label="Other players' hop counts"
+          className="mt-2 flex flex-wrap justify-center gap-2 text-sm"
           data-testid="opponent-moves"
-          aria-live="polite"
         >
-          <span className="text-muted">{race.opponent.name} </span>
-          <span className="font-bold tabular-nums">{race.opponent.moves}</span>
-          <span className="text-muted"> {race.opponent.moves === 1 ? "hop" : "hops"}</span>
-        </p>
+          {race.opponents.map((o) => (
+            <li key={o.name} className="rounded-lg bg-surface-hi px-3 py-1.5 text-center">
+              <span className="text-muted">{o.name} </span>
+              <span className="font-bold tabular-nums">{o.moves}</span>
+              <span className="text-muted"> {o.moves === 1 ? "hop" : "hops"}</span>
+              {o.status === "finished" && <span className="ml-1 text-accent-soft"> · done</span>}
+              {o.status === "gaveup" && <span className="ml-1 text-muted"> · gave up</span>}
+            </li>
+          ))}
+        </ul>
       )}
 
       {hintText && !finished && (

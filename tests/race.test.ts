@@ -14,6 +14,7 @@ import {
   msUntil,
   normalizeCode,
   opponentPresence,
+  ordinal,
   othersPresence,
   placesFor,
   readiness,
@@ -186,6 +187,9 @@ describe("codes, nicknames, formatting, errors", () => {
     expect(cleanNickname("x".repeat(40))).toHaveLength(16);
     expect(randomNickname(() => 0)).toBe("Guest100");
     expect(randomNickname(() => 0.999)).toBe("Guest999");
+  });
+  it("writes places as 1st, 2nd, 3rd, 4th", () => {
+    expect([1, 2, 3, 4, 11, 12, 13, 21, 22].map(ordinal)).toEqual(["1st", "2nd", "3rd", "4th", "11th", "12th", "13th", "21st", "22nd"]);
   });
   it("formats times", () => {
     expect(formatMs(0)).toBe("0:00.0");

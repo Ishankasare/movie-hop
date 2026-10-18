@@ -1,9 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Game from "@/components/Game";
-import { cleanNickname, countdown, findPair, isPicker, msUntil, opponentPresence, randomNickname, seats } from "@/lib/race";
+import {
+  activePlayers,
+  cleanNickname,
+  countdown,
+  findPair,
+  isPicker,
+  msUntil,
+  othersPresence,
+  randomNickname,
+  seats,
+} from "@/lib/race";
 import type { Pair } from "@/lib/pairs";
 import type { Room, RoomPlayer, RoundResult, Snapshot } from "@/lib/race";
 import { supabaseConfigured } from "@/lib/supabase";
@@ -122,37 +133,79 @@ function JoinPanel({ code, api }: { code: string; api: RoomApi }) {
 
 // ---------------------------------------------------------------------------------------------
 
+/**
+ * Leave the room. In the lobby it just removes you; mid-match it is a bigger step (you're scored at the cap for
+ * the rounds you miss and the others carry on), so it asks you to tap a second time.
+ */
+function useLeave(api: RoomApi): () => Promise<void> {
+  const router = useRouter();
+  const { leave } = api;
+  return async () => {
+    await leave(); // even if this fails the player can still walk away: the others will see them go quiet
+    router.push("/race");
+  };
+}
+
+function LeaveButton({ api, midMatch }: { api: RoomApi; midMatch: boolean }) {
+  const leave = useLeave(api);
+  const [sure, setSure] = useState(false);
+
+  if (midMatch && !sure) {
+    return (
+      <button type="button" onClick={() => setSure(true)} className="text-muted hover:text-foreground">
+        ← Leave
+      </button>
+    );
+  }
+  if (midMatch) {
+    return (
+      <span className="flex items-center gap-2">
+        <button type="button" onClick={() => void leave()} data-testid="confirm-leave" className="font-semibold text-danger">
+          Leave the match?
+        </button>
+        <button type="button" onClick={() => setSure(false)} className="text-muted hover:text-foreground">
+          Stay
+        </button>
+      </span>
+    );
+  }
+  return (
+    <button type="button" onClick={() => void leave()} data-testid="leave" className="text-muted hover:text-foreground">
+      ← Leave
+    </button>
+  );
+}
+
+// ---------------------------------------------------------------------------------------------
+
 function RoomView({ api, myId, snapshot, offset }: { api: RoomApi; myId: string; snapshot: Snapshot; offset: number }) {
   const t = useTicker(250);
   const { room, players, results } = snapshot;
-  const { me, opponent } = seats(players, myId);
+  const { me } = seats(players, myId);
+  const leaveRoom = useLeave(api);
   const pair = findPair(room.pair_key);
-  const presence = opponentPresence(opponent, offset, t);
-  const showAway = !!opponent && presence.away && room.status !== "lobby" && room.status !== "finished";
+  const midMatch = room.status !== "lobby" && room.status !== "finished";
+  const away = midMatch
+    ? othersPresence(players, myId, offset, t)
+        .filter((x) => x.presence.away)
+        .map((x) => ({ name: x.player.nickname, silentMs: x.presence.silentMs, canForfeit: x.presence.canForfeit }))
+    : [];
 
   return (
     <>
       <header className="mb-4 flex items-center justify-between text-sm">
-        <Link href="/race" className="text-muted hover:text-foreground">
-          ← Leave
-        </Link>
+        <LeaveButton api={api} midMatch={midMatch} />
         <span className="text-muted">
           Room <span className="font-bold tracking-widest text-foreground">{room.code}</span>
-          {room.status !== "lobby" && room.status !== "finished" && ` · round ${room.round_no}/${room.rounds_total}`}
+          {midMatch && ` · round ${room.round_no}/${room.rounds_total}`}
         </span>
       </header>
 
-      {showAway && (
-        <AwayBanner
-          name={opponent!.nickname}
-          silentMs={presence.silentMs}
-          canForfeit={presence.canForfeit}
-          onForfeit={() => void api.forfeit()}
-          busy={api.busy}
-        />
-      )}
+      <AwayBanner away={away} remaining={activePlayers(players).length} onForfeit={() => void api.forfeit()} busy={api.busy} />
 
-      {room.status === "lobby" && <LobbyPanel room={room} players={players} />}
+      {room.status === "lobby" && (
+        <LobbyPanel room={room} players={players} myId={myId} busy={api.busy} onStart={() => void api.start()} />
+      )}
 
       {room.status === "picking" && (
         <PickPanel
@@ -166,11 +219,11 @@ function RoomView({ api, myId, snapshot, offset }: { api: RoomApi; myId: string;
       )}
 
       {room.status === "ready" && (
-        <ReadyPanel room={room} pair={pair} me={me} opponent={opponent} busy={api.busy} onReady={() => void api.ready()} />
+        <ReadyPanel room={room} pair={pair} me={me} players={players} busy={api.busy} onReady={() => void api.ready()} />
       )}
 
       {room.status === "racing" && (
-        <RacingView api={api} room={room} pair={pair} me={me} opponent={opponent} results={results} offset={offset} nowMs={t} />
+        <RacingView api={api} room={room} pair={pair} me={me} players={players} results={results} offset={offset} nowMs={t} />
       )}
 
       {room.status === "round_over" && (
@@ -185,6 +238,7 @@ function RoomView({ api, myId, snapshot, offset }: { api: RoomApi; myId: string;
           myId={myId}
           rematchBusy={api.busy}
           onRematch={() => void api.rematch()}
+          onLeave={() => void leaveRoom()}
         />
       )}
 
@@ -204,7 +258,7 @@ function RacingView({
   room,
   pair,
   me,
-  opponent,
+  players,
   results,
   offset,
   nowMs: t,
@@ -213,15 +267,20 @@ function RacingView({
   room: Room;
   pair: Pair | undefined;
   me: RoomPlayer | undefined;
-  opponent: RoomPlayer | undefined;
+  players: RoomPlayer[];
   results: RoundResult[];
   offset: number;
   nowMs: number;
 }) {
   const cd = room.start_at ? countdown(room.start_at, offset, t) : { phase: "wait" as const, n: 0 };
-  const mine = results.find((r) => r.round_no === room.round_no && r.player_id === me?.player_id);
+  const resultOf = (id: string) => results.find((r) => r.round_no === room.round_no && r.player_id === id);
+  const mine = me ? resultOf(me.player_id) : undefined;
+  const opponents = seats(players, me?.player_id ?? "").opponents;
+  const stillRacing = opponents.filter((p) => !resultOf(p.player_id));
   const windowLeft = room.deadline_at && room.first_finish_ms !== null ? msUntil(room.deadline_at, offset, t) : null;
-  const waiting = <WaitingPanel mine={mine} opponentName={opponent?.nickname ?? "your opponent"} windowLeftMs={windowLeft} />;
+  const waiting = (
+    <WaitingPanel mine={mine} waitingFor={stillRacing.map((p) => p.nickname)} windowLeftMs={windowLeft} />
+  );
 
   if (!pair) {
     return (
@@ -239,7 +298,14 @@ function RacingView({
       api={api}
       room={room}
       pair={pair}
-      opponent={opponent}
+      opponents={opponents.map((p) => {
+        const r = resultOf(p.player_id);
+        return {
+          name: p.nickname,
+          moves: p.moves,
+          status: r ? (r.outcome === "finished" ? ("finished" as const) : ("gaveup" as const)) : ("racing" as const),
+        };
+      })}
       offset={offset}
       waiting={waiting}
     />
@@ -250,14 +316,14 @@ function RaceBoard({
   api,
   room,
   pair,
-  opponent,
+  opponents,
   offset,
   waiting,
 }: {
   api: RoomApi;
   room: Room;
   pair: Pair;
-  opponent: RoomPlayer | undefined;
+  opponents: { name: string; moves: number; status: "racing" | "finished" | "gaveup" }[];
   offset: number;
   waiting: React.ReactNode;
 }) {
@@ -270,7 +336,7 @@ function RaceBoard({
         onPlayAgain={() => undefined}
         race={{
           startedAtPerf,
-          opponent: { name: opponent?.nickname ?? "Opponent", moves: opponent?.moves ?? 0 },
+          opponents,
           onMoves: api.progress,
           onHint: () => void api.hint(),
           onFinish: (moves) => void api.finish(moves),

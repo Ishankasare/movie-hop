@@ -61,6 +61,8 @@ test.describe("race (two players, real Supabase)", () => {
       // host creates a room
       await host.page.goto("/race");
       await host.page.getByLabel("Your nickname").fill("Hosty");
+      await host.page.getByRole("button", { name: "2 players", exact: true }).click(); // the form defaults to 4 players
+      await host.page.getByRole("button", { name: "2 rounds", exact: true }).click();
       await host.page.getByTestId("create-room").click();
       await expect(host.page.getByTestId("room-code")).toBeVisible({ timeout: 20_000 });
       const code = (await host.page.getByTestId("room-code").textContent())!.trim();

@@ -3,7 +3,15 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { HopBand } from "@/lib/pairs";
-import { cleanNickname, friendlyError, isValidCode, normalizeCode, randomNickname } from "@/lib/race";
+import {
+  cleanNickname,
+  friendlyError,
+  isValidCode,
+  normalizeCode,
+  PLAYER_OPTIONS,
+  randomNickname,
+  ROUNDS_OPTIONS,
+} from "@/lib/race";
 import { callRpc, ensureUser, supabaseConfigured } from "@/lib/supabase";
 import { useNickname } from "./nickname";
 import { Card, PrimaryButton } from "./Panels";
@@ -29,7 +37,7 @@ function Segment<T extends string | number | null>({
   return (
     <fieldset className="mt-4">
       <legend className="text-sm font-semibold text-muted">{label}</legend>
-      <div className={`mt-2 grid gap-2 ${options.length === 2 ? "grid-cols-2" : "grid-cols-4"}`}>
+      <div className="mt-2 grid gap-2" style={{ gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` }}>
         {options.map((o) => (
           <button
             key={o.label}
@@ -51,7 +59,8 @@ function Segment<T extends string | number | null>({
 export default function RaceHome() {
   const router = useRouter();
   const [nickname, setNickname] = useNickname();
-  const [rounds, setRounds] = useState<2 | 4>(2);
+  const [players, setPlayers] = useState<2 | 3 | 4>(4);
+  const [rounds, setRounds] = useState<2 | 4 | 8>(4);
   const [band, setBand] = useState<HopBand | null>(null);
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
@@ -75,7 +84,12 @@ export default function RaceHome() {
     setError(null);
     try {
       await ensureUser();
-      const newCode = await callRpc<string>("create_room", { p_nickname: nick(), p_rounds: rounds, p_band: band });
+      const newCode = await callRpc<string>("create_room", {
+        p_nickname: nick(),
+        p_rounds: rounds,
+        p_band: band,
+        p_max_players: players,
+      });
       router.push(`/race/${newCode}`);
     } catch (e) {
       setError(friendlyError(e instanceof Error ? e.message : ""));
@@ -120,7 +134,18 @@ export default function RaceHome() {
 
       <Card>
         <h2 className="text-lg font-black">Host a match</h2>
-        <Segment label="Rounds" options={[{ value: 2 as const, label: "2 rounds" }, { value: 4 as const, label: "4 rounds" }]} value={rounds} onChange={setRounds} />
+        <Segment
+          label="Players (the host can start early with 2 or more)"
+          options={PLAYER_OPTIONS.map((n) => ({ value: n, label: `${n} players` }))}
+          value={players}
+          onChange={setPlayers}
+        />
+        <Segment
+          label="Rounds (each player takes turns picking the genre)"
+          options={ROUNDS_OPTIONS.map((n) => ({ value: n, label: `${n} rounds` }))}
+          value={rounds}
+          onChange={setRounds}
+        />
         <Segment label="Hops (movies to reach, at best)" options={BANDS} value={band} onChange={setBand} />
         <div className="mt-5">
           <PrimaryButton onClick={() => void create()} disabled={busy} testId="create-room">

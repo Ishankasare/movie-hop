@@ -320,6 +320,13 @@ export function randomNickname(rng: () => number = Math.random): string {
   return `Guest${String(Math.floor(rng() * 900) + 100)}`;
 }
 
+/** 1 -> "1st", 2 -> "2nd", 3 -> "3rd", 4 -> "4th", 11 -> "11th" */
+export function ordinal(n: number): string {
+  const tens = n % 100;
+  if (tens >= 11 && tens <= 13) return `${n}th`;
+  return `${n}${({ 1: "st", 2: "nd", 3: "rd" } as Record<number, string>)[n % 10] ?? "th"}`;
+}
+
 /** m:ss.s, e.g. 83_450 -> "1:23.4" */
 export function formatMs(ms: number): string {
   const tenths = Math.floor(ms / 100);
